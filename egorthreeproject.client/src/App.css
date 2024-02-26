@@ -1,0 +1,61 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.header {
+    display: block;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.logocl {
+    margin-left: 20px;
+}
+
+.menudiv {
+    display: table-cell;
+    vertical-align: middle;
+    flex-grow: 1;
+}
+
+.clickmenu {
+    width: 215px;
+    height: 120px;
+    align-items: flex-start;
+}
+
+.menu {
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+    background: #555;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .menu li {
+            width: 100%;
+            text-align: center;
+        }
+}
