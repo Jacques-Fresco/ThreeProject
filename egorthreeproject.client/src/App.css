@@ -8,45 +8,92 @@
     display: block;
     background: #333;
     color: #fff;
-    padding: 10px 0;
 }
 
 .logocl {
-    margin-left: 20px;
+    margin: 0 15px;
+    align-self: flex-start;
 }
 
 .menudiv {
     display: table-cell;
     vertical-align: middle;
     flex-grow: 1;
+    text-align: center;
 }
 
 .clickmenu {
     width: 215px;
     height: 120px;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    align-items: center;
+    margin: 0 15px 0 0;
+    display: flex;
+}
+
+.clickmenu > div {
+    display: flex;
+    align-items: center;
+}
+
+.clickmenu div svg {
+    padding: 0 5px;
 }
 
 .menu {
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.menu li {
+    text-align: center;
+    padding: 0 15px;
+    /* flex: 1 0 0; */
 }
 
 .menu li a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
-    padding: 10px 15px;
-    display: block;
+    white-space: nowrap;
 }
 
-.menu li a:hover,
+.menu li:first-child a {
+    padding-left: 0;
+}
+
+.menu li:last-child a {
+    padding-right: 0;
+}
+
+.mySwiper {
+    position: relative;
+}
+
+.mySwiper .swiper-slide {
+    position: relative;
+}
+
+/* .mySwiper .swiper-slide::after {
+    content: 'We make interior design products';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+} */
+
+/* .menu li a:hover,
 .menu li a:focus {
     background: #555;
-}
+} */
 
 @media (max-width: 600px) {
     .menu {
