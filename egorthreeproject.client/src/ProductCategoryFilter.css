@@ -1,0 +1,59 @@
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.category-buttons button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* Добавляем это свойство */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  }
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Небольшой эффект при наведении */
+}
+
+.product-image {
+    max-width: 100%; /* Чтобы изображение не выходило за границы карточки */
+    height: auto; /* Для сохранения пропорций изображения */
+    margin-bottom: 10px;
+}
+
+.category-buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+}

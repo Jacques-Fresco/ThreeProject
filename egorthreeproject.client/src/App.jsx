@@ -4,20 +4,68 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import ProductCategoryFilter from './ProductCategoryFilter.jsx'
 
 function App() {
 
-    // const [slideContent, setSlideContent] = useState({
-    //     1: 'We make interior design products',
-    //     2: 'We make furniture to individual design',
-    //     3: 'Our products are starting to be replenished more and more often'
-    // });
+    const products = [
+        { id: 1, name: 'Журнальный столик из дуба (wenge Italian paint)', description: '', categoryId: 1 },
+        { id: 2, name: 'Журнальный столик из дуба', description: '', category: 2 },
+        { id: 3, name: 'Полка LOFT in-design', description: 'Полка произведена полностью 100% из экологичных и качественных материалов.', categoryId: 3 },
+        { id: 4, name: 'Полка LOFT meli', description: 'Многофункциональная полка лофт в оригинальном исполнении', categoryId: 3 },
+        { id: 5, name: 'Интерьерные часы "Санкт-Петербург"', description: 'Часы из экзотического шпона "Американский орех"', categoryId: 5 },
+        { id: 6, name: 'Карта "Санкт-Петербург"', description: 'Прекрасно дополнит интерьер Вашего дома, офиса, ресторана или студии"', categoryId: 6 },
+        { id: 7, name: 'tv -tумба in-desidn', description: 'tv-tyмба из массива ореха', categoryId: 4 },
+        { id: 8, name: 'tv-tумба tik-design', description: 'Подвесная телевизионная tv-tумба из тикового дерева', categoryId: 4 },
+        { id: 9, name: 'Чехол для Iphone 12|13|14', description: 'Чехол с деревянной подложкой', categoryId: 7 },
+        { id: 10, name: 'Стеллаж LOFT siba', description: 'Если вы хотите добавить функциональности и стиля в свой дом, то стеллаж Стеллаж LOFT siba', categoryId: 3 },
+        { id: 11, name: 'Полка LOFT stef', description: 'Полка настенная в стиле лофт с полотенцедержателем', categoryId: 3 },
+        { id: 12, name: 'Домик для кошек', description: '', categoryId: 2 },
+        { id: 13, name: 'Прикроватная тумбочка "EDA"', description: 'У вашего пушистого друга будет собственное место, где он сможет пролежать весь день. Прикроватная тумбочка изготовленная из Австрийского лдсп, будет отлично смотреться с любым стилем, а велюровая подушка позволит вашему питомцу дремать рядом с вами. Тумбочка имеет открытое отделение для хранения вещей, электроники, книг и тд. А столешница идеально подходит для лампы для чтения, а также для хранения закусок и электроники во время просмотра любимых передач и фильмов.', categoryId: 2}
+    ];
 
-    const handleSlideChange = (swiper) => {
-        const currentSlideIndex = swiper.activeIndex;
-        const content = slideContent[currentSlideIndex + 1];
-        document.getElementById(`dynamicContent${currentSlideIndex + 1}`).innerText = content;
-    };
+    const categories = [
+        { id: 1, name: 'Журнальные столики' },
+        { id: 2, name: 'Для животных <3' },
+        { id: 3, name: 'LOFT' },
+        { id: 4, name: 'tv - tумба (premium)' },
+        { id: 5, name: 'Часы СПб' },
+        { id: 6, name: 'Карта СПб' },
+        { id: 7, name: 'Чехлы' },
+    ];
+
+    const pictures = [
+            { ProductId: 1, pictures: ['https://optim.tildacdn.com/stor6434-6235-4261-a336-333165376438/-/format/webp/56962683.jpg', 'https://optim.tildacdn.com/stor3735-3165-4561-a162-656632373264/-/format/webp/80300474.jpg', 'https://optim.tildacdn.com/stor3238-3635-4162-b139-323232376466/-/cover/560x560/center/center/-/format/webp/10731644.jpg'] },
+            { ProductId: 2, pictures: ['https://optim.tildacdn.com/stor6531-3466-4164-a438-303038643230/-/format/webp/33414867.jpg', 'https://optim.tildacdn.com/stor6539-3131-4266-b334-343435346239/-/format/webp/30500078.jpg', 'https://optim.tildacdn.com/stor6166-6433-4064-b136-616338633164/-/cover/560x560/center/center/-/format/webp/89246628.jpg'] },
+            { ProductId: 3, pictures: ['https://optim.tildacdn.com/stor6636-3763-4139-a666-363834633133/-/cover/560x560/center/center/-/format/webp/47010860.jpg', 'https://optim.tildacdn.com/stor3361-3131-4634-a332-653335636363/-/cover/560x560/center/center/-/format/webp/10205874.jpg', 'https://optim.tildacdn.com/stor6263-6366-4362-b138-336465623065/-/cover/560x560/center/center/-/format/webp/98022356.png'] },
+            { ProductId: 4, pictures: ['https://optim.tildacdn.com/stor3632-3338-4463-a139-306231623832/-/format/webp/46433545.jpg', 'https://optim.tildacdn.com/stor3531-3166-4162-b533-663865663363/-/format/webp/94609311.jpg', 'https://optim.tildacdn.com/stor6332-6364-4137-b162-353430626364/-/cover/560x560/center/center/-/format/webp/45652912.jpg'] },
+            { ProductId: 5, pictures: ['https://optim.tildacdn.com/stor3536-6537-4437-b263-376237343835/-/format/webp/80148727.jpg', 'https://optim.tildacdn.com/stor3163-3934-4537-a631-613037643831/-/format/webp/97541775.jpg', 'https://optim.tildacdn.com/stor3765-6531-4630-b031-613437383666/-/cover/560x560/center/center/-/format/webp/57181190.jpg'] },
+            { ProductId: 6, pictures: ['https://optim.tildacdn.com/stor6330-6430-4162-b933-306261616463/-/cover/560x560/center/center/-/format/webp/99120679.jpg', 'https://optim.tildacdn.com/stor3034-3334-4233-b337-643933636164/-/cover/560x560/center/center/-/format/webp/61192276.jpg'] },
+            { ProductId: 7, pictures: ['https://optim.tildacdn.com/stor3532-3539-4337-b266-316334346130/-/format/webp/88407492.jpg', 'https://optim.tildacdn.com/stor6239-3432-4033-a266-383234336534/-/cover/560x560/center/center/-/format/webp/12708178.jpg', 'https://optim.tildacdn.com/stor6434-3163-4735-b137-346262323630/-/cover/560x560/center/center/-/format/webp/80889560.jpg', 'https://optim.tildacdn.com/stor6130-6636-4633-b463-333862326130/-/cover/560x560/center/center/-/format/webp/34776588.jpg'] },
+            { ProductId: 8, pictures: ['https://optim.tildacdn.com/stor3734-6334-4830-a231-393735396163/-/format/webp/16010285.jpg', 'https://optim.tildacdn.com/stor3737-6261-4737-b633-306565653963/-/format/webp/65188225.jpg', 'https://optim.tildacdn.com/stor6166-6362-4661-b735-386237663533/-/format/webp/23012492.jpg', 'https://optim.tildacdn.com/stor3766-6234-4434-a136-646230623437/-/cover/560x560/center/center/-/format/webp/39137036.jpg'] },
+            { ProductId: 9, pictures: ['https://optim.tildacdn.com/stor3566-6136-4035-b730-306634386163/-/cover/560x560/center/center/-/format/webp/30877976.jpg', 'https://optim.tildacdn.com/stor3537-3664-4234-a464-373362653334/-/cover/560x560/center/center/-/format/webp/64698433.jpg'] },
+            { ProductId: 10, pictures: ['https://optim.tildacdn.com/stor3934-3639-4637-a337-613230376263/-/format/webp/38774043.jpg', 'https://optim.tildacdn.com/stor3961-3532-4534-a265-333631343139/-/format/webp/11103773.jpg', 'https://optim.tildacdn.com/stor3031-6433-4264-b965-323139306164/-/format/webp/22316555.jpg'] },
+            { ProductId: 11, pictures: ['https://optim.tildacdn.com/stor6136-3639-4666-b337-393735313131/-/format/webp/21902387.png', 'https://optim.tildacdn.com/stor3331-6433-4561-a237-363633363131/-/format/webp/55596258.png', 'https://optim.tildacdn.com/stor3837-3062-4932-a630-393531383337/-/format/webp/10602955.jpg', 'https://optim.tildacdn.com/stor3135-6534-4736-a562-656330366133/-/format/webp/18229847.png'] },
+            { ProductId: 12, pictures: ['https://optim.tildacdn.com/stor6333-3136-4662-a135-333232653038/-/format/webp/74781831.png', 'https://optim.tildacdn.com/stor6233-3262-4963-b830-663731643735/-/format/webp/25947067.png', 'https://optim.tildacdn.com/stor3364-3864-4033-b134-356431653963/-/cover/560x560/center/center/-/format/webp/72798592.png', 'https://optim.tildacdn.com/stor3362-6466-4462-b738-316464343530/-/cover/560x560/center/center/-/format/webp/28640840.png'] },
+            { ProductId: 13, pictures: ['https://optim.tildacdn.com/stor3165-6634-4232-b233-356431393238/-/cover/560x560/center/center/-/format/webp/15245761.jpg', 'https://optim.tildacdn.com/stor3636-3737-4663-b336-363830386138/-/cover/560x560/center/center/-/format/webp/90940369.jpg'] }
+    ]
+
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.href = 'https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap';
+        link.rel = 'stylesheet';
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
+    }, []);
+
+    // const handleSlideChange = (swiper) => {
+    //     const currentSlideIndex = swiper.activeIndex;
+    //     const content = slideContent[currentSlideIndex + 1];
+    //     document.getElementById(`dynamicContent${currentSlideIndex + 1}`).innerText = content;
+    // };
 
     return (
         <div style={{ width: '100%', boxSizing: 'border-box'}}>
@@ -35,7 +83,7 @@ function App() {
                                 <li><a href="#">Стоимость</a></li>
                                 <li><a href="#">Контакты</a></li>
                             </ul>
-                        </nav> 
+                        </nav>
                     </div>
                     <div className='clickmenu'>
                         <div style={{paddingLeft: '15px'}}>
@@ -48,56 +96,62 @@ function App() {
                     </div>
                 </div>
             </header>
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper" onSlideChange={handleSlideChange}>
-                <SwiperSlide className='swiper-slide'>
-                    <div 
-                      data-original="https://static.tildacdn.com/tild3465-3438-4266-b835-393061626632/1_1_1.png" 
+            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                <SwiperSlide className='swiper-slide' style={{ position: 'relative'}}>
+                    <div
+                      data-original="https://static.tildacdn.com/tild3465-3438-4266-b835-393061626632/1_1_1.png"
                       style={{
                         height: '550px',
-                        width: '100%', 
-                        backgroundImage: 'url("https://optim.tildacdn.com/tild3465-3438-4266-b835-393061626632/-/format/webp/1_1_1.png")',
+                        width: '100%',
+                        backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url("https://optim.tildacdn.com/tild3465-3438-4266-b835-393061626632/-/format/webp/1_1_1.png")',
                         background: '-moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1)',
-                        backgroundSize: 'cover'
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
                       }}
                     ><div id="dynamicContent1" style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '600px', padding: '0 0 27px 0', textAlign: 'center' }}>We make interior design products</div></div>
                 </SwiperSlide>
-                <SwiperSlide className='swiper-slide'>
-                    <div 
-                      data-original="https://optim.tildacdn.com/tild3439-3335-4764-b330-626562316362/-/format/webp/432.png" 
+                <SwiperSlide className='swiper-slide' style={{ position: 'relative'}}>
+                    <div
+                      data-original="https://optim.tildacdn.com/tild3439-3335-4764-b330-626562316362/-/format/webp/432.png"
                       style={{
                         height: '550px',
-                        width: '100%', 
-                        backgroundImage: 'url("https://optim.tildacdn.com/tild3439-3335-4764-b330-626562316362/-/format/webp/432.png")',
+                        width: '100%',
+                        backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url("https://optim.tildacdn.com/tild3439-3335-4764-b330-626562316362/-/format/webp/432.png")',
                         background: '-moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1)',
-                        backgroundSize: 'cover'
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
                       }}
                     ><div id="dynamicContent2" style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '600px', padding: '0 0 27px 0', textAlign: 'center' }}>We make furniture to individual design</div></div>
                 </SwiperSlide>
-                <SwiperSlide className='swiper-slide'>
-                    <div 
-                      data-original="https://optim.tildacdn.com/tild3330-6436-4466-b737-313239336634/-/format/webp/2-3.jpg" 
+                <SwiperSlide className='swiper-slide' style={{ position: 'relative'}}>
+                    <div
+                      data-original="https://optim.tildacdn.com/tild3330-6436-4466-b737-313239336634/-/format/webp/2-3.jpg"
                       style={{
                         height: '550px',
-                        width: '100%', 
-                        backgroundImage: 'url("https://optim.tildacdn.com/tild3330-6436-4466-b737-313239336634/-/format/webp/2-3.jpg")',
+                        width: '100%',
+                        backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url("https://optim.tildacdn.com/tild3330-6436-4466-b737-313239336634/-/format/webp/2-3.jpg")',
                         background: '-moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1)',
-                        backgroundSize: 'cover'
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
                       }}
                     ><div id="dynamicContent3" style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '600px', padding: '0 0 27px 0', textAlign: 'center' }}>Our products are starting to be replenished more and more often</div></div>
                 </SwiperSlide>
             </Swiper>
-            <div>
-                qwerqwe
+            <div style={{ paddingBottom: '45px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <div style={{height: '100px', paddingTop: '8px', fontSize: '32px',  fontFamily: "'Oswald', sans-serif", fontWeight: '300', fontStyle: 'normal', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px', lineHeight: '1.35' }}>
+                    Небольшой каталог товаров, которые мы производим
+                </div>
             </div>
+            <ProductCategoryFilter products={products} categories={categories} pictures={pictures} />
         </div>
     );
 }

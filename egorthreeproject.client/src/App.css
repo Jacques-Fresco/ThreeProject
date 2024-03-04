@@ -11,89 +11,53 @@
 }
 
 .logocl {
-    margin: 0 15px;
-    align-self: flex-start;
+    margin-left: 20px;
 }
 
 .menudiv {
     display: table-cell;
     vertical-align: middle;
     flex-grow: 1;
-    text-align: center;
 }
 
 .clickmenu {
     width: 215px;
     height: 120px;
     /* align-items: flex-start; */
-    align-items: center;
-    margin: 0 15px 0 0;
-    display: flex;
-}
-
-.clickmenu > div {
-    display: flex;
-    align-items: center;
-}
-
-.clickmenu div svg {
-    padding: 0 5px;
+    display: table-cell;
+    text-align: center;
 }
 
 .menu {
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+    justify-content: flex-end; /* Выравнивание элементов по правому краю */
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-
-    flex-direction: row;
-    flex-wrap: wrap;
-
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
 }
 
-.menu li {
-    text-align: center;
-    padding: 0 15px;
-    /* flex: 1 0 0; */
-}
+/* .menu li {
+    margin: 0px 15px;
+} */
+
+.menu a {
+    text-decoration: none;
+    color: black;
+  }
 
 .menu li a {
-    color: #000;
+    color: #fff;
     text-decoration: none;
-    white-space: nowrap;
+    padding: 0px 15px;
+    display: block;
 }
 
-.menu li:first-child a {
-    padding-left: 0;
-}
-
-.menu li:last-child a {
-    padding-right: 0;
-}
-
-.mySwiper {
-    position: relative;
-}
-
-.mySwiper .swiper-slide {
-    position: relative;
-}
-
-/* .mySwiper .swiper-slide::after {
-    content: 'We make interior design products';
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-} */
-
-/* .menu li a:hover,
+.menu li a:hover,
 .menu li a:focus {
     background: #555;
-} */
+}
 
 @media (max-width: 600px) {
     .menu {
