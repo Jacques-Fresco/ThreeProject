@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import ProductCategoryFilter from './ProductCategoryFilter.jsx'
+import Card from './Card.jsx'
 
 function App() {
 
@@ -151,7 +152,7 @@ function App() {
                     Небольшой каталог товаров, которые мы производим
                 </div>
             </div>
-            <ProductCategoryFilter products={products} categories={categories} pictures={pictures} />
+            <ProductCategoryFilter products={products} categories={categories} pictures={pictures} card={Card} />
         </div>
     );
 }
