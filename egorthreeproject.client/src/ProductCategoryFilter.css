@@ -57,3 +57,65 @@
     margin-right: 10px;
     padding: 5px 10px;
 }
+
+.cardBg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 20rem; /* Можно задать максимальную ширину */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    color: #4a5568; /* Текстовый цвет */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Стили для фона карты */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #4299e1, #3182ce); /* Градиентный фон */
+  }
+  
+  /* Стили для содержимого карты */
+  .card-content {
+    z-index: 1; /* Убираем содержимое карты поверх фона */
+  }
+  
+  /* Стили для заголовка карты */
+  .card-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  
+  /* Стили для описания карты */
+  .card-description {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Стили для кнопки карты */
+  .card-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #4299e1;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-button:hover {
+    background-color: #3182ce;
+  }
