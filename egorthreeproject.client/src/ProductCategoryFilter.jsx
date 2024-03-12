@@ -24,9 +24,9 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
     return (
         <div style={{ padding: '15px 0 135px 0' }}>
             <div className="category-buttons" style={{ padding: '0 30px', marginBottom: '40px' }}>
-                <button onClick={() => handleCategorySelect(null)}>Все</button>
+                <button onClick={() => handleCategorySelect(null)} className="small-button">Все</button>
                 {categories.map(category => (
-                    <button key={category.id} onClick={() => handleCategorySelect(category.id)}>{category.name}</button>
+                    <button key={category.id} onClick={() => handleCategorySelect(category.id)} className="small-button">{category.name}</button>
                 ))}
             </div>
             <div className="product-grid" style={{ justifyContent: 'center' }}>
@@ -35,24 +35,24 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
 
                     return (
 
-                        <div class="cardBg">
-                            <div class="card-background">
+                        <div className="cardBg" key={product.id}>
+                            <div className="card-background">
                                 
                             </div>
                             <Card key={product.id} dataImages={productPictures} products={products}>
-                                    <div
-                                        className="product-card"
-                                        onMouseEnter={() => handleMouseEnter(product.id)}
-                                        onMouseLeave={handleMouseLeave}
-                                    >
-                                        <h3>{product.name}</h3>
-                                        <p>{product.description}</p>
-                                    </div>
-                                </Card>
-                            <div class="card-content">
-                                <h5 class="card-title">Tailwind card</h5>
-                                <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula.</p>
-                                <button class="card-button">Read More</button>
+                                <div
+                                    className="product-card"
+                                    onMouseEnter={() => handleMouseEnter(product.id)}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    <h3>{product.name}</h3>
+                                    <p>{product.description}</p>
+                                </div>
+                            </Card>
+                            <div className="card-content">
+                                <h5 className="card-title">{product.name}</h5>
+                                {/* <p className="card-description">{product.description}</p>
+                                <button className="card-button">Read More</button> */}
                             </div>
                         </div>
                     );

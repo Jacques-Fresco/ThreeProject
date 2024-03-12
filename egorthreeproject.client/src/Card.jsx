@@ -5,9 +5,10 @@ function Card({ dataImages, children }) {
   const [cardDimensions, setCardDimensions] = useState({ width: 0, height: 0 });
   const [mousePosition, setMousePosition] = useState({ mouseX: 0, mouseY: 0 });
   const [cardBgImage, setCardBgImage] = useState(`url(${dataImages[0]})`);
-  const [showText, setShowText] = useState(false);
+  // const [showText, setShowText] = useState(false);
   const cardRef = useRef(null);
-  const stripRef = useRef(null);
+  // const stripRef = useRef(null);
+  const mouseLeaveDelayRef = useRef(null); // Добавляем ссылку на таймер
 
   useEffect(() => {
     if (cardRef.current) {
@@ -37,16 +38,16 @@ function Card({ dataImages, children }) {
   };
 
   const handleMouseEnter = () => {
-    clearTimeout(mouseLeaveDelay);
+    clearTimeout(mouseLeaveDelayRef.current); // Очищаем таймер при входе
   };
 
-  const handleStripMouseEnter = () => {
-    setShowText(true);
-  };
+  // const handleStripMouseEnter = () => {
+  //   setShowText(true);
+  // };
 
-  const handleStripMouseLeave = () => {
-    setShowText(false);
-  };
+  // const handleStripMouseLeave = () => {
+  //   setShowText(false);
+  // };
 
   const mousePX = mousePosition.mouseX / (cardDimensions.width || 1);
   const mousePY = mousePosition.mouseY / (cardDimensions.height || 1);
@@ -59,21 +60,21 @@ function Card({ dataImages, children }) {
     transform: `translateX(${mousePX * -40}px) translateY(${mousePY * -40}px)`,
   };
 
-  const stripStyle = {
-    bottom: 0,
-    height: '20px', // Вы можете настроить высоту полоски по вашему выбору
-    width: '100%',
-    position: 'absolute',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Измените цвет по вашему выбору
-    cursor: 'pointer',
-  };
+  // const stripStyle = {
+  //   bottom: 0,
+  //   height: '20px', // Вы можете настроить высоту полоски по вашему выбору
+  //   width: '100%',
+  //   position: 'absolute',
+  //   backgroundColor: 'rgba(0, 0, 0, 0.5)', // Измените цвет по вашему выбору
+  //   cursor: 'pointer',
+  // };
 
-  const textStyle = {
-    color: 'white',
-    textAlign: 'center',
-    paddingTop: '5px', // Вы можете настроить отступ сверху по вашему выбору
-    display: showText ? 'block' : 'none',
-  };
+  // const textStyle = {
+  //   color: 'white',
+  //   textAlign: 'center',
+  //   paddingTop: '5px', // Вы можете настроить отступ сверху по вашему выбору
+  //   display: showText ? 'block' : 'none',
+  // };
 
   return (
     <div
