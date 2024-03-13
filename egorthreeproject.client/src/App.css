@@ -15,8 +15,9 @@
 }
 
 .menudiv {
-    display: table-cell;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center;
     flex-grow: 1;
 }
 
@@ -29,6 +30,8 @@
 }
 
 .menu {
+    font-size: 18px;
+    font-family: 'TildaSans', Arial, sans-serif;
     align-items: flex-start; /* Выравнивание элементов по верхнему краю */
     justify-content: flex-end; /* Выравнивание элементов по правому краю */
     list-style: none;
@@ -48,25 +51,27 @@
   }
 
 .menu li a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     padding: 0px 15px;
     display: block;
+    position: relative;
 }
 
-.menu li a:hover,
-.menu li a:focus {
-    background: #555;
+.menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 4px;
+    background-color: #008cff;
+    transform-origin: bottom left; /* Изменено на bottom left */
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
 }
 
-@media (max-width: 600px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-        .menu li {
-            width: 100%;
-            text-align: center;
-        }
+.menu a:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
 }

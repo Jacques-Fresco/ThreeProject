@@ -29,7 +29,7 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
                     <button key={category.id} onClick={() => handleCategorySelect(category.id)} className="small-button">{category.name}</button>
                 ))}
             </div>
-            <div className="product-grid" style={{ justifyContent: 'center' }}>
+            <div className="product-grid" style={{ justifyContent: 'center', backgroundColor: '#bbbbbb'}}>
                 {filteredProducts.map(product => {
                     const productPictures = pictures.find(pic => pic.ProductId === product.id)?.pictures || [];
 
@@ -51,8 +51,9 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
                             </Card>
                             <div className="card-content">
                                 <h5 className="card-title">{product.name}</h5>
-                                {/* <p className="card-description">{product.description}</p>
-                                <button className="card-button">Read More</button> */}
+                                <p className="card-description">{product.description}</p>
+                                <div style={{ bottom: '20px', right: '20px', position: 'absolute'}}>{product.priceNew + " " + product.priceOld}</div>
+                                {/* <button className="card-button">Read More</button> */}
                             </div>
                         </div>
                     );

@@ -9,19 +9,19 @@ import ProductCategoryFilter from './ProductCategoryFilter.jsx'
 function App() {
 
     const products = [
-        { id: 1, name: 'Журнальный столик из дуба (wenge Italian paint)', description: '', categoryId: 1 },
-        { id: 2, name: 'Журнальный столик из дуба', description: '', category: 2 },
-        { id: 3, name: 'Полка LOFT in-design', description: 'Полка произведена полностью 100% из экологичных и качественных материалов.', categoryId: 3 },
-        { id: 4, name: 'Полка LOFT meli', description: 'Многофункциональная полка лофт в оригинальном исполнении', categoryId: 3 },
-        { id: 5, name: 'Интерьерные часы "Санкт-Петербург"', description: 'Часы из экзотического шпона "Американский орех"', categoryId: 5 },
-        { id: 6, name: 'Карта "Санкт-Петербург"', description: 'Прекрасно дополнит интерьер Вашего дома, офиса, ресторана или студии"', categoryId: 6 },
-        { id: 7, name: 'tv -tумба in-desidn', description: 'tv-tyмба из массива ореха', categoryId: 4 },
-        { id: 8, name: 'tv-tумба tik-design', description: 'Подвесная телевизионная tv-tумба из тикового дерева', categoryId: 4 },
-        { id: 9, name: 'Чехол для Iphone 12|13|14', description: 'Чехол с деревянной подложкой', categoryId: 7 },
-        { id: 10, name: 'Стеллаж LOFT siba', description: 'Если вы хотите добавить функциональности и стиля в свой дом, то стеллаж Стеллаж LOFT siba', categoryId: 3 },
-        { id: 11, name: 'Полка LOFT stef', description: 'Полка настенная в стиле лофт с полотенцедержателем', categoryId: 3 },
-        { id: 12, name: 'Домик для кошек', description: '', categoryId: 2 },
-        { id: 13, name: 'Прикроватная тумбочка "EDA"', description: 'У вашего пушистого друга будет собственное место, где он сможет пролежать весь день. Прикроватная тумбочка изготовленная из Австрийского лдсп, будет отлично смотреться с любым стилем, а велюровая подушка позволит вашему питомцу дремать рядом с вами. Тумбочка имеет открытое отделение для хранения вещей, электроники, книг и тд. А столешница идеально подходит для лампы для чтения, а также для хранения закусок и электроники во время просмотра любимых передач и фильмов.', categoryId: 2}
+        { id: 1, name: 'Журнальный столик из дуба (wenge Italian paint)', description: '', categoryId: 1, priceOld: '17 200 ₽.', priceNew: '11 490 ₽.'},
+        { id: 2, name: 'Журнальный столик из дуба', description: '', category: 2, priceOld: '17 200 ₽.', priceNew: '11 490 ₽.'},
+        { id: 3, name: 'Полка LOFT in-design', description: 'Полка произведена полностью 100% из экологичных и качественных материалов.', categoryId: 3, priceOld: '12 000 ₽.', priceNew: ''},
+        { id: 4, name: 'Полка LOFT meli', description: 'Многофункциональная полка лофт в оригинальном исполнении', categoryId: 3, priceOld: '9 900 ₽.', priceNew: ''},
+        { id: 5, name: 'Интерьерные часы "Санкт-Петербург"', description: 'Часы из экзотического шпона "Американский орех"', categoryId: 5, priceOld: '8 100 ₽.', priceNew: '3 450 ₽.'},
+        { id: 6, name: 'Карта "Санкт-Петербург"', description: 'Прекрасно дополнит интерьер Вашего дома, офиса, ресторана или студии"', categoryId: 6, priceOld: '5 100 ₽.', priceNew: '3 500 ₽.'},
+        { id: 7, name: 'tv -tумба in-desidn', description: 'tv-tyмба из массива ореха', categoryId: 4, priceOld: '300 000 ₽.', priceNew: '244 000 ₽.'},
+        { id: 8, name: 'tv-tумба tik-design', description: 'Подвесная телевизионная tv-tумба из тикового дерева', categoryId: 4, priceOld: '280 000 ₽.', priceNew: '220 000 ₽.'},
+        { id: 9, name: 'Чехол для Iphone 12|13|14', description: 'Чехол с деревянной подложкой', categoryId: 7, priceOld: '2 350 ₽.', priceNew: '1 400 ₽.'},
+        { id: 10, name: 'Стеллаж LOFT siba', description: 'Если вы хотите добавить функциональности и стиля в свой дом, то стеллаж Стеллаж LOFT siba', categoryId: 3, priceOld: '9 950 ₽.', priceNew: ''},
+        { id: 11, name: 'Полка LOFT stef', description: 'Полка настенная в стиле лофт с полотенцедержателем', categoryId: 3, priceOld: '8 750 ₽.', priceNew: ''},
+        { id: 12, name: 'Домик для кошек', description: '', categoryId: 2, priceOld: '35 000 ₽.', priceNew: ''},
+        { id: 13, name: 'Прикроватная тумбочка "EDA"', description: 'У вашего пушистого друга будет собственное место, где он сможет пролежать весь день. Прикроватная тумбочка изготовленная из Австрийского лдсп, будет отлично смотреться с любым стилем, а велюровая подушка позволит вашему питомцу дремать рядом с вами. Тумбочка имеет открытое отделение для хранения вещей, электроники, книг и тд. А столешница идеально подходит для лампы для чтения, а также для хранения закусок и электроники во время просмотра любимых передач и фильмов.', categoryId: 2, priceOld: '8 300 ₽.', priceNew: '6 900 ₽.'}
     ];
 
     const categories = [
@@ -103,7 +103,8 @@ function App() {
                       style={{
                         height: '550px',
                         width: '100%',
-                        backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url("https://optim.tildacdn.com/tild3465-3438-4266-b835-393061626632/-/format/webp/1_1_1.png")',
+                        // backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url("https://optim.tildacdn.com/tild3465-3438-4266-b835-393061626632/-/format/webp/1_1_1.png")',
+                        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgb(41 41 41 / 20%)), url("https://optim.tildacdn.com/tild3465-3438-4266-b835-393061626632/-/format/webp/1_1_1.png")',
                         background: '-moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
@@ -119,7 +120,7 @@ function App() {
                       style={{
                         height: '550px',
                         width: '100%',
-                        backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url("https://optim.tildacdn.com/tild3439-3335-4764-b330-626562316362/-/format/webp/432.png")',
+                        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgb(41 41 41 / 20%)), url("https://optim.tildacdn.com/tild3439-3335-4764-b330-626562316362/-/format/webp/432.png")',
                         background: '-moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
@@ -135,7 +136,7 @@ function App() {
                       style={{
                         height: '550px',
                         width: '100%',
-                        backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url("https://optim.tildacdn.com/tild3330-6436-4466-b737-313239336634/-/format/webp/2-3.jpg")',
+                        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0), rgb(41 41 41 / 20%)), url("https://optim.tildacdn.com/tild3330-6436-4466-b737-313239336634/-/format/webp/2-3.jpg")',
                         background: '-moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',
                         background: '-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1))',

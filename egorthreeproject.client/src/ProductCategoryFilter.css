@@ -32,6 +32,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
     padding: 20px;
+    /* background-image: url('./pictuгes/90114433 (1).jpg'); */
   }
 
 .product-card {
@@ -67,7 +68,7 @@
   padding: 1.5rem;
   border-radius: 1rem;
   background-color: #fff;
-  color: #5b4636; /* Текстовый цвет */
+  color: #572b0a; /* Текстовый цвет */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -98,7 +99,7 @@
 
 /* Стили для описания карты */
 .card-description {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 1rem;
   line-height: 1.5;
 }
