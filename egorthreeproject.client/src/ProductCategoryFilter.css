@@ -1,4 +1,4 @@
-.category-buttons {
+/* .category-buttons {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -6,57 +6,64 @@
 
 .category-buttons button {
     margin: 0 10px;
-    padding: 8px 16px;
-    /* background-color: #f2f2f2; */
-    border: none;
+    padding: 8px 16px; */
+/* background-color: #f2f2f2; */
+/* border: none;
     cursor: pointer;
 }
 
+.category-buttons button {
+  margin-right: 10px;
+  padding: 5px 10px;
+} */
+
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
 }
 
 .product-grid {
-    display: flex;
-    flex-wrap: wrap; /* Добавляем это свойство */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
-    /* background-image: url('./pictuгes/90114433 (1).jpg'); */
-  }
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-wrap: nowrap;
+  overflow-x: auto; */
+
+  /* Добавляем это свойство */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  /* padding: 20px; */
+  /* background-image: url('./pictuгes/90114433 (1).jpg'); */
+}
 
 .product-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(255, 254, 254, 0.1);
-    transition: transform 0.2s ease-in-out;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(255, 254, 254, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .product-card:hover {
-    transform: translateY(-5px); /* Небольшой эффект при наведении */
+  transform: translateY(-5px);
+  /* Небольшой эффект при наведении */
 }
 
 .product-image {
-    max-width: 100%; /* Чтобы изображение не выходило за границы карточки */
-    height: auto; /* Для сохранения пропорций изображения */
-    margin-bottom: 10px;
-}
-
-.category-buttons button {
-    margin-right: 10px;
-    padding: 5px 10px;
+  max-width: 100%;
+  /* Чтобы изображение не выходило за границы карточки */
+  height: auto;
+  /* Для сохранения пропорций изображения */
+  margin-bottom: 10px;
 }
 
 .cardBg {
@@ -64,33 +71,20 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  max-width: 20rem; /* Можно задать максимальную ширину */
+  max-width: 20rem;
+  /* Можно задать максимальную ширину */
   padding: 1.5rem;
   border-radius: 1rem;
-  background-color: #fff;
-  color: #572b0a; /* Текстовый цвет */
+  background-color: #ffffff;
+  color: #565453;
+  /* Текстовый цвет */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-/* Стили для фона карты */
-.card-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  border-radius: 1rem;
-  background: linear-gradient(to right, #4299e1, #3182ce); /* Градиентный фон */
-}
-
-/* Стили для содержимого карты */
-.card-content {
-  z-index: 1; /* Убираем содержимое карты поверх фона */
+  margin: 20px 0;
 }
 
 /* Стили для заголовка карты */
 .card-title {
+  color: #333232;
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -100,55 +94,169 @@
 /* Стили для описания карты */
 .card-description {
   margin-bottom: 2rem;
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.5;
 }
 
-.small-button {
+.custom-btn {
+  /* height: 40px; */
+  padding: 5px 10px;
+  /* border: 2px solid #000; */
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
   cursor: pointer;
-  background-color: transparent;
-  color: white;
-  border: none;
-  font-size: 17px;
+  transition: all 0.3s ease;
+  display: inline-block;
   position: relative;
-  z-index: 3;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
+  color: #000;
+  z-index: 2;
+  /* line-height: 40px; */
+  margin: 0 15px;
 }
 
-.small-button::before {
-  content: "";
-  border: 3px solid white;
+.custom-btn:hover,
+.custom-btn.active {
+  border: none;
+}
+
+.custom-btn:before,
+.custom-btn:after {
   position: absolute;
-  left: -25px;
-  bottom: 0;
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 60px;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  -ms-border-radius: 60px;
-  -o-border-radius: 60px;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-
-.small-button:hover::before {
-  left: -25px;
-  bottom: -17.5px;
-  width: 100%;
-  padding: 20px;
-  background-color: white;
+  content: "";
+  width: 0%;
+  height: 0%;
+  border: 2px solid;
   z-index: -1;
+  transition: all 0.3s ease;
 }
 
-.small-button:hover {
-  color: #282828;
+.custom-btn:before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #000;
+  border-left-color: #000;
+}
+
+.custom-btn:after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #000;
+  border-right-color: #000;
+}
+
+.custom-btn:hover:before,
+.custom-btn:hover:after,
+.custom-btn.active:before,
+.custom-btn.active:after {
+  border-color: #000;
+  height: 100%;
+  width: 100%;
+}
+/*  */
+.t-card__container {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+}
+
+.t-col {
+  text-align: center;
+  max-width: 360px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+}
+
+.t-img {
+  width: 100px;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 25px;
+}
+
+.wrappercenter {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.t-card__title {
+  font-weight: 500;
+  margin-top: 18px;
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 1.35;
+  font-family: 'TildaSans', Arial, sans-serif;
+  color: #000000;
+}
+
+.t-card__descr {
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 300;
+  color: #5b5a5a;
+  text-align: center;
+  font-family: "Istok Web", sans-serif;
+  font-style: normal;
+}
+
+.t-title {
+  padding: 8px 0; /* Задаем отступы сверху и снизу */
+  line-height: 1.23;
+  font-family: "Comme", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  color: #000000;
+  font-size: 42px;
+  text-align: center; /* Центрируем текст по горизонтали */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  margin: 60px 0 100px 0; /* Отступы сверху, снизу, справа и слева */
+}
+
+/*  */
+
+.containerDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.div1 {
+  width: 50%;
+  padding-right: 10px;
+  min-width: 460px;
+  min-height: 460px;
+}
+
+.div2 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding-left: 10px;
+  min-width: 460px;
+  min-height: 460px;
+}
+
+.div11,
+.div22 {
+  display: flex;
+}
+
+.div11 {
+  padding-bottom: 10px;
+}
+
+.div22 {
+  padding-top: 10px;
 }

@@ -1,4 +1,6 @@
-﻿body {
+﻿@import "https://fonts.fontstorage.com/import/beermoney.css";
+
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     width: 100%;
@@ -11,7 +13,7 @@
 }
 
 .logocl {
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .menudiv {
@@ -22,11 +24,30 @@
 }
 
 .clickmenu {
-    width: 215px;
-    height: 120px;
-    /* align-items: flex-start; */
+    /* width: 150px;
+    height: 100px;
+    align-items: flex-start;//
     display: table-cell;
-    text-align: center;
+    text-align: center; */
+
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 100px;
+}
+
+.clickmenu > div {
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+}
+
+.rightMenuBlock > svg {
+    padding: 0px 5px;
+}
+
+.rightMenuBlock svg:last-child {
+  padding-right: 20px; /* Больше отступ справа для последнего элемента */
 }
 
 .menu {
@@ -53,7 +74,7 @@
 .menu li a {
     color: #000000;
     text-decoration: none;
-    padding: 0px 15px;
+    padding: 0px 7px;
     display: block;
     position: relative;
 }
@@ -62,10 +83,10 @@
     content: '';
     position: absolute;
     left: 0px;
-    bottom: 0px;
+    bottom: -4px;
     width: 100%;
     height: 4px;
-    background-color: #008cff;
+    background-color: #a05f1b;
     transform-origin: bottom left; /* Изменено на bottom left */
     transition: transform 0.5s ease;
     transform: scaleX(0);
@@ -75,3 +96,45 @@
     transform-origin: bottom left;
     transform: scaleX(1);
 }
+  
+.slide-content {
+    position: relative;
+    height: 550px; /* Высота блока slide-content */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Обрезаем градиентный фон, чтобы он не выходил за пределы элемента */
+  }
+  
+  .slide-background {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+  
+  .slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7)); /* Градиент для затемнения */
+  }
+  
+  .slide-text {
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Выравниваем блок справа */
+    width: 600px; /* Ширина блока slide-text */
+    padding: 0 80px 60px 0;
+    text-align: right;
+    font-family: 'Beer money';
+    font-size: 24px; 
+    color: white; /* Установка цвета текста */
+    z-index: 2; /* Перемещаем текст над затемнением */
+  }
+  
