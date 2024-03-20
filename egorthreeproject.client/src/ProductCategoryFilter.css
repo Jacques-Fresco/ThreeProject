@@ -71,22 +71,23 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  max-width: 20rem;
+  max-width: 240px;
   /* Можно задать максимальную ширину */
-  padding: 1.5rem;
+  padding: 15px;
   border-radius: 1rem;
   background-color: #ffffff;
   color: #565453;
   /* Текстовый цвет */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   margin: 20px 0;
+  cursor: pointer
 }
 
 /* Стили для заголовка карты */
 .card-title {
   color: #333232;
   margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.25;
 }
@@ -94,7 +95,7 @@
 /* Стили для описания карты */
 .card-description {
   margin-bottom: 2rem;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -157,6 +158,7 @@
   height: 100%;
   width: 100%;
 }
+
 /*  */
 .t-card__container {
   margin-bottom: 0;
@@ -174,7 +176,6 @@
   max-width: 360px;
   margin-left: 20px;
   margin-right: 20px;
-  width: 100%;
 }
 
 .t-img {
@@ -210,7 +211,8 @@
 }
 
 .t-title {
-  padding: 8px 0; /* Задаем отступы сверху и снизу */
+  padding: 60px 60px 49px;
+  /* Задаем отступы сверху и снизу */
   line-height: 1.23;
   font-family: "Comme", sans-serif;
   font-optical-sizing: auto;
@@ -218,45 +220,77 @@
   font-weight: 600;
   color: #000000;
   font-size: 42px;
-  text-align: center; /* Центрируем текст по горизонтали */
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: center; /* Центрируем по вертикали */
-  margin: 60px 0 100px 0; /* Отступы сверху, снизу, справа и слева */
+  text-align: center;
+  /* Центрируем текст по горизонтали */
+  justify-content: center;
+  /* Центрируем по горизонтали */
+  align-items: center;
+  /* Центрируем по вертикали */
 }
 
 /*  */
 
-.containerDiv {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
 .div1 {
-  width: 50%;
-  padding-right: 10px;
-  min-width: 460px;
-  min-height: 460px;
-}
-
-.div2 {
+  width: 100%;
   display: flex;
-  width: 50%;
-  flex-direction: column;
-  padding-left: 10px;
-  min-width: 460px;
-  min-height: 460px;
 }
 
 .div11,
 .div22 {
+  width: 50%;
   display: flex;
+  flex-direction: column;
 }
 
-.div11 {
-  padding-bottom: 10px;
+.div111,
+.div222 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.div22 {
-  padding-top: 10px;
+.div111 div,
+.div222 div {
+  width: calc(50% - 10px);
+  /* 10px - учет отступов между картинками */
+  height: auto;
+  max-height: calc(50vw - 10px);
+  /* 50vw - 50% ширины экрана */
+  aspect-ratio: 1;
+}
+
+.t-zoomable {
+  cursor: zoom-in;
+}
+
+.t-sociallinks__wrapper {
+  display: flex;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.t-sociallinks__wrapper > li {
+  padding: 0 4px;
+}
+
+/* .div111,
+.div222,
+.div111 img,
+.div222 img {
+  width: 50%;
+  height: auto;
+  box-sizing: border-box;
+} */
+
+@media screen and (max-width: 1200px) {
+  .div1 {
+    max-width: 940px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .div1 {
+    max-width: 1160px;
+  }
 }

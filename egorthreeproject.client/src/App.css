@@ -52,7 +52,7 @@ body {
 
 .menu {
     font-size: 18px;
-    font-family: 'TildaSans', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     align-items: flex-start; /* Выравнивание элементов по верхнему краю */
     justify-content: flex-end; /* Выравнивание элементов по правому краю */
     list-style: none;

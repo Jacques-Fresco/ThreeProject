@@ -8,15 +8,15 @@ const MyComponent = () => {
   const slides = [
     {
       image: 'https://optim.tildacdn.com/tild3465-3438-4266-b835-393061626632/-/format/webp/1_1_1.png',
-      text: 'We make interior design products'
+      text: 'Мы производим продукцию для дизайна интерьера'
     },
     {
       image: 'https://optim.tildacdn.com/tild3439-3335-4764-b330-626562316362/-/format/webp/432.png',
-      text: 'We make furniture to individual design'
+      text: 'Мы изготавливаем мебель по индивидуальному дизайну'
     },
     {
       image: 'https://optim.tildacdn.com/tild3330-6436-4466-b737-313239336634/-/format/webp/2-3.jpg',
-      text: 'Our products are starting to be replenished more and more often'
+      text: 'Наши продукты начинают пополняться все чаще и чаще'
     }
   ];
 
