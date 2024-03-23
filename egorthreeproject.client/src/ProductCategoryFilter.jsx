@@ -1,16 +1,16 @@
-import React, { useState, useEffect, componentDidMount } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './ProductCategoryFilter.css';
 import Card from './Card';
-import Popup from './Popup';
+// import Popup from './Popup';
 
 
-const ProductCategoryFilter = ({ products, categories, pictures, onCardClick}) => {
+const ProductCategoryFilter = ({ products, categories, pictures, onCardClick }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
-    // const [hoveredProductId, setHoveredProductId] = useState(null);
 
     useEffect(() => {
         // Выбор категории "LOFT" при первой загрузке страницы
-        const loftCategory = categories.find(category => category.name === 'LOFT');
+        const loftCategory = categories?.find(category => category.name === 'LOFT');
         setSelectedCategory(loftCategory ? loftCategory.id : null);
     }, []);
 
@@ -24,7 +24,7 @@ const ProductCategoryFilter = ({ products, categories, pictures, onCardClick}) =
         <div>
             <div>
                 <div style={{ padding: '10px 30px', display: 'flex', justifyContent: 'center', backgroundColor: 'rgb(187, 187, 187)' }}>
-                    {categories.map(category => (
+                    {categories?.map(category => (
                         <div
                             key={category.id}
                             onClick={() => handleCategorySelect(category.id)}
@@ -39,15 +39,17 @@ const ProductCategoryFilter = ({ products, categories, pictures, onCardClick}) =
                         const productPictures = pictures.find(pic => pic.ProductId === product.id)?.pictures || [];
 
                         return (
-                            <div className="cardBg" key={product.id} onClick={() => onCardClick(product.id)}>
-                                <div className="card-background"></div>
-                                <Card key={product.id} dataImages={productPictures} products={products} />
-                                <div className="card-content">
-                                    <h5 className="card-title">{product.name}</h5>
-                                    <p className="card-description">{product.description}</p>
-                                    <div style={{ bottom: '20px', right: '20px', position: 'absolute' }}>{product.priceNew + " " + product.priceOld}</div>
+                            <Link to={`/popup/${product.id}`} key={product.id}>
+                                <div className="cardBg" key={product.id} onClick={() => onCardClick(product.id)}>
+                                    <div className="card-background"></div>
+                                    <Card key={product.id} dataImages={productPictures} products={products} />
+                                    <div className="card-content">
+                                        <h5 className="card-title">{product.name}</h5>
+                                        <p className="card-description">{product.description}</p>
+                                        <div style={{ bottom: '20px', right: '20px', position: 'absolute' }}>{product.priceNew + " " + product.priceOld}</div>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
@@ -122,7 +124,7 @@ const ProductCategoryFilter = ({ products, categories, pictures, onCardClick}) =
                             </li>
                         </ul>
                     </div>
-                </div>              
+                </div>
             </div>
         </div>
     );
