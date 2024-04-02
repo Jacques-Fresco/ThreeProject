@@ -52,12 +52,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route exact path="/" element={<App products={products} categories={categories} pictures={pictures}/>} />
-        <Route path="/popup:productId" element={<Popup />} />
-        {/* <Route path="/popup" render={() => {<Popup products={() => products} categories={() => categories} pictures={() => pictures}/>}} /> */}
+        <Route exact path="/" element={<App products={products} categories={categories} pictures={pictures} />} />
+        <Route path="/portfolio" element={<App bodyComponent={'portfolio'}/>} />
+        <Route path="/material" element={<App bodyComponent={'material'}/>} />
+        <Route path="/delivery" element={<App bodyComponent={'delivery'}/>} />
+        <Route path="/price" element={<App bodyComponent={'price'}/>} />
+        <Route path="/contacts" element={<App bodyComponent={'contacts'}/>} />
+        <Route path="/popup/:productId" element={<Popup pictures={pictures} products={products} />} />
         {/* <Route component={NotFound} /> */}
       </Routes>
     </Router>
-    <App />
+    { /* <App /> */}
   </React.StrictMode>,
 )
