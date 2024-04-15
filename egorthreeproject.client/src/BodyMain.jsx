@@ -1,8 +1,9 @@
+import React, { useState, useEffect } from 'react';
 import ProductCategoryFilter from './ProductCategoryFilter.jsx'
 import ComponentClider from './ComponentClider.jsx'
 
-function BodyMain({products, categories, pictures}) {
-    
+function BodyMain({ products, categories, pictures }) {
+
     return (
         <div>
             <ComponentClider />

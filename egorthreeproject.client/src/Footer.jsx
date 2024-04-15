@@ -4,52 +4,57 @@ import './ProductCategoryFilter.css';
 function Footer() {
 
     return (
-        <div>
-            <div className="t-title" field="btitle">Мы гордимся нашими продуктами</div>
-            <div style={{ display: 'flex', marginTop: '50px', marginBottom: '60px', justifyContent: 'center' }}>
-                <div className='t-col'>
-                    <img className="t-img" src="https://static.tildacdn.com/lib/tildaicon/38356263-3235-4064-b636-313065343566/re_trees.svg" alt="" />
-                    <div className='wrappercenter'>
-                        <div className='t-card__title'>Забота</div>
-                        <div className='t-card__descr'>Мы активно участвуем в посадке деревьев, организуя регулярные мероприятия, в рамках которых выращиваются и устанавливаются новые деревья с целью сохранения природной красоты и улучшения окружающей среды.</div>
-                    </div>
-                </div>
-                <div className='t-col'>
-                    <img className="t-img" src="https://static.tildacdn.com/tild6166-6534-4631-b630-326632333333/photo.svg" alt="" />
-                    <div className='wrappercenter'>
-                        <div className='t-card__title'>Дизайн</div>
-                        <div className='t-card__descr'>Мы предлагаем стильный и минималистичный дизайн для вашего дома. Наша цель - создать для вас уютное и элегантное пространство, которое приносит радость и комфорт каждый день.</div>
-                    </div>
-                </div>
-                <div className='t-col'>
-                    <img className="t-img" src="https://static.tildacdn.com/tild6435-3339-4431-b233-333838623164/8yo_hand.svg" alt="" />
-                    <div className='wrappercenter'>
-                        <div className='t-card__title'>Качество</div>
-                        <div className='t-card__descr'>Мы используем только лучшие материалы. Все наши продукты создаются вручную с большим вниманием к деталям и проходят строгий отбор.</div>
-                    </div>
-                </div>
-            </div>
-            <div style={{ backgroundColor: '#faf9f5', paddingBottom: "30px" }}>
-                <div style={{ textAlign: 'center' }}>
-                    <div className="t-title">Следите за нами в <a href="https://www.instagram.com/tildapublishing/" style={{ color: 'rgb(0, 0, 0)', borderBottom: '1px solid rgb(0, 0, 0)', boxShadow: 'none', textDecoration: 'none' }}>instagram</a></div>
-                </div>
-                <div className="div1" style={{ maxHeight: '570px', margin: '0 auto', padding: '20px 10px' }}>
-                    <div className="div11" style={{ paddingRight: "10px" }}>
-                        <div className='t-zoomable' style={{ width: '100%', maxHeight: '570px', maxWidth: '570px', height: '100%', objectFit: 'cover', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild6633-3365-4936-b534-643834303035/-/resize/1000x1000/-/format/webp/3-5e3046195a45167156.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-lazy-rule="comm:resize,round:100" />
-                    </div>
-                    <div className="div22" style={{ paddingLeft: "10px" }}>
-                        <div className="div111" style={{ marginBottom: "10px" }}>
-                            <div className='t-zoomable' style={{ marginRight: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild3764-3032-4636-a435-363732393938/-/resize/600x600/-/format/webp/3.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3764-3032-4636-a435-363732393938/3.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3764-3032-4636-a435-363732393938/3.jpg" data-lazy-rule="comm:resize,round:100" />
-                            <div className='t-zoomable' style={{ marginLeft: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild6138-3264-4334-b537-323436323533/-/resize/600x600/-/format/webp/2023-10-03_22-23-21.png) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6138-3264-4334-b537-323436323533/2023-10-03_22-23-21.png" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6138-3264-4334-b537-323436323533/2023-10-03_22-23-21.png" data-lazy-rule="comm:resize,round:100" />
+        <div className="footer_component">
+            <div style={{background: '#ffffff'}}>
+                <div className="t-title" field="btitle">Мы гордимся нашими продуктами</div>
+                <div style={{ display: 'flex', marginTop: '50px', marginBottom: '60px', justifyContent: 'center' }}>
+                    <div className='t-col'>
+                        <img className="t-img" src="https://static.tildacdn.com/lib/tildaicon/38356263-3235-4064-b636-313065343566/re_trees.svg" alt="" />
+                        <div className='wrappercenter'>
+                            <div className='t-card__title'>Забота</div>
+                            <div className='t-card__descr'>Мы активно участвуем в посадке деревьев, организуя регулярные мероприятия, в рамках которых выращиваются и устанавливаются новые деревья с целью сохранения природной красоты и улучшения окружающей среды.</div>
                         </div>
-                        <div className="div222" style={{ marginTop: "10px" }}>
-                            <div className='t-zoomable' style={{ marginRight: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild3433-6165-4631-a138-363431366635/-/resize/600x600/-/format/webp/1200-1200-circa-3-dr.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3433-6165-4631-a138-363431366635/1200-1200-circa-3-dr.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3433-6165-4631-a138-363431366635/1200-1200-circa-3-dr.jpg" data-lazy-rule="comm:resize,round:100" />
-                            <div className='t-zoomable' style={{ marginLeft: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild3762-3034-4263-b462-313462363766/-/resize/600x600/-/format/webp/photo_2023-05-07_19-.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3762-3034-4263-b462-313462363766/photo_2023-05-07_19-.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3762-3034-4263-b462-313462363766/photo_2023-05-07_19-.jpg" data-lazy-rule="comm:resize,round:100" />
+                    </div>
+                    <div className='t-col'>
+                        <img className="t-img" src="https://static.tildacdn.com/tild6166-6534-4631-b630-326632333333/photo.svg" alt="" />
+                        <div className='wrappercenter'>
+                            <div className='t-card__title'>Дизайн</div>
+                            <div className='t-card__descr'>Мы предлагаем стильный и минималистичный дизайн для вашего дома. Наша цель - создать для вас уютное и элегантное пространство, которое приносит радость и комфорт каждый день.</div>
+                        </div>
+                    </div>
+                    <div className='t-col'>
+                        <img className="t-img" src="https://static.tildacdn.com/tild6435-3339-4431-b233-333838623164/8yo_hand.svg" alt="" />
+                        <div className='wrappercenter'>
+                            <div className='t-card__title'>Качество</div>
+                            <div className='t-card__descr'>Мы используем только лучшие материалы. Все наши продукты создаются вручную с большим вниманием к деталям и проходят строгий отбор.</div>
                         </div>
                     </div>
                 </div>
+                <div style={{ backgroundColor: '#faf9f5', paddingBottom: "30px" }}>
+                    <div style={{ textAlign: 'center' }}>
+                        <div className="t-title">Следите за нами в <a href="https://www.instagram.com/tildapublishing/" style={{ color: 'rgb(0, 0, 0)', borderBottom: '1px solid rgb(0, 0, 0)', boxShadow: 'none', textDecoration: 'none' }}>instagram</a></div>
+                    </div>
+                    <div className="div1" style={{ maxHeight: '570px', margin: '0 auto', padding: '20px 10px' }}>
+                        <div className="div11" style={{ paddingRight: "10px" }}>
+                            <div className='t-zoomable' style={{ width: '100%', maxHeight: '570px', maxWidth: '570px', height: '100%', objectFit: 'cover', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild6633-3365-4936-b534-643834303035/-/resize/1000x1000/-/format/webp/3-5e3046195a45167156.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-lazy-rule="comm:resize,round:100" />
+                        </div>
+                        <div className="div22" style={{ paddingLeft: "10px" }}>
+                            <div className="div111" style={{ marginBottom: "10px" }}>
+                                <div className='t-zoomable' style={{ marginRight: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild3764-3032-4636-a435-363732393938/-/resize/600x600/-/format/webp/3.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3764-3032-4636-a435-363732393938/3.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3764-3032-4636-a435-363732393938/3.jpg" data-lazy-rule="comm:resize,round:100" />
+                                <div className='t-zoomable' style={{ marginLeft: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild6138-3264-4334-b537-323436323533/-/resize/600x600/-/format/webp/2023-10-03_22-23-21.png) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6138-3264-4334-b537-323436323533/2023-10-03_22-23-21.png" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6138-3264-4334-b537-323436323533/2023-10-03_22-23-21.png" data-lazy-rule="comm:resize,round:100" />
+                            </div>
+                            <div className="div222" style={{ marginTop: "10px" }}>
+                                <div className='t-zoomable' style={{ marginRight: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild3433-6165-4631-a138-363431366635/-/resize/600x600/-/format/webp/1200-1200-circa-3-dr.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3433-6165-4631-a138-363431366635/1200-1200-circa-3-dr.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3433-6165-4631-a138-363431366635/1200-1200-circa-3-dr.jpg" data-lazy-rule="comm:resize,round:100" />
+                                <div className='t-zoomable' style={{ marginLeft: '10px', maxHeight: '275px', maxWidth: '275px', minHeight: '220px', minWidth: '220px', backgroundSize: 'cover', background: 'url(https://optim.tildacdn.com/tild3762-3034-4263-b462-313462363766/-/resize/600x600/-/format/webp/photo_2023-05-07_19-.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3762-3034-4263-b462-313462363766/photo_2023-05-07_19-.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3762-3034-4263-b462-313462363766/photo_2023-05-07_19-.jpg" data-lazy-rule="comm:resize,round:100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div style={{ padding: '45px 0 45px', backgroundColor: '#111111' }}>
+            {/* <div className="photo-container" onMouseMove={movePhotos}>
+                <img src="https://optim.tildacdn.com/tild6537-3338-4665-b866-343739666462/-/format/webp/2023-07-07_12-51-27.png" className="photo" id="photo" style={{ left: photoPosition.left, top: photoPosition.top }} />
+            </div> */}
+            <div className="footer_footer" style={{ padding: '45px 0 45px', backgroundColor: '#111111'}}>
                 <div style={{ margin: '0 auto', maxWidth: '760px', textAlign: 'center' }}>
                     <div style={{ marginBottom: '60px', fontSize: '100px', color: '#ffffff' }}>Хамадево</div>
                     <ul role="list" className="t-sociallinks__wrapper" aria-label="Social media links" style={{ display: 'flex', justifyContent: 'center' }}>

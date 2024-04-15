@@ -20,10 +20,10 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
     const filteredProducts = selectedCategory ? products.filter(product => product.categoryId === selectedCategory) : [];
 
     return (
-        <div>
-            <div style={{ paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{position: 'sticky', zIndex: '1201'}}>
+            <div style={{ paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#000000', background: '#f0f0f0' }}>
                 <div style={{ paddingTop: '8px', fontStyle: 'normal', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px', lineHeight: '1.35' }}>
-                    <div style={{ fontFamily: "Ubuntu", fontWeight: '100', color: '#000000', lineHeight: '1.35', fontSize: '32px', margin: '0 200px' }}>Небольшой каталог товаров, которые мы производим</div>
+                    <div style={{ fontFamily: "Ubuntu", fontWeight: '100', lineHeight: '1.35', fontSize: '32px', margin: '0 200px'}}>Небольшой каталог товаров, которые мы производим</div>
                 </div>
             </div>
             <div>

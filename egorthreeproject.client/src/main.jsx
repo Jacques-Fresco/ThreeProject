@@ -47,17 +47,113 @@ const pictures = [
   { ProductId: 13, pictures: ['https://optim.tildacdn.com/stor3165-6634-4232-b233-356431393238/-/cover/560x560/center/center/-/format/webp/15245761.jpg', 'https://optim.tildacdn.com/stor3636-3737-4663-b336-363830386138/-/cover/560x560/center/center/-/format/webp/90940369.jpg'] }
 ]
 
+const galleryItems = [
+  {
+    imgMain: "https://optim.tildacdn.com/tild3565-6439-4162-b561-303062386233/-/cover/720x720/center/center/-/format/webp/2023-07-07_12-51-27.png",
+    imgs: ["https://optim.tildacdn.com/tild6537-3338-4665-b866-343739666462/-/format/webp/2023-07-07_12-51-27.png",
+      "https://optim.tildacdn.com/tild3735-3033-4430-b065-653834336237/-/format/webp/2023-07-07_12-52-33.png",
+      "https://optim.tildacdn.com/tild3463-3031-4466-b466-353063333338/-/format/webp/2023-07-07_12-53-39.png",
+      "https://optim.tildacdn.com/tild3338-6532-4366-b863-616336336164/-/format/webp/2023-07-07_12-53-56.png",
+      "https://optim.tildacdn.com/tild6437-3664-4834-b662-633836636263/-/format/webp/2023-07-07_12-54-14.png",
+      "https://optim.tildacdn.com/tild3531-6534-4262-b537-353934306362/-/format/webp/2023-07-07_12-50-40.png",
+      "https://optim.tildacdn.com/tild3463-3537-4335-b530-393161613330/-/format/webp/2023-07-07_12-51-01.png"],
+    type: 1
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild6130-3233-4631-b930-356333366366/-/cover/720x720/center/center/-/format/webp/2023-07-07_12-35-19.png",
+    imgs: ["https://optim.tildacdn.com/tild3034-6261-4934-b935-623532336166/-/format/webp/2023-07-07_12-35-19.png",
+      "https://optim.tildacdn.com/tild6232-3835-4663-a563-383264326664/-/format/webp/2023-07-07_12-36-16.png",
+      "https://optim.tildacdn.com/tild3166-6130-4831-b133-336131303861/-/format/webp/2023-07-07_12-38-58.png",
+      "https://optim.tildacdn.com/tild6336-3363-4465-b463-363431303566/-/format/webp/2023-07-07_12-39-14.png",
+      "https://optim.tildacdn.com/tild6130-3837-4230-a635-616331363536/-/format/webp/2023-07-07_12-36-51.png",
+      "https://optim.tildacdn.com/tild6435-3862-4330-a535-333462623562/-/format/webp/2023-07-07_12-38-16.png",
+      "https://optim.tildacdn.com/tild3736-6234-4465-a164-303634656135/-/format/webp/2023-07-07_12-36-33.png"],
+    type: 1
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild3536-3635-4433-b335-633839363138/-/cover/720x720/center/center/-/format/webp/2023-07-08_12-54-25.png",
+    imgs: ["https://optim.tildacdn.com/tild3534-3336-4533-b735-323834666463/-/format/webp/2023-07-08_12-54-21.png",
+      "https://optim.tildacdn.com/tild3732-3261-4133-a566-303364383836/-/format/webp/2023-07-08_12-54-47.png",
+      "https://optim.tildacdn.com/tild3530-3962-4134-b763-623734616634/-/format/webp/2023-07-08_12-58-27.png",
+      "https://optim.tildacdn.com/tild6236-3565-4866-b366-346538323438/-/format/webp/2023-07-08_12-59-56.png",
+      "https://optim.tildacdn.com/tild6464-6362-4564-a432-643037326634/-/format/webp/2023-07-08_12-59-22.png",
+      "https://optim.tildacdn.com/tild6233-3164-4965-b039-663432373134/-/format/webp/2023-07-08_12-55-57.png",
+      "https://optim.tildacdn.com/tild3663-6631-4132-a265-366132343834/-/format/webp/2023-07-08_12-55-19.png"],
+    type: 1
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild3062-3637-4932-b331-646466613266/-/cover/720x720/center/center/-/format/webp/2023-07-06_14-53-20.png",
+    imgs: ["https://optim.tildacdn.com/tild3865-3339-4963-b132-356166366235/-/format/webp/2023-07-06_14-53-02.png",
+      "https://optim.tildacdn.com/tild6231-6631-4633-b534-363330353065/-/format/webp/2023-07-06_14-54-40.png",
+      "https://optim.tildacdn.com/tild3732-6237-4736-b161-363738306330/-/format/webp/2023-07-06_14-53-36.png",
+      "https://optim.tildacdn.com/tild3663-3830-4431-a339-373434643339/-/format/webp/2023-07-06_14-53-59.png",
+      "https://optim.tildacdn.com/tild6330-3838-4165-b435-393066373534/-/format/webp/2023-07-06_14-54-15.png",
+      "https://optim.tildacdn.com/tild3636-6166-4934-b966-366536363966/-/format/webp/2023-07-06_14-55-37.png",
+      "https://optim.tildacdn.com/tild6231-3730-4236-b761-393261613739/-/format/webp/2023-07-06_14-53-20.png"],
+    type: 1
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild6264-3865-4631-a466-373938346233/-/cover/720x720/center/center/-/format/webp/2023-07-05_13-15-20.png",
+    imgs: ["https://optim.tildacdn.com/tild3931-3333-4864-b333-313465353539/-/format/webp/2023-07-05_13-15-20.png",
+      "https://optim.tildacdn.com/tild3264-6366-4763-b834-383363383066/-/format/webp/2023-07-05_13-15-29.png",
+      "https://optim.tildacdn.com/tild6264-3938-4630-a665-393630616166/-/format/webp/2023-07-05_13-15-36.png",
+      "https://optim.tildacdn.com/tild6334-6633-4833-b038-363131393262/-/format/webp/2023-07-05_13-15-49.png"],
+    type: 2
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild3237-3831-4161-b039-396131633065/-/cover/720x720/center/center/-/format/webp/2023-09-26_14-23-50.png",
+    imgs: ["https://optim.tildacdn.com/tild6436-3638-4263-a638-663766336139/-/format/webp/2023-09-26_14-23-50.png",
+      "https://optim.tildacdn.com/tild3037-3839-4837-b433-303663613838/-/format/webp/2023-09-26_14-23-50.png",
+      "https://optim.tildacdn.com/tild3132-3434-4562-b830-626461356233/-/format/webp/2023-09-26_14-24-48.png",
+      "https://optim.tildacdn.com/tild3234-3533-4638-b231-313032316237/-/format/webp/2023-09-26_14-24-23.png"],
+    type: 2
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild3433-3633-4638-b433-643733323132/-/cover/720x720/center/center/-/format/webp/2023-09-26_14-16-44.png",
+    imgs: ["https://optim.tildacdn.com/tild6565-3836-4431-a335-363361333761/-/format/webp/2023-09-26_14-16-44.png",
+      "https://optim.tildacdn.com/tild6635-3537-4361-b830-363336323439/-/format/webp/2023-09-26_14-17-27.png",
+      "https://optim.tildacdn.com/tild3738-6266-4366-b964-393262383834/-/format/webp/2023-09-26_14-16-23.png",
+      "https://optim.tildacdn.com/tild3339-3037-4831-b236-393834356435/-/format/webp/2023-09-26_14-17-08.png"],
+    type: 3
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild6439-3635-4133-b131-646534363763/-/cover/720x720/center/center/-/format/webp/2023-09-26_14-13-25.png",
+    imgs: ["https://optim.tildacdn.com/tild3634-6566-4336-b263-306336616336/-/format/webp/2023-09-26_14-05-36.png",
+      "https://optim.tildacdn.com/tild3266-3036-4631-b831-353462366233/-/format/webp/2023-09-26_14-05-55.png",
+      "https://optim.tildacdn.com/tild3330-6666-4039-b663-656130303061/-/format/webp/2023-09-26_14-13-25.png",
+      "https://optim.tildacdn.com/tild3462-3964-4837-b966-323439393065/-/format/webp/2023-09-26_14-06-17.png",
+      "https://optim.tildacdn.com/tild3236-6238-4839-a465-633764396562/-/format/webp/2023-09-26_14-07-04.png",
+      "https://optim.tildacdn.com/tild3938-3964-4630-b165-373133323036/-/format/webp/2023-09-26_14-06-48.png"],
+    type: 4
+  },
+  {
+    imgMain: "https://optim.tildacdn.com/tild3032-3630-4537-b662-373066666136/-/cover/720x720/center/center/-/format/webp/2023-09-26_14-02-06.png",
+    imgs: ["https://optim.tildacdn.com/tild3730-3535-4861-b531-376238623135/-/format/webp/2023-09-26_14-00-59.png",
+      "https://optim.tildacdn.com/tild3932-3136-4066-b031-643637313932/-/format/webp/2023-09-26_14-02-06.png",
+      "https://optim.tildacdn.com/tild6263-3131-4834-b366-303433333362/-/format/webp/2023-09-26_14-02-28.png",
+      "https://optim.tildacdn.com/tild6230-3464-4631-a137-373634393864/-/format/webp/2023-09-26_14-02-47.png"],
+    type: 5
+  },
+  { imgMain: "https://optim.tildacdn.com/tild6337-3536-4662-b537-303435356431/-/cover/720x720/center/center/-/format/webp/2023-09-26_14-14-53.png" },
+  { imgMain: "https://optim.tildacdn.com/tild6163-6230-4937-a436-373362346638/-/cover/720x720/center/center/-/format/webp/3.jpg" },
+  { imgMain: "https://optim.tildacdn.com/tild3233-3035-4734-b965-326132356563/-/cover/720x720/center/center/-/format/webp/-1.jpg" },
+  { imgMain: "https://optim.tildacdn.com/tild3739-3130-4634-b738-663136333332/-/format/webp/_1.jpg" },
+  { imgMain: "https://optim.tildacdn.com/tild3036-6235-4339-a538-316138366164/-/format/webp/__.jpg" },
+  { imgMain: "https://optim.tildacdn.com/tild3532-3131-4532-a337-623262323130/-/format/webp/photo_2023-05-07_19-.jpg" }
+];
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route exact path="/" element={<App products={products} categories={categories} pictures={pictures} />} />
-        <Route path="/portfolio" element={<App bodyComponent={'portfolio'}/>} />
-        <Route path="/material" element={<App bodyComponent={'material'}/>} />
-        <Route path="/delivery" element={<App bodyComponent={'delivery'}/>} />
-        <Route path="/price" element={<App bodyComponent={'price'}/>} />
-        <Route path="/contacts" element={<App bodyComponent={'contacts'}/>} />
+        <Route path="/portfolio" element={<App bodyComponent={'portfolio'} galleryItems={galleryItems} />} />
+        <Route path="/portfolio/:detailId" element={<App bodyComponent={'portfolio/detailId'} galleryItems={galleryItems} />} />
+        <Route path="/material" element={<App bodyComponent={'material'} />} />
+        <Route path="/delivery" element={<App bodyComponent={'delivery'} />} />
+        <Route path="/price" element={<App bodyComponent={'price'} />} />
+        <Route path="/contacts" element={<App bodyComponent={'contacts'} />} />
         <Route path="/popup/:productId" element={<Popup pictures={pictures} products={products} />} />
         {/* <Route component={NotFound} /> */}
       </Routes>

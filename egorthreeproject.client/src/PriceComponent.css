@@ -1,0 +1,32 @@
+.container_price_component {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .div1_price_component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black; /* Для наглядности */
+  }
+  
+  .centeredDiv_price_component {
+    padding: 35px 25px 0px 25px;
+    background-color: lightblue;
+    margin-bottom: 25px;
+  }
+  
+  .div2_price_component {
+    display: flex;
+    flex-direction: row; /* Изменение направления главной оси на вертикальное */
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black; /* Для наглядности */
+  }
+  
+  .childDiv_price_component {
+    background-color: lightgreen;
+    padding: 10px;
+    margin-bottom: 10px; /* Помещаем элементы под div1_price_component */
+  }

@@ -10,15 +10,82 @@ body {
     display: block;
     background: #333;
     color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    /* opacity: 0.90; */
+    transition: opacity 0.5s ease;
+}
+
+/* .paralax {
+    height: 1000px;
+    min-height: 1000px;
+    background: #ededed;
+    position: relative;
+    z-index: 1;
+} */
+
+.scroll-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.scroll-to-top-button::before {
+    content: "";
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 20px;
+    height: 20px;
+    border-top: 10px solid #a05f1b;
+    /* коричневый цвет */
+    border-right: 10px solid #a05f1b;
+    /* коричневый цвет */
+    border-radius: 100px;
+}
+
+/* Убираем бордер и анимации при нажатии */
+.scroll-to-top-button:active {
+    border: none;
+}
+
+/* Убираем изменения при наведении */
+.scroll-to-top-button:hover::before {
+    border-top-color: #a05f1b;
+    border-right-color: #a05f1b;
+}
+
+.scroll-to-top-button:hover {
+    color: #000;
+    /* Цвет текста */
+    background-color: transparent;
+    /* Фон */
 }
 
 .logocl {
-    /* margin-left: 20px; */
+    max-width: 80px;
+    width: 80px;
+    min-width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 20px;
 }
 
 .menudiv {
     display: flex;
-    justify-content: center; /* Центрируем по горизонтали */
+    justify-content: center;
+    /* Центрируем по горизонтали */
     align-items: center;
     flex-grow: 1;
 }
@@ -31,41 +98,47 @@ body {
     text-align: center; */
 
     display: flex;
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали */
+    justify-content: center;
+    /* Центрируем по горизонтали */
+    align-items: center;
+    /* Центрируем по вертикали */
     height: 100px;
 }
 
-.clickmenu > div {
+.clickmenu>div {
     display: flex;
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали */
+    justify-content: center;
+    /* Центрируем по горизонтали */
+    align-items: center;
+    /* Центрируем по вертикали */
 }
 
-.rightMenuBlock > svg {
+.rightMenuBlock>svg {
     padding: 0px 5px;
 }
 
 .rightMenuBlock svg:last-child {
-  padding-right: 20px; /* Больше отступ справа для последнего элемента */
+    padding-right: 20px;
+    /* Больше отступ справа для последнего элемента */
 }
 
 .menu {
     font-size: 18px;
     font-family: Arial, sans-serif;
-    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
-    justify-content: flex-end; /* Выравнивание элементов по правому краю */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    flex-wrap: wrap;
+    /* Позволяет элементам переноситься на новую строку */
 }
 
 .menu a {
     text-decoration: none;
     color: black;
-  }
+}
 
 .menu li a {
     color: #000000;
@@ -79,35 +152,35 @@ body {
     content: '';
     position: absolute;
     left: 0px;
-    bottom: -4px;
+    bottom: -5px;
     width: 100%;
-    height: 4px;
+    height: 3px;
     background-color: #a05f1b;
-    transform-origin: bottom left;
     transition: transform 0.5s ease;
     transform: scaleX(0);
+    transform-origin: bottom right;
 }
 
-.menu a:hover::after {
-    transform-origin: bottom left;
+.menu li a:hover::after {
     transform: scaleX(1);
 }
 
 .menu li.activeButton a::after {
-    transform-origin: bottom left;
     transform: scaleX(1);
 }
 
 .slide-content {
     position: relative;
-    height: 550px; /* Высота блока slide-content */
+    height: 550px;
+    /* Высота блока slide-content */
     width: 100%;
     background-size: cover;
     background-position: center;
-    overflow: hidden; /* Обрезаем градиентный фон, чтобы он не выходил за пределы элемента */
-  }
-  
-  .slide-background {
+    overflow: hidden;
+    /* Обрезаем градиентный фон, чтобы он не выходил за пределы элемента */
+}
+
+.slide-background {
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -115,27 +188,31 @@ body {
     position: absolute;
     bottom: -20px;
     left: 0;
-  }
-  
-  .slide-overlay {
+}
+
+.slide-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7)); /* Градиент для затемнения */
-  }
-  
-  .slide-text {
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    /* Градиент для затемнения */
+}
+
+.slide-text {
     position: absolute;
     bottom: 0;
-    right: 0; /* Выравниваем блок справа */
-    width: 600px; /* Ширина блока slide-text */
+    right: 0;
+    /* Выравниваем блок справа */
+    width: 600px;
+    /* Ширина блока slide-text */
     padding: 0 80px 60px 0;
     text-align: right;
     font-family: 'Beer money';
-    font-size: 24px; 
-    color: white; /* Установка цвета текста */
-    z-index: 2; /* Перемещаем текст над затемнением */
-  }
-  
+    font-size: 24px;
+    color: white;
+    /* Установка цвета текста */
+    z-index: 2;
+    /* Перемещаем текст над затемнением */
+}

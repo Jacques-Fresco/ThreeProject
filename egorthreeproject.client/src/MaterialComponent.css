@@ -18,3 +18,42 @@
     color: #686868;
     text-align: center;
 }
+
+.gallery__content {
+    text-align: center;
+    width: 360px;
+    height: auto;
+}
+
+.gallery__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery__content #materialTitle {
+    font-size: 28px;
+    line-height: 1.17;
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-weight: 600;
+    margin: 20px auto;
+}
+
+.gallery__content #materialDescription {
+    font-size: 14px;
+    line-height: 1.55;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    color: #4c4c4c;
+}
+
+.detail {
+    color: #ffffff;
+    background-color: #222222;
+    height: 35px;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Arial, sans-serif;
+    margin-top: 30px;
+}

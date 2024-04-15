@@ -1,0 +1,108 @@
+$brand: #5c4084;
+
+.container_gallery {
+    padding: 40px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px #0000007a;
+    height: 530px;
+}
+
+
+.vueGallery {
+    display: flex;
+    height: 100%;
+
+    .photo-container {
+        display: flex;
+        justify-content: center; /* Центрирование по горизонтали */
+        align-items: center; /* Центрирование по вертикали */
+        position: relative; /* Положение относительно родительского элемента */
+        width: 1100px;
+        overflow: hidden;
+        margin-right: 10px;
+
+        .activePhoto {
+            // padding-bottom: 65%;
+            position: absolute; /* Положение абсолютное, чтобы перемещать изображения внутри контейнера */
+            transform: translate(-50%, -50%); /* Центрирование изображения по центру контейнера */
+            transition: transform 10s ease;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+
+            // &:hover {
+            //     background-size: cover;
+            // }
+
+            button {
+                border: none;
+                background-color: transparent;
+                font-size: 32px;
+                color: #fff;
+                opacity: 0.5;
+                position: absolute;
+                outline: none;
+                height: 100%;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &.previous {
+                    padding: 0 1em 0 0.7em;
+                    left: 0;
+                    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+                    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+                    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+                }
+
+                &.next {
+                    padding: 0 0.7em 0 1em;
+                    right: 0;
+                    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+                    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+                    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+                }
+            }
+        }
+    }
+
+    .thumbnails {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            width: 100px;
+            /* Ширина для неактивных изображений */
+            height: 100px;
+            /* Высота для неактивных изображений */
+            margin-bottom: 5px;
+            /* Добавляем отступ между неактивными изображениями */
+            border: 2px solid #fff;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 1;
+
+            &:hover {
+                opacity: 0.6;
+            }
+
+            &.active {
+                outline-color: $brand;
+                opacity: 1;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

@@ -6,10 +6,12 @@ import Footer from './Footer.jsx';
 
 import BodyMain from './BodyMain.jsx';
 import PortfolioComponent from './PortfolioComponent.jsx';
-import TwoComponent from './TwoComponent.jsx';
 import MaterialComponent from './MaterialComponent.jsx';
+import PortfolioDetailComponent from './PortfolioDetailComponent.jsx';
+import DeliveryComponent from './DeliveryComponent.jsx';
+import PriceComponent from './PriceComponent.jsx';
 
-function App({ products, categories, pictures, bodyComponent }) {
+function App({ products, categories, pictures, bodyComponent, galleryItems }) {
 
     useEffect(() => {
         const link = document.createElement('link');
@@ -23,24 +25,26 @@ function App({ products, categories, pictures, bodyComponent }) {
     }, []);
 
     const renderBodyComponent = () => {
-        switch (bodyComponent) {                
+        switch (bodyComponent) {
             case 'portfolio':
-                return <PortfolioComponent />;
+                return <PortfolioComponent galleryItems={galleryItems} />;
+            case 'portfolio/detailId':
+                return <PortfolioDetailComponent galleryItems={galleryItems} />
             case 'material':
                 return <MaterialComponent />;
             case 'delivery':
-                return <PortfolioComponent />;
+                return <DeliveryComponent />;
             case 'price':
-                return <TwoComponent />;
+                return <PriceComponent />;
             case 'contacts':
-                return <PortfolioComponent />;
+                return <div />;
             default:
                 return <BodyMain products={products} categories={categories} pictures={pictures} />
         }
     };
 
     return (
-        <div style={{ width: '100%', boxSizing: 'border-box' }}>
+        <div style={{ width: '100%', boxSizing: 'border-box', background: '#ffffff', position: 'relative', zIndex: '1' }}>
             <Header />
             {renderBodyComponent()}
             <Footer />

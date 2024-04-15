@@ -1,3 +1,17 @@
+.footer_component {
+  margin-bottom: 300px;
+}
+
+
+
+.footer_footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; 
+}
+
 /* .category-buttons {
     display: flex;
     justify-content: center;
@@ -178,13 +192,6 @@
   margin-right: 20px;
 }
 
-.t-img {
-  width: 100px;
-  height: auto;
-  max-width: 100%;
-  margin-bottom: 25px;
-}
-
 .wrappercenter {
   padding-right: 20px;
   padding-left: 20px;
@@ -211,7 +218,7 @@
 }
 
 .t-title {
-  padding: 60px 60px 49px;
+  padding: 120px 60px 49px;
   /* Задаем отступы сверху и снизу */
   line-height: 1.23;
   font-family: "Comme", sans-serif;
@@ -272,6 +279,13 @@
 
 .t-sociallinks__wrapper > li {
   padding: 0 4px;
+}
+
+.t-img {
+  width: 100px;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 25px;
 }
 
 /* .div111,

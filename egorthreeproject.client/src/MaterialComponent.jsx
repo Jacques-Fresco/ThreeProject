@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './MaterialComponent.css';
+import './PortfolioComponent.css';
 
 function MaterialComponent() {
 
@@ -10,17 +11,20 @@ function MaterialComponent() {
     ];
 
     return (
-        <div style={{ paddingTop: '75px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ padding: '120px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgb(255, 255, 255)' }}>
             <div className="section__title">Материалы</div>
             <div className="section__descr">Материалы и фурнитура, которые мы используем при изготовлении корпусной мебели</div>
             <div className="gallery">
                 {galleryItems.map((item, index) => (
-                    <div key={index}>
+                    <div key={index} className="gallery__wrapper">
                         <figure className="gallery__item">
                             <a className="tn-atom" style={{ backgroundImage: `url("${item.img}")` }}></a>
                         </figure>
-                        <div>{item.title}</div>
-                        <div>{item.description}</div>
+                        <div className="gallery__content">
+                            <div id="materialTitle">{item.title}</div>
+                            <div id="materialDescription">{item.description}</div>
+                        </div>
+                        <button className="detail">Читать подробнее</button>
                     </div>
                 ))}
             </div>

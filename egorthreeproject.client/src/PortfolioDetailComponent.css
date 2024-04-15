@@ -1,0 +1,6 @@
+.container_portfolio_detail {
+    display: flex;
+    justify-content: center;
+    /* Центрируем содержимое по горизонтали */
+    align-items: center;
+}
