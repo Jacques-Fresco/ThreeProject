@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PortfolioComponent.css';
 import { Link } from 'react-router-dom';
 
@@ -17,6 +17,42 @@ function PortfolioComponent({ galleryItems }) {
         setShowAll(true);
     };
 
+    useEffect(() => {
+        const tiltEls = document.querySelectorAll('.tilt');
+        
+        const tiltMove = (x, y) => `perspective(500px) scale(1.1) rotateX(${x}deg) rotateY(${y}deg)`;
+        const tiltReset = () => `perspective(500px) scale(1) rotateX(0) rotateY(0)`;
+        let resetTimer;
+        
+        const addMouseEvents = (elements) => {
+            elements.forEach(tilt => {
+                tilt.addEventListener('mousemove', (e) => {
+                    const x = e.layerX;
+                    const y = e.layerY;
+                    const multiplier = 50;
+    
+                    const xRotate = multiplier * ((x - tilt.clientWidth / 2) / tilt.clientWidth);
+                    const yRotate = -multiplier * ((y - tilt.clientHeight / 2) / tilt.clientHeight);
+    
+                    tilt.style.transform = tiltMove(xRotate, -yRotate);
+                });
+    
+                tilt.addEventListener('mouseleave', () => {
+                    tilt.style.transform = tiltReset(); // Возвращаем элемент в исходное состояние
+                });
+            });
+        };
+    
+        addMouseEvents(tiltEls);
+    
+        return () => {
+            tiltEls.forEach(tilt => {
+                tilt.removeEventListener('mousemove', tiltMove);
+                tilt.removeEventListener('mouseleave', tiltReset);
+            });
+        };
+    }, [showAll]);
+
     return (
         <div style={{ paddingTop: '75px', background: 'rgb(255, 255, 255)', justifyContent: 'center' }}>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -27,7 +63,7 @@ function PortfolioComponent({ galleryItems }) {
             </div>
             <div className="gallery">
                 {getVisibleItems().map((item, index) => (
-                    <figure key={index} className="gallery__item">
+                    <figure key={index} className="gallery__item gallery__item_portfolio tilt">
                         <Link to={`/portfolio/${index + 1}`} className="tn-atom" style={{ backgroundImage: `url("${item.imgMain}")` }} />
                     </figure>
                 ))}

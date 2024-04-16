@@ -31,20 +31,52 @@ function Header() {
         setShowScrollButton(false);
       }
     };
+    
+    const buttons = document.querySelectorAll('.menu li a');
 
     const handleScrollForHeader = () => {
+
       const scrollPosition = window.scrollY;
       const componentHeight = document.querySelector('.header').offsetHeight;
       const scrollTrigger = componentHeight; // Дистанция, на которой должен измениться opacity
 
       if (scrollPosition > scrollTrigger) {
         // Когда компонент спустился на расстояние своей высоты, меняем opacity
-        setComponentOpacity(0.5);
+        setComponentOpacity(0.8);
       } else {
         // Возвращаем исходное значение opacity
         setComponentOpacity(1);
       }
     };
+
+    buttons.forEach(function(button) {
+      button.addEventListener('mouseenter', function() {
+        const activeButton = document.querySelector('.menu li.activeButton');
+        if (activeButton) {
+          const activeButtonRect = activeButton.getBoundingClientRect();
+          const buttonRect = button.getBoundingClientRect();
+          
+          if (activeButtonRect.left < buttonRect.left) {
+            // Активная кнопка слева от наведенной
+            button.classList.add('active-left');
+          } else {
+            // Активная кнопка справа от наведенной
+            button.classList.add('active-right');
+          }
+        }
+      });
+      
+      button.addEventListener('mouseleave', function() {
+        button.classList.remove('active-left', 'active-right');
+      });
+
+      return () => {
+        buttons.forEach(button => {
+          button.removeEventListener('mouseenter');
+          button.removeEventListener('mouseleave');
+        });
+      }
+    });
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('scroll', handleScrollForHeader);
@@ -64,11 +96,11 @@ function Header() {
 
   return (
     <header className="header" style={{ opacity: componentOpacity }}>
-      <div style={{ backgroundColor: 'rgba(255,255,255,1)', height: '100px', width: '100%', display: 'flex', flexDirection: "row" }}>
+      <div style={{ backgroundColor: 'rgba(255,255,255,1)', height: '100px', width: '100%', display: 'flex', flexDirection: "row", padding: '20px 0' }}>
         <div className='menudiv'>
           <nav style={{ display: 'block' }}>
             <ul className="menu">
-              <li className={activeButton === '/' ? 'activeButton' : ''}><Link to="/" onClick={() => handleClick('/')}>Каталог</Link></li>
+              <li className={activeButton === '/' ? 'activeButton' : ''}><Link to="/" onClick={() => handleClick('/')} style={{opacity: '1'}}>Каталог</Link></li>
               <li className={activeButton === '/portfolio' ? 'activeButton' : ''}><Link to="/portfolio" onClick={() => handleClick('/portfolio')}>Портфолио</Link></li>
               <li className={activeButton === '/material' ? 'activeButton' : ''}><Link to="/material" onClick={() => handleClick('/material')}>Материал</Link></li>
               <Link to="/" onClick={() => handleClick('/')}>

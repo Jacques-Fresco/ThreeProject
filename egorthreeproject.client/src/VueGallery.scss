@@ -24,19 +24,20 @@ $brand: #5c4084;
         margin-right: 10px;
 
         .activePhoto {
-            // padding-bottom: 65%;
-            position: absolute; /* Положение абсолютное, чтобы перемещать изображения внутри контейнера */
-            transform: translate(-50%, -50%); /* Центрирование изображения по центру контейнера */
-            transition: transform 10s ease;
+            position: absolute;
+            transform: translate(-50%, -50%);
             border: 2px solid #fff;
             border-radius: 10px;
             width: 100%;
             height: 100%;
             background-position: center center;
-
-            // &:hover {
-            //     background-size: cover;
-            // }
+            background-size: 100%;
+            transition: background-size 0.5s ease;
+        
+            &:hover {
+                background-size: 110%;
+            }
+        
 
             button {
                 border: none;

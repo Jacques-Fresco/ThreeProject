@@ -30,7 +30,7 @@ const VueGallery = ({ photos }) => {
     return (
         <div className="container_gallery">
             <div className="vueGallery">
-                <div className="photo-container" onMouseMove={movePhotos}>
+                <div className="photo-container"> 
                     <div className="activePhoto" style={{ backgroundImage: `url(${photos[activePhoto]})`, left: photoPosition.left, top: photoPosition.top }}>
                         <button type="button" aria-label="Previous Photo" className="previous" onClick={previousPhoto}>
                             <i className="fas fa-chevron-circle-left"></i>
