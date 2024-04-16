@@ -2,11 +2,11 @@
   margin-bottom: 300px;
 }
 
-.hamadevo { 
+.hamadevo {
   position: relative;
   text-transform: uppercase;
-  font-size: 2em;
-  letter-spacing: 4px;
+  /* font-size: 2em; */
+  letter-spacing: 20px;
   overflow: hidden;
   background: linear-gradient(90deg, #000, #fff, #000);
   background-repeat: no-repeat;
@@ -293,7 +293,7 @@
 
 .t-sociallinks__wrapper {
   display: flex;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   padding-left: 0;
   list-style: none;
 }

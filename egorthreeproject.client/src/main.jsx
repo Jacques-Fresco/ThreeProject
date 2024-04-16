@@ -151,6 +151,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/portfolio" element={<App bodyComponent={'portfolio'} galleryItems={galleryItems} />} />
         <Route path="/portfolio/:detailId" element={<App bodyComponent={'portfolio/detailId'} galleryItems={galleryItems} />} />
         <Route path="/material" element={<App bodyComponent={'material'} />} />
+        <Route path="/material_detail_component" element={<App bodyComponent={'material_detail_component'} />} />
         <Route path="/delivery" element={<App bodyComponent={'delivery'} />} />
         <Route path="/price" element={<App bodyComponent={'price'} />} />
         <Route path="/contacts" element={<App bodyComponent={'contacts'} />} />

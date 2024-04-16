@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './MaterialComponent.css';
 import './PortfolioComponent.css';
 
@@ -16,16 +17,16 @@ function MaterialComponent() {
             <div className="section__descr">Материалы и фурнитура, которые мы используем при изготовлении корпусной мебели</div>
             <div className="gallery">
                 {galleryItems.map((item, index) => (
-                    <div key={index} className="gallery__wrapper">
+                    <Link to={'/material_detail_component'} key={index} className="gallery__wrapper">
                         <figure className="gallery__item">
-                            <a className="tn-atom" style={{ backgroundImage: `url("${item.img}")` }}></a>
+                            <div className="tn-atom" style={{ backgroundImage: `url("${item.img}")` }} />
                         </figure>
                         <div className="gallery__content">
                             <div id="materialTitle">{item.title}</div>
                             <div id="materialDescription">{item.description}</div>
                         </div>
-                        <button className="detail">Читать подробнее</button>
-                    </div>
+                        {/* <Link to={`/popup`} className="detail">Читать подробнее</Link> */}
+                    </Link>
                 ))}
             </div>
         </div>

@@ -10,6 +10,7 @@ import MaterialComponent from './MaterialComponent.jsx';
 import PortfolioDetailComponent from './PortfolioDetailComponent.jsx';
 import DeliveryComponent from './DeliveryComponent.jsx';
 import PriceComponent from './PriceComponent.jsx';
+import MaterialDetailComponent from './MaterialDetailComponent.jsx';
 
 function App({ products, categories, pictures, bodyComponent, galleryItems }) {
 
@@ -32,6 +33,8 @@ function App({ products, categories, pictures, bodyComponent, galleryItems }) {
                 return <PortfolioDetailComponent galleryItems={galleryItems} />
             case 'material':
                 return <MaterialComponent />;
+            case 'material_detail_component':
+                return <MaterialDetailComponent />;
             case 'delivery':
                 return <DeliveryComponent />;
             case 'price':

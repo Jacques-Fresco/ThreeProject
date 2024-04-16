@@ -51,7 +51,7 @@
     height: 280px;
     margin: 50px;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .gallery__item_portfolio {
@@ -76,6 +76,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 10%;
+    border: 5px solid #ffffff;
 }
 
 .tilt {
