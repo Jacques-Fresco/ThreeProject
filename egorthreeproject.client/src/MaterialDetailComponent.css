@@ -1,12 +1,85 @@
 .image-container-material {
-    position: relative;
+   position: relative;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Цвет и прозрачность затемнения */
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   /* Цвет и прозрачность затемнения */
+}
+
+.nav {
+   list-style-type: none;
+   border-radius: 10px;
+   background: #ffffff;
+   margin: auto;
+   /* Устанавливаем автоматические отступы для центрирования по горизонтали и вертикали */
+   padding: 0;
+   overflow: hidden;
+   opacity: 0.5;
+   max-width: 1200px;
+   top: 0;
+   left: 0;
+   text-align: center;
+}
+
+.nav-item {
+   font-size: 20px;
+   border-bottom: 1px solid rgba(63, 46, 73, 0.3);
+}
+
+.nav-item:last-child {
+   border-bottom: none;
+}
+
+.nav-link,
+.nav-submenu-link {
+   text-decoration: none;
+   padding: 16px 20px;
+   display: block;
+   color: #ffffff;
+}
+
+.nav-link {
+   cursor: pointer;
+   font-size: 24px;
+   line-height: 1.35;
+   font-weight: 600;
+   background-color: #000000;
+}
+
+.nav-submenu-link {
+   line-height: 1.55;
+   font-weight: 300;
+   padding: 0 40px 0 56px;
+   font-size: 23px;
+   background: transparent;
+   transition: background 0.2s ease-in;
+}
+
+.nav-submenu-link li {
+   text-align: start;
+}
+
+.nav-submenu-link li:first-child {
+   padding-top: 20px; 
+}
+
+.nav-submenu-link li:last-child {
+   padding-bottom: 20px; 
+}
+
+.nav-submenu {
+   overflow: hidden;
+   max-height: 0;
+   transition: max-height 0.5s;
+   background: #000000;
+}
+
+.nav-submenu:target {
+   max-height: 10rem;
 }

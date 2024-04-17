@@ -11,6 +11,7 @@ import PortfolioDetailComponent from './PortfolioDetailComponent.jsx';
 import DeliveryComponent from './DeliveryComponent.jsx';
 import PriceComponent from './PriceComponent.jsx';
 import MaterialDetailComponent from './MaterialDetailComponent.jsx';
+import ContactComponent from './ContactComponent.jsx';
 
 function App({ products, categories, pictures, bodyComponent, galleryItems }) {
 
@@ -40,7 +41,7 @@ function App({ products, categories, pictures, bodyComponent, galleryItems }) {
             case 'price':
                 return <PriceComponent />;
             case 'contacts':
-                return <div />;
+                return <ContactComponent />;
             default:
                 return <BodyMain products={products} categories={categories} pictures={pictures} />
         }
