@@ -45,6 +45,15 @@
     position: relative;
 }
 
+.gallery__wrapper .gallery__item {
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.gallery__wrapper:hover .gallery__item {
+    width: 320px;
+    height: 320px;
+  }
+
 .gallery__item {
     display: flex;
     width: 280px;

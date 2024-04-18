@@ -1,3 +1,14 @@
+.survival {
+  opacity: 0;
+  max-height: 0;
+  /* overflow: hidden; */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.survival.active {
+  opacity: 1;
+}
+
 .container_price_component {
   display: flex;
   flex-direction: column;
@@ -8,7 +19,6 @@
   height: 356px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   border: 2px solid black;
   /* Добавляем границу */
@@ -17,7 +27,7 @@
 
 .centeredDiv_price_component {
   height: 30px;
-  padding: 0 0 25px;
+  padding: 35px 0 25px;
   line-height: 1.35;
   font-size: 22px;
   font-weight: 600;
@@ -76,7 +86,7 @@
 }
 
 .pricePadding {
-  padding: 35px 25px 48px;
+  padding: 0 25px 48px;
 }
 
 .pricePadding ul li {

@@ -19,7 +19,7 @@ function ContactComponent() {
         </li>
         <li className="t-sociallinks__item t-sociallinks__item_telegram">
           <a href="https://t.me/hamadewo" target="_blank" rel="nofollow noopener" aria-label="telegram" style={{ width: '30px', height: '30px' }}>
-            
+
           </a>
         </li>
         <li className="t-sociallinks__item t-sociallinks__item_instagram">
