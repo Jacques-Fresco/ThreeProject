@@ -16,11 +16,10 @@ function PriceComponent() {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgb(255, 255, 255)' }}>
-            <div className='priceTitle'>Стоимость</div>
             <div className="container_price_component">
                 <div className="div1_price_component">
-                    <div className="centeredDiv_price_component" onClick={() => toggleSurvival(0)}>Custom</div>
-                    <div className={`survival ${activeSurvivals.includes(0) ? 'active' : ''}`}>
+                    <div className="centeredDiv_price_component">Custom</div>
+                    <div>
                         <div style={{ padding: '0 25px' }}>
                             <strong>Наши дизайнеры и мастера готовы сделать для Вас уникальный продукт</strong>
                             <br />
@@ -38,7 +37,7 @@ function PriceComponent() {
                     </div>
                 </div>
                 <div className="div2_price_component">
-                    <div className="childDiv_price_component" style={{ height: activeSurvivals.includes(1) ? '330px' : '100px', border: '2px solid black', transition: 'height 0.3s ease'  }}>
+                    <div className="childDiv_price_component" style={{ height: activeSurvivals.includes(1) ? '330px' : '100px', border: '2px solid black', transition: 'height 1s ease', cursor: 'pointer' }}>
                         <div className='pricePadding'>
                             <div className="centeredDiv_price_component" onClick={() => toggleSurvival(1)}>Стандарт | eco</div>
                             <div className={`survival ${activeSurvivals.includes(1) ? 'active' : ''}`}>
@@ -49,7 +48,7 @@ function PriceComponent() {
                             </div>
                         </div>
                     </div>
-                    <div className="childDiv_price_component" style={{ height: activeSurvivals.includes(2) ? '330px' : '100px', border: '2px solid black', transition: 'height 0.3s ease'  }}>
+                    <div className="childDiv_price_component" style={{ height: activeSurvivals.includes(2) ? '330px' : '100px', border: '2px solid black', transition: 'height 1s ease', cursor: 'pointer' }}>
                         <div className='pricePadding'>
                             <div className="centeredDiv_price_component" onClick={() => toggleSurvival(2)}>Комфорт | комфорт+</div>
                             <div className={`survival ${activeSurvivals.includes(2) ? 'active' : ''}`}>
@@ -60,7 +59,7 @@ function PriceComponent() {
                             </div>
                         </div>
                     </div>
-                    <div className="childDiv_price_component" style={{ height: activeSurvivals.includes(3) ? '330px' : '100px', border: '2px solid black', transition: 'height 0.3s ease'  }}>
+                    <div className="childDiv_price_component" style={{ height: activeSurvivals.includes(3) ? '330px' : '100px', border: '2px solid black', transition: 'height 1s ease', cursor: 'pointer' }}>
                         <div className='pricePadding'>
                             <div className="centeredDiv_price_component" onClick={() => toggleSurvival(3)}>Бизнес | Премиум</div>
                             <div className={`survival ${activeSurvivals.includes(3) ? 'active' : ''}`}>

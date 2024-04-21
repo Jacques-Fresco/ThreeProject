@@ -12,6 +12,7 @@
 .container_price_component {
   display: flex;
   flex-direction: column;
+  padding-top: 25px;
 }
 
 .div1_price_component {
@@ -72,7 +73,6 @@
   max-width: 300px;
   height: 330px;
   border: 2px solid black;
-  /* Добавляем границу */
 }
 
 .priceTitle {
@@ -86,7 +86,16 @@
 }
 
 .pricePadding {
-  padding: 0 25px 48px;
+  padding: 0 25px 0;
+}
+
+.childDiv_price_component {
+  margin: 0 10px;
+  max-width: 300px;
+  height: 100px; /* Начальная высота */
+  border: 2px solid black;
+  overflow: hidden; /* Скрывает содержимое, которое выходит за пределы блока */
+  transition: height 1s ease; /* Анимация для изменения высоты */
 }
 
 .pricePadding ul li {

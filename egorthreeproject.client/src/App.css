@@ -74,15 +74,13 @@ body {
 }
 
 .logocl {
-    max-width: 100px;
     width: 100px;
-    min-width: 100px;
     height: 100px;
     display: block;
     margin: 0 20px;
 }
 
-.menudiv {
+.menudivPC {
     display: flex;
     justify-content: center;
     /* Центрируем по горизонтали */
@@ -125,7 +123,8 @@ body {
 .menu {
     font-size: 18px;
     font-family: Arial, sans-serif;
-    justify-content: center; /* Центрирование по горизонтали */
+    justify-content: center;
+    /* Центрирование по горизонтали */
     align-items: center;
     list-style: none;
     margin: 0;
@@ -222,3 +221,119 @@ body {
     z-index: 2;
     /* Перемещаем текст над затемнением */
 }
+
+.headerS {
+    background-color: rgba(255, 255, 255, 1);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+}
+
+    .menudivMb {
+        display: none;
+    }
+
+    input {
+        display: none;
+    }
+
+    @media screen and (max-width: 952px) {
+        .menudivPC {
+            display: none;
+        }
+
+        .headerS {
+            padding: 0;
+            background-color: rgb(0 0 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logocl {
+            height: 55px;
+            width: 55px;
+        }
+
+        .menudivMb {
+            display: flex; /* Используем flexbox */
+            justify-content: center; /* Центрируем дочерние элементы по горизонтали */
+            position: relative;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.65);
+            height: 100%;
+            width: 100%;
+        }
+
+        .menuNav {
+            display: none;
+            position: absolute;
+            top: 80px;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.65);
+            width: 100%;
+            right: 0;
+            padding: 50px 0;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            transition: 500ms;
+        }
+
+        .menuNav li {
+            list-style-type: none;
+            padding: 10px 20px;
+            margin: 3px 0;
+        }
+
+        .menuNav li a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 500;
+            border-radius: 99px;
+            transition: 150ms;
+            color: #fff;
+            
+        }
+
+        .menuNav li a:hover {
+            background: #a05f1b;
+        }
+
+        .menuClick {
+            display: block;
+            width: 60px;
+        }
+
+        .menuClick label {
+            border: solid;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+        }
+
+        .x-icon {
+            display: none;
+        }
+
+        input:checked ~ .menuClick .line-icon {
+            display: none;
+        }
+
+        input:checked ~ .menuClick .x-icon {
+            display: block;
+        }
+
+        input:checked ~ .menuNav {
+            display: flex;
+            height: 100vh;
+            padding: 50px 0px;
+        }
+
+        
+    }
