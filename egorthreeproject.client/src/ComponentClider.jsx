@@ -4,7 +4,7 @@ import 'swiper/swiper-bundle.css';
 import { Navigation } from 'swiper/modules';
 import './App.css'; // Создайте файл styles.css и определите в нем стили
 
-const MyComponent = () => {
+const ComponentClider = () => {
   const slides = [
     {
       image: 'https://optim.tildacdn.com/tild3465-3438-4266-b835-393061626632/-/format/webp/1_1_1.png',
@@ -57,4 +57,4 @@ const MyComponent = () => {
   );
 }
 
-export default MyComponent;
+export default ComponentClider;

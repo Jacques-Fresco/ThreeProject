@@ -7,7 +7,7 @@ function Footer() {
         <div className="footer_component">
             <div style={{ background: '#ffffff' }}>
                 <div className="t-title" field="btitle">Мы гордимся нашими продуктами</div>
-                <div style={{ display: 'flex', marginTop: '50px', marginBottom: '60px', justifyContent: 'center' }}>
+                <div className="t-col-c" style={{ display: 'flex', marginTop: '50px', marginBottom: '60px' }}>
                     <div className='t-col'>
                         <img className="t-img" src="https://static.tildacdn.com/lib/tildaicon/38356263-3235-4064-b636-313065343566/re_trees.svg" alt="" />
                         <div className='wrappercenter'>
@@ -34,19 +34,19 @@ function Footer() {
                     <div style={{ textAlign: 'center' }}>
                         <div className="t-title">Следите за нами в <a href="https://www.instagram.com/tildapublishing/" style={{ color: 'rgb(0, 0, 0)', borderBottom: '1px solid rgb(0, 0, 0)', boxShadow: 'none', textDecoration: 'none' }}>instagram</a></div>
                     </div>
-                    <div className="d">
-                        <div className="d0">
-                            <div className="d1">
-                                <img src="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" className="d11" alt="Image 1" />
+                    <div className="d0">
+                        <div className="d1">
+                            <div className="d11">
+                                <div className='d11Img' style={{background: 'url(https://optim.tildacdn.com/tild6633-3365-4936-b534-643834303035/-/resize/1000x1000/-/format/webp/3-5e3046195a45167156.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-lazy-rule="comm:resize,round:100" />
                             </div>
-                            <div className="d2">
-                                <div className="d22">
-                                    <img src="https://static.tildacdn.com/tild3764-3032-4636-a435-363732393938/3.jpg" className="d222" alt="Image 2" />
-                                    <img src="https://static.tildacdn.com/tild6138-3264-4334-b537-323436323533/2023-10-03_22-23-21.png" className="d333" alt="Image 3" />
+                            <div className="d22">
+                                <div className="d111">
+                                    <div className="d111Img_1" style={{ background: 'url(https://optim.tildacdn.com/tild3764-3032-4636-a435-363732393938/-/resize/600x600/-/format/webp/3.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3764-3032-4636-a435-363732393938/3.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3764-3032-4636-a435-363732393938/3.jpg" data-lazy-rule="comm:resize,round:100" />
+                                    <div className="d111Img_2" style={{ background: 'url(https://optim.tildacdn.com/tild6138-3264-4334-b537-323436323533/-/resize/600x600/-/format/webp/2023-10-03_22-23-21.png) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6138-3264-4334-b537-323436323533/2023-10-03_22-23-21.png" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6138-3264-4334-b537-323436323533/2023-10-03_22-23-21.png" data-lazy-rule="comm:resize,round:100" />
                                 </div>
-                                <div className="d44">
-                                    <img src="https://static.tildacdn.com/tild3433-6165-4631-a138-363431366635/1200-1200-circa-3-dr.jpg" className="d444" alt="Image 4" />
-                                    <img src="https://static.tildacdn.com/tild3762-3034-4263-b462-313462363766/photo_2023-05-07_19-.jpg" className="d555" alt="Image 5" />
+                                <div className="d222">
+                                    <div className="d222Img_1" style={{ background: 'url(https://optim.tildacdn.com/tild3433-6165-4631-a138-363431366635/-/resize/600x600/-/format/webp/1200-1200-circa-3-dr.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3433-6165-4631-a138-363431366635/1200-1200-circa-3-dr.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3433-6165-4631-a138-363431366635/1200-1200-circa-3-dr.jpg" data-lazy-rule="comm:resize,round:100" />
+                                    <div className="d222Img_2" style={{ background: 'url(https://optim.tildacdn.com/tild3762-3034-4263-b462-313462363766/-/resize/600x600/-/format/webp/photo_2023-05-07_19-.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild3762-3034-4263-b462-313462363766/photo_2023-05-07_19-.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild3762-3034-4263-b462-313462363766/photo_2023-05-07_19-.jpg" data-lazy-rule="comm:resize,round:100" />
                                 </div>
                             </div>
                         </div>

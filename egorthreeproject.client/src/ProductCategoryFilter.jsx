@@ -23,11 +23,11 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
         <div style={{position: 'sticky', zIndex: '1201'}}>
             <div style={{ paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#000000', background: '#f0f0f0' }}>
                 <div style={{ paddingTop: '8px', fontStyle: 'normal', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px', lineHeight: '1.35' }}>
-                    <div style={{ fontFamily: "Ubuntu", fontWeight: '100', lineHeight: '1.35', fontSize: '32px'}}>Небольшой каталог товаров, которые мы производим</div>
+                    <div className='title_menu'>Небольшой каталог товаров, которые мы производим</div>
                 </div>
             </div>
             <div>
-                <div style={{ padding: '10px 30px', display: 'flex', justifyContent: 'center', backgroundColor: 'rgb(187, 187, 187)' }}>
+                <div style={{ padding: '10px 30px', display: 'flex', justifyContent: 'center', backgroundColor: 'rgb(187, 187, 187)', flexWrap: 'wrap' }}>
                     {categories?.map(category => (
                         <div
                             key={category.id}

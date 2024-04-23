@@ -130,10 +130,10 @@ function Header() {
             <input type="checkbox" id="checkbox" />
             <div className="menuClick" style={{ marginLeft: 'auto' }}>
               <label htmlFor="checkbox" />
-              <svg style={{ width: '50px', height: '50px', paddingRight: '20px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="line-icon">
+              <svg style={{ width: '48px', height: '48px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="line-icon">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
-              <svg style={{ width: '50px', height: '50px', marginLeft: 'auto', paddingRight: '20px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="x-icon">
+              <svg style={{ width: '48px', height: '48px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="x-icon">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
             </div>
