@@ -3,55 +3,51 @@ import './PortfolioComponent.css';
 import { Link } from 'react-router-dom';
 
 function PortfolioComponent({ galleryItems }) {
-    const [showAll, setShowAll] = useState(false);
-
-    const getVisibleItems = () => {
-        if (showAll) {
-            return galleryItems;
-        } else {
-            return galleryItems.slice(0, 6);
-        }
-    };
-
-    const handleShowAllClick = () => {
-        setShowAll(true);
-    };
+    const [visibleItems, setVisibleItems] = useState([]);
 
     useEffect(() => {
-        const tiltEls = document.querySelectorAll('.tilt');
-        
-        const tiltMove = (x, y) => `perspective(500px) scale(1.1) rotateX(${x}deg) rotateY(${y}deg)`;
-        const tiltReset = () => `perspective(500px) scale(1) rotateX(0) rotateY(0)`;
-        let resetTimer;
-        
-        const addMouseEvents = (elements) => {
-            elements.forEach(tilt => {
-                tilt.addEventListener('mousemove', (e) => {
-                    const x = e.layerX;
-                    const y = e.layerY;
-                    const multiplier = 50;
-    
-                    const xRotate = multiplier * ((x - tilt.clientWidth / 2) / tilt.clientWidth);
-                    const yRotate = -multiplier * ((y - tilt.clientHeight / 2) / tilt.clientHeight);
-    
-                    tilt.style.transform = tiltMove(xRotate, -yRotate);
-                });
-    
-                tilt.addEventListener('mouseleave', () => {
-                    tilt.style.transform = tiltReset(); // Возвращаем элемент в исходное состояние
-                });
-            });
-        };
-    
-        addMouseEvents(tiltEls);
-    
-        return () => {
-            tiltEls.forEach(tilt => {
-                tilt.removeEventListener('mousemove', tiltMove);
-                tilt.removeEventListener('mouseleave', tiltReset);
-            });
-        };
-    }, [showAll]);
+    let lastScrollTop = 0;
+    const handleScroll = () => {
+        const triggerBottom = window.innerHeight / 5 * 4;
+        const updatedVisibleItems = galleryItems.map((_, index) => {
+            const element = document.getElementById(`galleryItem_${index}`);
+            const top = element.getBoundingClientRect().top;
+            const bottom = element.getBoundingClientRect().bottom;
+            const isVisible = top < triggerBottom && bottom > 0;
+            const direction = window.scrollY > lastScrollTop ? 'down' : 'up';
+            lastScrollTop = window.scrollY;
+            return { isVisible, direction };
+        });
+
+        updatedVisibleItems.forEach((item, index) => {
+            const element = document.getElementById(`galleryItem_${index}`);
+            if (item.isVisible) {
+                element.classList.add('show');
+                if (item.direction === 'down' && index % 2 === 0) {
+                    element.classList.add('shift-left');
+                    element.classList.remove('shift-right');
+                } else if (item.direction === 'up' && index % 2 === 0) {
+                    element.classList.remove('shift-left');
+                    element.classList.remove('shift-right');
+                } else if (item.direction === 'down' && index % 2 !== 0) {
+                    element.classList.add('shift-right');
+                    element.classList.remove('shift-left');
+                } else if (item.direction === 'up' && index % 2 !== 0) {
+                    element.classList.remove('shift-right');
+                    element.classList.remove('shift-left');
+                }
+            } else {
+                element.classList.remove('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call it once to initialize
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, [galleryItems]);
 
     return (
         <div style={{ paddingTop: '75px', background: 'rgb(255, 255, 255)', justifyContent: 'center' }}>
@@ -62,15 +58,12 @@ function PortfolioComponent({ galleryItems }) {
                 <div className="t__text">Нажмите на картинку, чтобы подробнее ознакомиться с проектом </div>
             </div>
             <div className="gallery">
-                {getVisibleItems().map((item, index) => (
-                    <figure key={index} className="gallery__item gallery__item_portfolio tilt">
-                        <Link to={`/portfolio/${index + 1}`} className="tn-atom" style={{ backgroundImage: `url("${item.imgMain}")` }} />
+                {galleryItems.map((item, index) => (
+                    <figure key={index} id={`galleryItem_${index}`} className={`gallery__item_portf gallery__item_portf_portfolio tilt ${visibleItems[index] ? 'show' : ''}`}>
+                        <Link to={`/portfolio/${index + 1}`} className={`tn-atom tn-atom-${index}`} style={{ backgroundImage: `url("${item.imgMain}")` }} />
                     </figure>
                 ))}
             </div>
-            {!showAll && (
-                <button className="buttonShowAll" onClick={handleShowAllClick}>Показать все</button>
-            )}
         </div>
     );
 }

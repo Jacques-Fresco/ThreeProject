@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 
@@ -7,8 +7,16 @@ function Header() {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [componentOpacity, setComponentOpacity] = useState(1);
 
+  const checkboxRef = useRef(null);
+
   const handleClick = (path) => {
     setActiveButton(path);
+    scrollToTop();
+
+
+    if (checkboxRef.current) {
+      checkboxRef.current.click();
+    }
   };
 
   const handleScrollSwiper = () => {
@@ -123,12 +131,12 @@ function Header() {
           </nav>
         </div>
         <div className='menudivMb'>
-          <div style={{ display: 'flex' }}>
-            <div className="headerLogo">
+          <div style={{ display: 'flex', width: "100%"}}>
+            <div className="headerLogo" style={{ display: 'flex', width: "50%"}}>
               <Link to="/" onClick={() => handleClick('/')}><img className="logocl" src={menuItems[3].image} imgfield="img" alt="hamadewo" /></Link>
             </div>
-            <input type="checkbox" id="checkbox" />
-            <div className="menuClick" style={{ marginLeft: 'auto' }}>
+            <input type="checkbox" id="checkbox" ref={checkboxRef} />
+            <div className="menuClick" style={{ display: "flex", width: "50%"}} >
               <label htmlFor="checkbox" />
               <svg style={{ width: '48px', height: '48px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="line-icon">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

@@ -42,7 +42,7 @@ const ComponentClider = () => {
       className="mySwiper"
       loop={true}
       speed={2000}
-      style={{position: 'sticky', zIndex: '1200'}}
+      style={{position: 'sticky', zIndex: '1200', height: '400px'}}
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className='swiper-slide'>

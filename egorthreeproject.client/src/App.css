@@ -201,7 +201,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to bottom, transparent, rgb(87 87 87 / 70%));
     /* Градиент для затемнения */
 }
 
@@ -242,115 +242,226 @@ body {
     padding: 20px 0;
 }
 
+.menudivMb {
+    display: none;
+}
+
+input {
+    display: none;
+}
+
+.childPath {
+    position: absolute;
+    bottom: 25%;
+    /* Разместить по вертикали посередине */
+    right: 25%;
+    /* Разместить по горизонтали посередине */
+}
+
+@media screen and (max-width: 952px) {
+    .menudivPC {
+        display: none;
+    }
+
+    .headerS {
+        padding: 0;
+        background-color: rgb(0 0 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+
+        flex-direction: row;
+    }
+
+    .headerLogo {
+        justify-content: right;
+    }
+
+    .logocl {
+        margin: 0;
+    }
+
+    .logocl {
+        height: 55px;
+        width: 55px;
+        transform: translateX(50%);
+        border-radius: 10px;
+    }
+
     .menudivMb {
-        display: none;
+        display: flex;
+        /* Используем flexbox */
+        justify-content: center;
+        /* Центрируем дочерние элементы по горизонтали */
+        position: relative;
+        flex-direction: column;
+        background: rgb(64 66 75 / 48%);
+        height: 100%;
+        width: 100%;
     }
-
-    input {
+    
+    .menuNav {
         display: none;
-    }
-
-    .childPath {
         position: absolute;
-  bottom: 25%; /* Разместить по вертикали посередине */
-  right: 25%; /* Разместить по горизонтали посередине */
+        top: 80px;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.65);
+        /* width: 100%; */
+        right: 0;
+        padding: 50px 0;
+        /* height: 100vh; */
+        overflow: hidden;
+        margin: 0;
+        transition: 500ms;
+        /* Не применяем радиус справа снизу */
+        border-bottom-left-radius: 20px;
     }
 
-    @media screen and (max-width: 952px) {
-        .menudivPC {
-            display: none;
-        }
-
-        .headerS {
-            padding: 0;
-            background-color: rgb(0 0 0);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logocl {
-            height: 55px;
-            width: 55px;
-        }
-
-        .menudivMb {
-            display: flex; /* Используем flexbox */
-            justify-content: center; /* Центрируем дочерние элементы по горизонтали */
-            position: relative;
-            flex-direction: column;
-            background: rgba(0, 0, 0, 0.65);
-            height: 100%;
-            width: 100%;
-        }
-
-        .menuNav {
-            display: none;
-            position: absolute;
-            top: 80px;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.65);
-            width: 100%;
-            right: 0;
-            padding: 50px 0;
-            height: 100vh;
-            overflow: hidden;
-            margin: 0;
-            transition: 500ms;
-        }
-
-        .menuNav li {
-            list-style-type: none;
-            padding: 10px 20px;
-            margin: 3px 0;
-        }
-
-        .menuNav li a {
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 22px;
-            font-weight: 500;
-            border-radius: 99px;
-            transition: 150ms;
-            color: #fff;
-            
-        }
-
-        .menuNav li a:hover {
-            background: #a05f1b;
-        }
-
-        .menuClick {
-            display: block;
-            width: 60px;
-        }
-
-        .menuClick label {
-            border: solid;
-            width: 45px;
-            height: 45px;
-            position: absolute;
-        }
-
-        .x-icon {
-            display: none;
-        }
-
-        input:checked ~ .menuClick .line-icon {
-            display: none;
-        }
-
-        input:checked ~ .menuClick .x-icon {
-            display: block;
-        }
-
-        input:checked ~ .menuNav {
-            display: flex;
-            height: 100vh;
-            padding: 50px 0px;
-        }
-
-        
+    .menuNav li {
+        list-style-type: none;
+        padding: 10px 20px;
+        margin: 3px 0;
     }
+
+    .menuNav li a {
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 500;
+        border-radius: 99px;
+        transition: 150ms;
+        color: #fff;
+
+    }
+
+    
+
+    .menuNav .activeButton a {
+        background: #a05f1b;
+    }
+
+    .menuClick {
+        display: flex;
+    justify-content: right;
+    align-items: center;
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    .menuClick label {
+        /* border: solid; */
+        width: 45px;
+        height: 45px;
+        position: absolute;
+    }
+
+    .x-icon {
+        display: none;
+    }
+
+    input:checked~.menuClick .line-icon {
+        display: none;
+    }
+
+    input:checked~.menuClick .x-icon {
+        display: block;
+    }
+
+    input:checked~.menuNav {
+        display: flex;
+        /* height: 100vh; */
+        padding: 50px 0px;
+    }
+
+
+}
+
+
+#nav-icon2 {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    margin: 30px auto;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon2 span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 50%;
+    background: #337AB7;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+#nav-icon2 span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+#nav-icon2 span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+}
+
+#nav-icon2 span:nth-child(1),
+#nav-icon2 span:nth-child(2) {
+    top: 0px;
+}
+
+#nav-icon2 span:nth-child(3),
+#nav-icon2 span:nth-child(4) {
+    top: 18px;
+}
+
+#nav-icon2 span:nth-child(5),
+#nav-icon2 span:nth-child(6) {
+    top: 36px;
+}
+
+#nav-icon2.open span:nth-child(1),
+#nav-icon2.open span:nth-child(6) {
+    transform: rotate(45deg);
+}
+
+#nav-icon2.open span:nth-child(2),
+#nav-icon2.open span:nth-child(5) {
+    transform: rotate(-45deg);
+}
+
+#nav-icon2.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+}
+
+#nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+}
+
+#nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(5) {
+    left: 5px;
+    top: 29px;
+}
+
+#nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 29px;
+}
+

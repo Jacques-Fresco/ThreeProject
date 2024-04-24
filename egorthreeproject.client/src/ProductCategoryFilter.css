@@ -256,6 +256,21 @@
   font-style: normal;
 }
 
+@media (max-width: 865px) {
+  .t-card__descr {
+    text-align: justify;
+  }
+
+  .t-col:last-child {
+    padding-top: 0px;
+}
+
+.t-img {
+  margin-left: 20px;
+  width:20%;
+}
+}
+
 .t-title {
   padding: 120px 60px 49px;
   /* Задаем отступы сверху и снизу */
@@ -476,26 +491,46 @@
     align-items: center;
   }
 
-  .t-col {
+  /* .t-col {
     justify-content: center;
     width: 80%;
-  }
+  } */
 
+@media (max-width: 866) {
   .t-col-c .t-col:last-child {
     padding-top: 40px;
   }
+}
 
-  .t-img {
+  /* .t-img {
     width: 300px;
     height: auto;
     max-width: 100%;
     margin-bottom: 25px;
-  }
+  } */
 
   .t-card__title {
     font-size: 40px;
     font-weight: 800;
   }
+
+  .t-col {
+    display: flex; /* Использовать flexbox для расположения элементов в строку */
+    justify-content: center;
+}
+
+.t-col .t-img {
+    margin-right: 20px; /* Отступ справа от изображения */
+    flex-shrink: 0; /* Запретить изображению сжиматься при необходимости */
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+.wrappercenter {
+    flex-grow: 1; /* Заполнить доступное пространство внутри t-col */
+}
 }
 
 .title_menu {
