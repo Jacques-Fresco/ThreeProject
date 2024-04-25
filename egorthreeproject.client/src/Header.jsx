@@ -6,25 +6,17 @@ function Header() {
   const [activeButton, setActiveButton] = useState('');
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [componentOpacity, setComponentOpacity] = useState(1);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const checkboxRef = useRef(null);
 
   const handleClick = (path) => {
     setActiveButton(path);
     scrollToTop();
-
+    handleToggle();
 
     if (checkboxRef.current) {
       checkboxRef.current.click();
-    }
-  };
-
-  const handleScrollSwiper = () => {
-    const div2 = document.querySelector('.div2'); // Получаем ссылку на див2
-    if (div2.getBoundingClientRect().top <= 0) {
-      setShowHeader(true); // Если див2 находится над верхней границей, показываем хедер
-    } else {
-      setShowHeader(false); // В противном случае скрываем хедер
     }
   };
 
@@ -102,6 +94,12 @@ function Header() {
     });
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   const menuItems = [
     { path: '/', label: 'Каталог' },
     { path: '/portfolio', label: 'Портфолио' },
@@ -131,33 +129,30 @@ function Header() {
           </nav>
         </div>
         <div className='menudivMb'>
-          <div style={{ display: 'flex', width: "100%"}}>
-            <div className="headerLogo" style={{ display: 'flex', width: "50%"}}>
+          <div style={{ display: 'flex', width: "100%" }}>
+            <div className="headerLogo" style={{ display: 'flex', width: "50%" }}>
               <Link to="/" onClick={() => handleClick('/')}><img className="logocl" src={menuItems[3].image} imgfield="img" alt="hamadewo" /></Link>
             </div>
-            <input type="checkbox" id="checkbox" ref={checkboxRef} />
-            <div className="menuClick" style={{ display: "flex", width: "50%"}} >
-              <label htmlFor="checkbox" />
-              <svg style={{ width: '48px', height: '48px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="line-icon">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-              <svg style={{ width: '48px', height: '48px' }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="x-icon">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
+            <div className="menuClick" style={{ display: "flex", width: "50%" }} >
+              <div id="nav-icon" className={isOpen ? 'open' : ''} onClick={handleToggle}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
-            <ul className="menuNav">
-            {menuItems.map((item, index) => {
-              // Используйте оператор if для проверки условия
-              if (item.path) {
-                return (
-                  <li key={index} className={activeButton === item.path ? 'activeButton' : ''}>
-                    <Link to={item.path} onClick={() => handleClick(item.path)}>{item.label}</Link>
-                  </li>
-                );
-              }
-              return null; // Если условие не выполнено, вернуть null, чтобы элемент не рендерился
-            })}
-          </ul>
+            <ul className={`menuNav ${isOpen ? 'open' : ''}`}>
+              {menuItems.map((item, index) => {
+                // Используйте оператор if для проверки условия
+                if (item.path) {
+                  return (
+                    <li key={index} className={activeButton === item.path ? 'activeButton' : ''}>
+                      <Link to={item.path} onClick={() => handleClick(item.path)}>{item.label}</Link>
+                    </li>
+                  );
+                }
+                return null; // Если условие не выполнено, вернуть null, чтобы элемент не рендерился
+              })}
+            </ul>
           </div>
         </div>
       </div>

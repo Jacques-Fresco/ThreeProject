@@ -4,6 +4,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .header {
@@ -38,6 +39,31 @@ body {
     border: none;
     cursor: pointer;
     z-index: 1000;
+
+
+
+
+    -webkit-tap-highlight-color: transparent; /* Убираем подсветку при нажатии (для устройств с сенсорным экраном) */
+    -webkit-touch-callout: none; /* Отключаем контекстное меню на устройствах с сенсорным экраном */
+    -webkit-user-select: none; /* Запрещаем выделение текста на устройствах с сенсорным экраном */
+    -moz-user-select: none; /* Запрещаем выделение текста в Firefox */
+    -ms-user-select: none; /* Запрещаем выделение текста в Internet Explorer */
+    user-select: none; /* Запрещаем выделение текста */
+    -webkit-appearance: none; /* Убираем стандартные стили для элемента */
+    -moz-appearance: none; /* Убираем стандартные стили для элемента */
+    appearance: none; /* Убираем стандартные стили для элемента */
+    background-color: transparent; /* Убираем фоновый цвет */
+    border: none; /* Убираем границу */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем отступы */
+    cursor: pointer; /* Устанавливаем курсор в виде указателя */
+    font: inherit; /* Используем наследуемый шрифт */
+    color: inherit; /* Используем наследуемый цвет текста */
+    text-decoration: none; /* Убираем стандартное оформление ссылки */
+}
+
+.scroll-to-top-button:focus {
+    outline: none; /* Убираем обводку */
 }
 
 .scroll-to-top-button::before {
@@ -61,10 +87,10 @@ body {
 }
 
 /* Убираем изменения при наведении */
-.scroll-to-top-button:hover::before {
+/* .scroll-to-top-button:hover::before {
     border-top-color: #a05f1b;
     border-right-color: #a05f1b;
-}
+} */
 
 .scroll-to-top-button:hover {
     color: #000;
@@ -176,7 +202,7 @@ body {
 
 .slide-content {
     position: relative;
-    height: 550px;
+    height: 100%;
     /* Высота блока slide-content */
     width: 100%;
     background-size: cover;
@@ -201,7 +227,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgb(87 87 87 / 70%));
+    background: linear-gradient(to bottom, transparent, rgb(0 0 0 / 20%));
     /* Градиент для затемнения */
 }
 
@@ -244,6 +270,7 @@ body {
 
 .menudivMb {
     display: none;
+    /* overflow: hidden; */
 }
 
 input {
@@ -276,6 +303,7 @@ input {
 
     .headerLogo {
         justify-content: right;
+        margin-left: 10px;
     }
 
     .logocl {
@@ -300,22 +328,19 @@ input {
         height: 100%;
         width: 100%;
     }
-    
+
     .menuNav {
-        display: none;
         position: absolute;
         top: 80px;
+        right: 0;
         flex-direction: column;
         align-items: center;
         background: rgba(0, 0, 0, 0.65);
-        /* width: 100%; */
-        right: 0;
+        width: 0; /* Начальная ширина 0 */
         padding: 50px 0;
-        /* height: 100vh; */
-        overflow: hidden;
+        overflow-x: hidden;
         margin: 0;
-        transition: 500ms;
-        /* Не применяем радиус справа снизу */
+        transition: width 1s ease; /* Анимация изменения ширины */
         border-bottom-left-radius: 20px;
     }
 
@@ -323,6 +348,8 @@ input {
         list-style-type: none;
         padding: 10px 20px;
         margin: 3px 0;
+        
+        text-align: center;
     }
 
     .menuNav li a {
@@ -333,19 +360,19 @@ input {
         border-radius: 99px;
         transition: 150ms;
         color: #fff;
-
     }
 
-    
+
 
     .menuNav .activeButton a {
         background: #a05f1b;
+        /* background: #adadad; */
     }
 
     .menuClick {
         display: flex;
-    justify-content: right;
-    align-items: center;
+        justify-content: right;
+        align-items: center;
         width: 60px;
         margin-right: 10px;
     }
@@ -376,92 +403,69 @@ input {
     }
 
 
+
+    .scroll-to-top-button {
+        cursor: pointer;
+    }
 }
 
 
-#nav-icon2 {
-    width: 60px;
+#nav-icon {
+    width: 50px;
     height: 45px;
     position: relative;
-    margin: 30px auto;
+    /* margin: 30px auto; */
     transform: rotate(0deg);
     transition: .5s ease-in-out;
-    cursor: pointer;
+    /* cursor: pointer; */
+    margin-bottom: -3px;
 }
 
-#nav-icon2 span {
+#nav-icon span {
     display: block;
     position: absolute;
-    height: 9px;
-    width: 50%;
-    background: #337AB7;
+    height: 7px;
+    width: 100%;
+    background: #adadad;
+    border-radius: 9px;
     opacity: 1;
+    left: 0;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
 }
 
-#nav-icon2 span:nth-child(even) {
-    left: 50%;
-    border-radius: 0 9px 9px 0;
-}
-
-#nav-icon2 span:nth-child(odd) {
-    left: 0px;
-    border-radius: 9px 0 0 9px;
-}
-
-#nav-icon2 span:nth-child(1),
-#nav-icon2 span:nth-child(2) {
+#nav-icon span:nth-child(1) {
     top: 0px;
+    transform-origin: left center;
 }
 
-#nav-icon2 span:nth-child(3),
-#nav-icon2 span:nth-child(4) {
+#nav-icon span:nth-child(2) {
     top: 18px;
+    transform-origin: left center;
 }
 
-#nav-icon2 span:nth-child(5),
-#nav-icon2 span:nth-child(6) {
+#nav-icon span:nth-child(3) {
     top: 36px;
+    transform-origin: left center;
 }
 
-#nav-icon2.open span:nth-child(1),
-#nav-icon2.open span:nth-child(6) {
+#nav-icon.open span:nth-child(1) {
     transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
 }
 
-#nav-icon2.open span:nth-child(2),
-#nav-icon2.open span:nth-child(5) {
+#nav-icon.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav-icon.open span:nth-child(3) {
     transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
 }
 
-#nav-icon2.open span:nth-child(1) {
-    left: 5px;
-    top: 7px;
+.menuNav.open {
+    width: 50%; /* Установка ширины на 100% при раскрытии */
 }
-
-#nav-icon2.open span:nth-child(2) {
-    left: calc(50% - 5px);
-    top: 7px;
-}
-
-#nav-icon2.open span:nth-child(3) {
-    left: -50%;
-    opacity: 0;
-}
-
-#nav-icon2.open span:nth-child(4) {
-    left: 100%;
-    opacity: 0;
-}
-
-#nav-icon2.open span:nth-child(5) {
-    left: 5px;
-    top: 29px;
-}
-
-#nav-icon2.open span:nth-child(6) {
-    left: calc(50% - 5px);
-    top: 29px;
-}
-

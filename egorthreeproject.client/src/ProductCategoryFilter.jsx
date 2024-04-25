@@ -21,13 +21,13 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
 
     return (
         <div style={{position: 'sticky', zIndex: '1201'}}>
-            <div style={{ paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#000000', background: '#f0f0f0' }}>
+            <div className="catalogDiv" style={{ margin: '20px 0', paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffffff', background: 'rgb(255 188 120)' }}>
                 <div style={{ paddingTop: '8px', fontStyle: 'normal', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px', lineHeight: '1.35' }}>
                     <div className='title_menu'>Небольшой каталог товаров, которые мы производим</div>
                 </div>
             </div>
             <div>
-                <div style={{ padding: '10px 30px', display: 'flex', justifyContent: 'center', backgroundColor: 'rgb(187, 187, 187)', flexWrap: 'wrap' }}>
+                <div className="categoryDiv" style={{ padding: '10px 30px', display: 'flex', justifyContent: 'center', backgroundColor: '#000000', flexWrap: 'wrap', borderTopLeftRadius: '160px', borderBottomLeftRadius: '50px', borderBottomRightRadius: '160px', borderTopRightRadius: '50px', margin: '20px', opacity: '0.8'}}>
                     {categories?.map(category => (
                         <div
                             key={category.id}
@@ -38,7 +38,7 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
                         </div>
                     ))}
                 </div>
-                <div className="product-grid autoplay" style={{ justifyContent: 'center', backgroundColor: '#bbbbbb' }}>
+                <div className="product-grid autoplay" style={{ justifyContent: 'center', backgroundColor: '#bbbbbb', borderTopLeftRadius: '160px', borderBottomLeftRadius: '50px', borderBottomRightRadius: '160px', borderTopRightRadius: '50px', padding: '50px 0'}}>
                     {filteredProducts.map(product => {
                         const productPictures = pictures.find(pic => pic.ProductId === product.id)?.pictures || [];
 

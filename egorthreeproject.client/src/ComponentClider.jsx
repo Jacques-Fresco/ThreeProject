@@ -20,7 +20,14 @@ const ComponentClider = () => {
     }
   ];
 
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 952);
+
+  const handleResize = () => {
+    setIsSmallScreen(window.innerWidth <= 952);
+  };
+
   const [swiper, setSwiper] = useState(null);
+  const [initialHeight, setInitialHeight] = useState(645);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,18 +38,37 @@ const ComponentClider = () => {
       }
     }, 7000);
 
-    return () => clearInterval(interval);
+    window.addEventListener('resize', handleResize);
+
+    if (isSmallScreen) {
+      // const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.clientHeight;
+
+      const otherElementsHeight = 80; // Здесь вы можете добавить высоту других элементов, если они есть
+      // const availableHeight = windowHeight - otherElementsHeight;
+      const availableHeight = documentHeight - otherElementsHeight;
+
+      setInitialHeight(availableHeight);
+    } else {
+      setInitialHeight(645); // Сбрасываем высоту до нуля, если ширина окна больше 952
+    }
+
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearInterval(interval);
+    }
   }, [swiper]);
 
   return (
     <Swiper
-      navigation={true}
+      navigation={isSmallScreen ? false : true}
       modules={[Navigation]}
       onSwiper={setSwiper}
       className="mySwiper"
       loop={true}
       speed={2000}
-      style={{position: 'sticky', zIndex: '1200', height: '400px'}}
+      style={{ position: 'sticky', zIndex: '1200', height: initialHeight }}
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className='swiper-slide'>
@@ -50,6 +76,7 @@ const ComponentClider = () => {
             <div className="slide-background" style={{ backgroundImage: `url(${slide.image})`, height: '700px' }}></div>
             <div className="slide-overlay"></div>
             <div className="slide-text">{slide.text}</div>
+            <div className='slide-text-blur'>sdafsdaf</div>
           </div>
         </SwiperSlide>
       ))}

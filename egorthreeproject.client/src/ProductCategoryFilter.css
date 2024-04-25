@@ -14,7 +14,7 @@
   animation: animate 7s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
-}
+} 
 
 .t-sociallinks__item {
   padding: 0 5px;
@@ -162,7 +162,7 @@
   transition: all 0.3s ease;
   display: inline-block;
   position: relative;
-  color: #000;
+  color: #fff;
   z-index: 2;
   /* line-height: 40px; */
   margin: 10px 15px;
@@ -189,8 +189,8 @@
   left: 0;
   border-bottom-color: transparent;
   border-right-color: transparent;
-  border-top-color: #000;
-  border-left-color: #000;
+  border-top-color: #fff;
+  border-left-color: #fff;
 }
 
 .custom-btn:after {
@@ -198,15 +198,15 @@
   right: 0;
   border-top-color: transparent;
   border-left-color: transparent;
-  border-bottom-color: #000;
-  border-right-color: #000;
+  border-bottom-color: #fff;
+  border-right-color: #fff;
 }
 
 .custom-btn:hover:before,
 .custom-btn:hover:after,
 .custom-btn.active:before,
 .custom-btn.active:after {
-  border-color: #000;
+  border-color: #fff;
   height: 100%;
   width: 100%;
 }
@@ -229,6 +229,18 @@
   width: 33%;
   margin-left: 20px;
   margin-right: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+}
+
+.t-col:hover {
+  color: #ffffff;
+  background-color: #c97e1c;
+  border-radius: 20px;
+}
+
+.t-col:hover .t-card__title, .t-col:hover .t-card__descr {
+  color: #ffffff;
+  fill: red;
 }
 
 .wrappercenter {

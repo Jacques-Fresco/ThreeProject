@@ -48,11 +48,12 @@ function App({ products, categories, pictures, bodyComponent, galleryItems }) {
     };
 
     return (
-        <div style={{ width: '100%', boxSizing: 'border-box', background: '#ffffff', position: 'relative', zIndex: '1' }}>
+        <div style={{ width: '100%', boxSizing: 'border-box', background: '#ffffff', position: 'relative' }}>
             <Header />
             {renderBodyComponent()}
             <Footer />
         </div>
+
     );
 }
 

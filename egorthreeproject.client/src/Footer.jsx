@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ProductCategoryFilter.css';
+import imgM from './pictuгes/pngwing.svg'
 
 function Footer() {
 
@@ -16,7 +17,7 @@ function Footer() {
                         </div>
                     </div>
                     <div className='t-col'>
-                        <img className="t-img" src="https://static.tildacdn.com/tild6166-6534-4631-b630-326632333333/photo.svg" alt="" />
+                        <img className="t-img" src={imgM} alt="" />
                         <div className='wrappercenter'>
                             <div className='t-card__title'>Дизайн</div>
                             <div className='t-card__descr'>Мы предлагаем стильный и минималистичный дизайн для вашего дома. Наша цель - создать для вас уютное и элегантное пространство, которое приносит радость и комфорт каждый день.</div>
@@ -37,7 +38,7 @@ function Footer() {
                     <div className="d0">
                         <div className="d1">
                             <div className="d11">
-                                <div className='d11Img' style={{background: 'url(https://optim.tildacdn.com/tild6633-3365-4936-b534-643834303035/-/resize/1000x1000/-/format/webp/3-5e3046195a45167156.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-lazy-rule="comm:resize,round:100" />
+                                <div className='d11Img' style={{ background: 'url(https://optim.tildacdn.com/tild6633-3365-4936-b534-643834303035/-/resize/1000x1000/-/format/webp/3-5e3046195a45167156.jpg) center center / cover no-repeat' }} data-original="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="https://static.tildacdn.com/tild6633-3365-4936-b534-643834303035/3-5e3046195a45167156.jpg" data-lazy-rule="comm:resize,round:100" />
                             </div>
                             <div className="d22">
                                 <div className="d111">

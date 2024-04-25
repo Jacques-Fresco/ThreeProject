@@ -10,7 +10,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --swiper-theme-color: #ecbd8c;
+  /* --swiper-theme-color: #ecbd8c; */
+  --swiper-theme-color: #adadad;
 }
 
 a {
