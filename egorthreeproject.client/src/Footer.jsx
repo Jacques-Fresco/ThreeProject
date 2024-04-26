@@ -5,6 +5,8 @@ import imgM from './pictuгes/pngwing.svg'
 function Footer() {
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,9 +20,15 @@ function Footer() {
             }
         };
 
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -42,14 +50,19 @@ function Footer() {
                 <div className="t-title" field="btitle">Мы гордимся нашими продуктами</div>
                 <div className="t-col-c" style={{ display: 'flex', marginTop: '50px', marginBottom: '60px' }}>
                     {componentT.map((item, index) => (
-                        <div className='t-col t-col_scrolledColor' key={index}>
-                            <div className="t-img_component">
+                        <div className={`t-col t-col_scrolledColor ${windowWidth <= 866 ? 't-img_component' : ''}`} key={index}>
+                            <div className={`t-img-c ${windowWidth <= 866 ? 't-img_component' : ''}`}>
+                                {windowWidth <= 866 && <div className={`t-card__title ${isScrolled ? 'wrappercenter_scrolledColor' : ''}`}>{item.tct}</div>}
                                 <img className="t-img" src={item.timg} alt="" />
                             </div>
+
                             <div className='wrappercenter'>
-                                <div className={`t-card__title ${isScrolled ? 'wrappercenter_scrolledColor' : ''}`}>{item.tct}</div>
+                                {windowWidth > 866 && (
+                                    <div className={`t-card__title ${isScrolled ? 'wrappercenter_scrolledColor' : ''}`}>{item.tct}</div>
+                                )}
                                 <div className={`t-card__descr ${isScrolled ? 'wrappercenter_scrolledColor' : ''}`}>{item.tcd}</div>
                             </div>
+
                         </div>
                     ))}
                     {/* <div className={`t-col ${isScrolled ? 't-col_scrolledColor' : ''}`}> */}
@@ -82,7 +95,7 @@ function Footer() {
             </div> */}
             <div className="footer_footer" style={{ padding: '45px 0 45px' }}>
                 <div style={{ margin: '0 auto', textAlign: 'center' }}>
-                    <div className="hamadevo" style={{ marginBottom: '60px', fontSize: '50px' }}>Хамадево</div>
+                    <div className="hamadevo">Хамадево</div>
                     <ul role="list" className="t-sociallinks__wrapper" aria-label="Social media links" style={{ display: 'flex', justifyContent: 'center' }}>
                         {socialMediaData.map((item, index) => (
                             <li key={index} className={`t-sociallinks__item t-sociallinks__item_${item.icon}`}>
