@@ -6,6 +6,7 @@ import Card from './Card';
 
 const ProductCategoryFilter = ({ products, categories, pictures }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         // Выбор категории "LOFT" при первой загрузке страницы
@@ -20,14 +21,14 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
     const filteredProducts = selectedCategory ? products.filter(product => product.categoryId === selectedCategory) : [];
 
     return (
-        <div style={{position: 'sticky', zIndex: '1201'}}>
-            <div className="catalogDiv" style={{ margin: '20px 0', paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffffff', background: 'rgb(255 188 120)' }}>
+        <div style={{ position: 'sticky', zIndex: '1201' }}>
+            <div className="catalogDiv" style={{ transform: 'skewY(-2deg)', margin: '20px 0', paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffffff', background: 'rgb(255 188 120)', marginTop: '60px' }}>
                 <div style={{ paddingTop: '8px', fontStyle: 'normal', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px', lineHeight: '1.35' }}>
                     <div className='title_menu'>Небольшой каталог товаров, которые мы производим</div>
                 </div>
             </div>
             <div>
-                <div className="categoryDiv" style={{ padding: '10px 30px', display: 'flex', justifyContent: 'center', backgroundColor: '#000000', flexWrap: 'wrap', borderTopLeftRadius: '160px', borderBottomLeftRadius: '50px', borderBottomRightRadius: '160px', borderTopRightRadius: '50px', margin: '20px', opacity: '0.8'}}>
+                <div className="categoryDiv" style={{ padding: '10px 30px', display: 'flex', justifyContent: 'center', backgroundColor: '#000000', flexWrap: 'wrap', borderTopLeftRadius: '160px', borderBottomLeftRadius: '50px', borderBottomRightRadius: '160px', borderTopRightRadius: '50px', margin: '20px', opacity: '0.8', marginTop: '60px' }}>
                     {categories?.map(category => (
                         <div
                             key={category.id}
@@ -38,7 +39,7 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
                         </div>
                     ))}
                 </div>
-                <div className="product-grid autoplay" style={{ justifyContent: 'center', backgroundColor: '#bbbbbb', borderTopLeftRadius: '160px', borderBottomLeftRadius: '50px', borderBottomRightRadius: '160px', borderTopRightRadius: '50px', padding: '50px 0'}}>
+                <div className="product-grid autoplay" style={{ justifyContent: 'center', backgroundColor: '#bbbbbb', borderTopLeftRadius: '160px', borderBottomLeftRadius: '50px', borderBottomRightRadius: '160px', borderTopRightRadius: '50px', padding: '50px 0' }}>
                     {filteredProducts.map(product => {
                         const productPictures = pictures.find(pic => pic.ProductId === product.id)?.pictures || [];
 
@@ -49,8 +50,9 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
                                     <Card key={product.id} dataImages={productPictures} products={products} />
                                     <div className="card-content">
                                         <h5 className="card-title">{product.name}</h5>
-                                        <p className="card-description">{product.description}</p>
-                                        <div style={{ bottom: '20px', right: '20px', position: 'absolute' }}>{product.priceNew + " " + product.priceOld}</div>
+                                        {/* <p className="card-description">{product.description}</p> */}
+                                        {/* <div style={{ bottom: '20px', right: '20px', position: 'absolute' }}>{product.priceNew + " " + product.priceOld}</div> */}
+                                        <div style={{ bottom: '20px', right: '20px', position: 'absolute' }}>{product.priceOld}</div>
                                     </div>
                                 </div>
                             </Link>

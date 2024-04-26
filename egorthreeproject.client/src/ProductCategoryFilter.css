@@ -8,12 +8,13 @@
   /* font-size: 2em; */
   letter-spacing: 20px;
   overflow: hidden;
-  background: linear-gradient(90deg, #000, #fff, #000);
-  background-repeat: no-repeat;
+  /* background: linear-gradient(90deg, rgb(187, 187, 187), #000, rgb(187, 187, 187)); */
+  color: #ffffff;
+  /* background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 7s linear infinite;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0); */
 } 
 
 .t-sociallinks__item {
@@ -22,6 +23,8 @@
 
 .t-sociallinks__wrapper {
   list-style-type: none; /* Убираем стандартные точки маркера */
+  padding-left: 0px;
+  margin: auto;
 }
 
 @keyframes animate {
@@ -40,6 +43,7 @@
   left: 0;
   width: 100%;
   z-index: -1;
+  background-color: rgb(187, 187, 187);
 }
 
 /* .category-buttons {
@@ -133,15 +137,35 @@
   }
 }
 
+.t-col_scrolledColor {
+  color: #ffffff;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);  */
+  background: linear-gradient(-45deg, #b9c7a5, rgb(187, 187, 187), rgb(255, 188, 120), rgb(255 147 38));
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  border-radius: 20px;
+}
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* Стили для заголовка карты */
 .card-title {
   color: #333232;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   font-size: 20px;
   font-weight: 600;
   line-height: 1.25;
+  margin-top: 10px;
 }
 
 /* Стили для описания карты */
@@ -231,17 +255,20 @@
   margin-right: 20px;
   transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
 }
-
+/* 
 .t-col:hover {
   color: #ffffff;
-  background-color: #c97e1c;
+  background-color: #02ea9d;
   border-radius: 20px;
+} */
+
+.wrappercenter_scrolledColor {
+  color: #ffffff;
 }
 
-.t-col:hover .t-card__title, .t-col:hover .t-card__descr {
+/* .t-col:hover .t-card__title, .t-col:hover .t-card__descr {
   color: #ffffff;
-  fill: red;
-}
+} */
 
 .wrappercenter {
   padding-right: 20px;
@@ -255,17 +282,18 @@
   font-size: 24px;
   line-height: 1.35;
   font-family: 'TildaSans', Arial, sans-serif;
-  color: #000000;
+  /* color: #000000; */
 }
 
 .t-card__descr {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.55;
   font-weight: 300;
-  color: #5b5a5a;
+  /* color: #5b5a5a; */
   text-align: center;
   font-family: "Istok Web", sans-serif;
   font-style: normal;
+  padding-bottom: 25px;
 }
 
 @media (max-width: 865px) {
@@ -284,7 +312,7 @@
 }
 
 .t-title {
-  padding: 120px 60px 49px;
+  padding: 90px 60px 49px;
   /* Задаем отступы сверху и снизу */
   line-height: 1.23;
   font-family: "Comme", sans-serif;
@@ -486,11 +514,24 @@
 
 
 /*  */
+
+.t-img_component {
+  margin: auto;
+  width: 80%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  background-color: #ffffff;
+  border-radius: 99px;
+}
+
 .t-img {
   width: 100px;
   height: auto;
   max-width: 100%;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 /*  */

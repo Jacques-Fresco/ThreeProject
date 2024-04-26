@@ -43,27 +43,45 @@ body {
 
 
 
-    -webkit-tap-highlight-color: transparent; /* Убираем подсветку при нажатии (для устройств с сенсорным экраном) */
-    -webkit-touch-callout: none; /* Отключаем контекстное меню на устройствах с сенсорным экраном */
-    -webkit-user-select: none; /* Запрещаем выделение текста на устройствах с сенсорным экраном */
-    -moz-user-select: none; /* Запрещаем выделение текста в Firefox */
-    -ms-user-select: none; /* Запрещаем выделение текста в Internet Explorer */
-    user-select: none; /* Запрещаем выделение текста */
-    -webkit-appearance: none; /* Убираем стандартные стили для элемента */
-    -moz-appearance: none; /* Убираем стандартные стили для элемента */
-    appearance: none; /* Убираем стандартные стили для элемента */
-    background-color: transparent; /* Убираем фоновый цвет */
-    border: none; /* Убираем границу */
-    padding: 0; /* Убираем отступы */
-    margin: 0; /* Убираем отступы */
-    cursor: pointer; /* Устанавливаем курсор в виде указателя */
-    font: inherit; /* Используем наследуемый шрифт */
-    color: inherit; /* Используем наследуемый цвет текста */
-    text-decoration: none; /* Убираем стандартное оформление ссылки */
+    -webkit-tap-highlight-color: transparent;
+    /* Убираем подсветку при нажатии (для устройств с сенсорным экраном) */
+    -webkit-touch-callout: none;
+    /* Отключаем контекстное меню на устройствах с сенсорным экраном */
+    -webkit-user-select: none;
+    /* Запрещаем выделение текста на устройствах с сенсорным экраном */
+    -moz-user-select: none;
+    /* Запрещаем выделение текста в Firefox */
+    -ms-user-select: none;
+    /* Запрещаем выделение текста в Internet Explorer */
+    user-select: none;
+    /* Запрещаем выделение текста */
+    -webkit-appearance: none;
+    /* Убираем стандартные стили для элемента */
+    -moz-appearance: none;
+    /* Убираем стандартные стили для элемента */
+    appearance: none;
+    /* Убираем стандартные стили для элемента */
+    background-color: transparent;
+    /* Убираем фоновый цвет */
+    border: none;
+    /* Убираем границу */
+    padding: 0;
+    /* Убираем отступы */
+    margin: 0;
+    /* Убираем отступы */
+    cursor: pointer;
+    /* Устанавливаем курсор в виде указателя */
+    font: inherit;
+    /* Используем наследуемый шрифт */
+    color: inherit;
+    /* Используем наследуемый цвет текста */
+    text-decoration: none;
+    /* Убираем стандартное оформление ссылки */
 }
 
 .scroll-to-top-button:focus {
-    outline: none; /* Убираем обводку */
+    outline: none;
+    /* Убираем обводку */
 }
 
 .scroll-to-top-button::before {
@@ -336,11 +354,13 @@ input {
         flex-direction: column;
         align-items: center;
         background: rgba(0, 0, 0, 0.65);
-        width: 0; /* Начальная ширина 0 */
+        width: 0;
+        /* Начальная ширина 0 */
         padding: 50px 0;
         overflow-x: hidden;
         margin: 0;
-        transition: width 1s ease; /* Анимация изменения ширины */
+        transition: width 1s ease;
+        /* Анимация изменения ширины */
         border-bottom-left-radius: 20px;
     }
 
@@ -348,7 +368,7 @@ input {
         list-style-type: none;
         padding: 10px 20px;
         margin: 3px 0;
-        
+
         text-align: center;
     }
 
@@ -467,5 +487,6 @@ input {
 }
 
 .menuNav.open {
-    width: 50%; /* Установка ширины на 100% при раскрытии */
+    width: 50%;
+    /* Установка ширины на 100% при раскрытии */
 }
