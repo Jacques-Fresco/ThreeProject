@@ -51,8 +51,8 @@ function PortfolioComponent({ galleryItems }) {
 
     return (
         <div style={{ paddingTop: '75px', background: 'rgb(255, 255, 255)', justifyContent: 'center' }}>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div className="t__circle" style={{ border: '0px solid #000' }}>
+            <div className="title_c_component">
+                <div className="t__circle" style={{ border: '0px solid #000', padding: "5px" }}>
                     <div className="t__title" style={{ color: '#ffffff' }}>!</div>
                 </div>
                 <div className="t__text">Нажмите на картинку, чтобы подробнее ознакомиться с проектом </div>
