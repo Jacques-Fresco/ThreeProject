@@ -557,7 +557,7 @@
 
   .t-card__title {
     color: #000000;
-    font-size: 30px;
+    font-size: px;
     margin-top: 80px;
   }
 
@@ -636,6 +636,12 @@
   .wrappercenter {
     flex-grow: 1;
     /* Заполнить доступное пространство внутри t-col */
+  }
+}
+
+@media screen and (max-width: 867px) {
+  .t-card__title {
+    font-size: 25px;
   }
 }
 

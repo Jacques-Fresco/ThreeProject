@@ -153,7 +153,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/material" element={<App bodyComponent={'material'} />} />
         <Route path="/material_detail_component" element={<App bodyComponent={'material_detail_component'} />} />
         <Route path="/delivery" element={<App bodyComponent={'delivery'} />} />
-        <Route path="/price" element={<App bodyComponent={'price'} />} />
+        {/* <Route path="/price" element={<App bodyComponent={'price'} />} /> */}
+        <Route path="/cooperation" element={<App bodyComponent={'cooperation'} />} />
         <Route path="/contacts" element={<App bodyComponent={'contacts'} />} />
         <Route path="/popup/:productId" element={<Popup pictures={pictures} products={products} />} />
         {/* <Route component={NotFound} /> */}

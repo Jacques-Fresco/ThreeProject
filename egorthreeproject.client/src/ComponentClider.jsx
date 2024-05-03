@@ -76,7 +76,6 @@ const ComponentClider = () => {
             <div className="slide-background" style={{ backgroundImage: `url(${slide.image})`, height: '700px' }}></div>
             <div className="slide-overlay"></div>
             <div className="slide-text">{slide.text}</div>
-            <div className='slide-text-blur'>sdafsdaf</div>
           </div>
         </SwiperSlide>
       ))}

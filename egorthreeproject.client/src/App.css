@@ -275,6 +275,11 @@ body {
     }
 }
 
+@media (min-width: 900px) and (max-width: 1000px) {
+    .menu li a {
+        padding: 0px 10px;
+    }
+}
 
 
 .headerS {
@@ -303,7 +308,7 @@ input {
     /* Разместить по горизонтали посередине */
 }
 
-@media screen and (max-width: 952px) {
+@media screen and (max-width: 956px) {
     .menudivPC {
         display: none;
     }
@@ -487,6 +492,6 @@ input {
 }
 
 .menuNav.open {
-    width: 50%;
+    width: 70%;
     /* Установка ширины на 100% при раскрытии */
 }

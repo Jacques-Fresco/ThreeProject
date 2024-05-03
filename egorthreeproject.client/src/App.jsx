@@ -12,6 +12,7 @@ import DeliveryComponent from './DeliveryComponent.jsx';
 import PriceComponent from './PriceComponent.jsx';
 import MaterialDetailComponent from './MaterialDetailComponent.jsx';
 import ContactComponent from './ContactComponent.jsx';
+import CooperationComponent from './CooperationComponent.jsx';
 
 function App({ products, categories, pictures, bodyComponent, galleryItems }) {
 
@@ -38,8 +39,10 @@ function App({ products, categories, pictures, bodyComponent, galleryItems }) {
                 return <MaterialDetailComponent />;
             case 'delivery':
                 return <DeliveryComponent />;
-            case 'price':
-                return <PriceComponent />;
+            // case 'price':
+            //     return <PriceComponent />;
+            case 'cooperation':
+                return <CooperationComponent />;
             case 'contacts':
                 return <ContactComponent />;
             default:

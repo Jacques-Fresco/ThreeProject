@@ -106,7 +106,8 @@ function Header() {
     { path: '/material', label: 'Материал' },
     { image: 'https://static.tildacdn.com/tild3634-3839-4265-a364-356134346664/200200.png' }, // Объект для картинки
     { path: '/delivery', label: 'Доставка' },
-    { path: '/price', label: 'Стоимость' },
+    // { path: '/price', label: 'Стоимость' },
+    { path: '/cooperation', label: 'Сотрудничество'},
     { path: '/contacts', label: 'Контакты' }
   ];
 

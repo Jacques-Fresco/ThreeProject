@@ -46,6 +46,7 @@
     padding-top: 80px;
     position: relative;
     overflow: hidden;
+    align-items: flex-start;
 }
 
 .gallery__wrapper .gallery__item_portf {
