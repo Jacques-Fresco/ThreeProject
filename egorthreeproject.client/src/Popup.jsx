@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import './Popup.css'
 // import Slider from 'react-slick';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 import ImageGallery from './ImageGallery.jsx';
+import './Popup.css'
 
 function Popup({ pictures, products }) {
 
@@ -19,7 +19,7 @@ function Popup({ pictures, products }) {
             </div>
             <div className="" style={{ backgroundColor: '#ffffff' }}>
                 <div>
-                    <div className="" style={{ display: 'flex', justifyContent: 'center', paddingTop: '40px' }}>
+                    <div className="t-col_6_component">
                         <div className="t_col t-col_6">
                             <div className="" style={{}}>
                                 <ImageGallery imageURLs={pictures[productId - 1].pictures} />
@@ -27,10 +27,10 @@ function Popup({ pictures, products }) {
                             </div>
                         </div>
                         <div className="t_col t-col_6" style={{ textAlign: 'left', paddingTop: '15px' }}>
-                            <div className="">
+                            <div className="t_col_one">
                                 <div className="t-name t-name_xl" style={{}}>{products[productId - 1].name}</div>
                             </div>
-                            <div className="">
+                            <div className="t_col_two">
                                 <div className="t-store__prod-popup__price-item t-name t-name_md">
                                     <div className="" translate="no" data-product-price-def="11490" data-product-price-def-str="11490">{products[productId].priceNew}</div>
                                 </div>

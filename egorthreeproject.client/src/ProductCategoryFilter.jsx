@@ -22,7 +22,7 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
 
     return (
         <div style={{ position: 'sticky', zIndex: '1201' }}>
-            <div className="catalogDiv" style={{ transform: 'skewY(-2deg)', margin: '20px 0', paddingBottom: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffffff', background: 'rgb(255 188 120)', marginTop: '60px' }}>
+            <div className="catalogDiv">
                 <div style={{ paddingTop: '8px', fontStyle: 'normal', textAlign: 'center', paddingLeft: '50px', paddingRight: '50px', lineHeight: '1.35' }}>
                     <div className='title_menu'>Небольшой каталог товаров, которые мы производим</div>
                 </div>

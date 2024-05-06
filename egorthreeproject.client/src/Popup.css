@@ -4,6 +4,12 @@
     cursor: zoom-in;
 } */
 
+.t-col_6_component {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
 .t-col_6 {
     max-width: 560px;
 }
@@ -98,7 +104,3 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-
-
-

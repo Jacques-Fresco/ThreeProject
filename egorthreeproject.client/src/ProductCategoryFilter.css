@@ -21,6 +21,23 @@
   font-size: 50px
 }
 
+.catalogDiv {
+  /* transform: skewY(-2deg); */
+  margin: 60px auto 20px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  /* background: rgb(255 188 120); */
+  background: linear-gradient(-45deg, #b9c7a5, #bbb, #ffbc78, #ff9326);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  margin-top: 60px;
+  width: 98%;
+  border-radius: 10px;
+}
+
 .t-sociallinks__item {
   padding: 0 5px;
 }
@@ -322,6 +339,25 @@
   /* Центрируем по вертикали */
 }
 
+@media (max-width: 800px) {
+  .t-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 550px) {
+  .t-title {
+    font-size: 30px;
+    padding: 90px 30px 49px;
+  }
+}
+
+@media (max-width: 400px) {
+  .t-title {
+    font-size: 25px;
+  }
+}
+
 /*  */
 
 .d0 {
@@ -612,7 +648,7 @@
     max-width: 100%;
     margin-bottom: 25px;
   } */
-  
+
   .t-img_component {
     width: 95%;
   }
@@ -646,7 +682,7 @@
 }
 
 @media (max-width: 387px) {
-  .t-card__title  {
+  .t-card__title {
     padding: 0 10px;
   }
 }

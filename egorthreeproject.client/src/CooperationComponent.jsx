@@ -5,21 +5,62 @@ function CooperationComponent() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        telephone: '',
         message: ''
     });
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        // Здесь вы можете выполнить любую логику, связанную с отправкой формы
-        // Например, отправка данных на сервер или выполнение других действий
-        console.log(formData);
-        // Сбросить значения полей формы после отправки
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
-    };
+    function sendMessageToTelegram(event) {
+        event.preventDefault();
+
+        const botToken = '6710215028:AAGiDYpdE71_v7jJSbYrzm8kAXL8IK8CBbc';
+        const chatId = '-1002135771820';
+
+        const message = `New form submission:\nName: ${formData.name}\nEmail: ${formData.email}\nTelephone: ${formData.telephone}\nMessage: ${formData.message}`;
+
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+        const params = new URLSearchParams();
+        params.append('chat_id', chatId);
+        params.append('text', message);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log('Message sent to Telegram');
+                } else {
+                    console.error('Error sending message to Telegram:', xhr.statusText);
+                }
+            }
+        };
+        xhr.send(params);
+    }
+
+
+    // const handleFormSubmit = (e) => {
+    //     e.preventDefault();
+
+    //     fetch('http://192.168.1.65:3000/submit-form', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(formData)
+    //     })
+    //         .then(response => response.text())
+    //         .then(data => {
+    //             console.log(data);
+    //             setFormData({
+    //                 name: '',
+    //                 email: '',
+    //                 telephone: '',
+    //                 message: ''
+    //             });
+    //         })
+    //         .catch(error => console.error('Error:', error));
+    // };
 
     const handleInputChange = (e) => {
         setFormData({
@@ -82,7 +123,7 @@ function CooperationComponent() {
                     <div className='body_contact'>
                         <section id="contact">
                             <div className="contact-wrapper">
-                                <form className="form-horizontal" onSubmit={handleFormSubmit}>
+                                <form className="form-horizontal" onSubmit={sendMessageToTelegram}>
                                     <div className="form-group">
                                         <div className="col-sm-12">
                                             <input type="text" className="form-control" placeholder="Ваше имя:" name="name" value={formData.name} onChange={handleInputChange} required />
@@ -98,7 +139,7 @@ function CooperationComponent() {
                                             <input type="tel" className="form-control" placeholder="Телефон:" name="telephone" value={formData.telephone} onChange={handleInputChange} required />
                                         </div>
                                     </div>
-                                    <textarea className="form-control" style={{borderRadius: '30px', textIndent: '10px', paddingTop: '10px'}} rows="10" placeholder="Комментарий..." name="message" value={formData.message} onChange={handleInputChange} required></textarea>
+                                    <textarea className="form-control" style={{ borderRadius: '30px', textIndent: '10px', paddingTop: '10px', resize: 'none' }} rows="10" placeholder="Комментарий..." name="message" value={formData.message} onChange={handleInputChange} required></textarea>
                                     <button className="btn btn-primary send-button" type="submit" value="SEND">
                                         <div className="alt-send-button">
                                             <i className="fa fa-paper-plane"></i><span className="send-text">Отправить</span>

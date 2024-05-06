@@ -7,8 +7,15 @@ $brand: #5c4084;
     border-radius: 8px;
     box-shadow: 0 5px 8px #0000007a;
     height: 530px;
+    top: 30%; /* Располагаем верхний край дива в середине экрана */
+    position: fixed;
+    transform: translateY(-30%);
+    
 }
 
+.container_gallery_rotate {
+    height: inherit;
+}
 
 .vueGallery {
     display: flex;
@@ -16,9 +23,12 @@ $brand: #5c4084;
 
     .photo-container {
         display: flex;
-        justify-content: center; /* Центрирование по горизонтали */
-        align-items: center; /* Центрирование по вертикали */
-        position: relative; /* Положение относительно родительского элемента */
+        justify-content: center;
+        /* Центрирование по горизонтали */
+        align-items: center;
+        /* Центрирование по вертикали */
+        position: relative;
+        /* Положение относительно родительского элемента */
         width: 1100px;
         overflow: hidden;
         margin-right: 10px;
@@ -32,12 +42,12 @@ $brand: #5c4084;
             height: 100%;
             background-position: center center;
             background-size: 100%;
-            transition: background-size 0.5s ease;
-        
+            transition: background-size 0.5s ease, transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+
             &:hover {
                 background-size: 110%;
             }
-        
+
 
             button {
                 border: none;
@@ -74,6 +84,10 @@ $brand: #5c4084;
         }
     }
 
+    .photo-container-rotate {
+        height: 460px;
+    }
+
     .thumbnails {
         display: flex;
         flex-direction: column;
@@ -104,6 +118,216 @@ $brand: #5c4084;
             &:not(:last-child) {
                 margin-bottom: 5px;
             }
+
+            @media (min-width: 1330px) {
+                &:first-child {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+            }
         }
     }
 }
+
+
+@media (max-width: 1330px) {
+    .container_gallery {
+        width: 91%;
+        height: auto;
+    }
+
+    .vueGallery .photo-container {
+        width: 100%;
+        height: 600px;
+        margin: auto;
+    }
+
+    .vueGallery {
+        flex-direction: column;
+    }
+
+    .vueGallery .thumbnails {
+        flex-direction: row;
+    }
+
+    .vueGallery .thumbnails div {
+        width: 30vh;
+        height: 95px;
+        margin: 10px auto 0;
+    }
+
+    .vueGallery .thumbnails div:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .vueGallery .thumbnails div:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+@media (max-width: 1060px) {
+    .vueGallery .photo-container {
+        height: 500px;
+        margin: 0 auto 10px;
+    }
+
+    .vueGallery .thumbnails div {
+        width: 90%;
+        height: 95px;
+        margin: 0;
+    }
+
+    .container_gallery {
+        margin-top: 100px;
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 1060px) {
+    .vueGallery .photo-container {
+        height: 400px;
+        margin: 0 auto 10px;
+    }
+
+    .vueGallery .thumbnails div {
+        height: 70px;
+    }
+}
+
+@media (max-width: 700px) {
+    .vueGallery .photo-container {
+        height: 300px;
+    }
+
+    .vueGallery .thumbnails div {
+        height: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .vueGallery .photo-container {
+        height: 300px;
+    }
+
+    .vueGallery .thumbnails div {
+        height: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .vueGallery .photo-container {
+        height: 200px;
+    }
+
+    .vueGallery .thumbnails div {
+        height: 50px;
+    }
+
+    .container_gallery {
+        padding: 5px 5px;
+    }
+}
+
+// @media (max-width: 800px) {
+//     .vueGallery .photo-container {
+//         width: 600px;
+//         height: 400px;
+//     }
+
+//     .vueGallery .thumbnails div {
+//         width: 80px;
+//         height: 80px;
+//         margin: 0 auto;
+//     }
+
+//     .container_gallery {
+//         margin-top: 30px;
+//         padding: 10px;
+//         height: auto;
+//     }
+// }
+
+// @media (max-width: 650px) {
+//     .vueGallery .photo-container {
+//         width: 550px;
+//         height: 300px;
+//     }
+
+//     .vueGallery .thumbnails div {
+//         width: 65px;
+//         height: 65px;
+//         margin: 0 auto;
+//     }
+
+//     .container_gallery {
+//         height: auto;
+//         margin-top: 10%;
+//     }
+// }
+
+// @media (max-width: 600px) {
+//     .vueGallery .photo-container {
+//         width: 500px;
+//         height: 300px;
+//     }
+
+//     .vueGallery .thumbnails div {
+//         width: 60px;
+//         height: 50px;
+//     }
+// }
+
+// @media (max-width: 550px) {
+//     .vueGallery .photo-container {
+//         width: 450px;
+//         height: 250px;
+//     }
+
+//     .vueGallery .thumbnails div {
+//         width: 60px;
+//         height: 50px;
+//     }
+// }
+
+// @media (max-width: 500px) {
+//     .vueGallery .photo-container {
+//         width: 370px;
+//         height: 200px;
+//     }
+
+//     .vueGallery .thumbnails div {
+//         width: 45px;
+//         height: 45px;
+//     }
+// }
+
+// @media (max-width: 405px) {
+//     .vueGallery .photo-container {
+//         width: 350px;
+//         height: 200px;
+//     }
+
+//     .vueGallery .thumbnails div {
+//         width: 35px;
+//         height: 35px;
+//     }
+// }
+
+// @media (max-width: 340px) {
+//     .vueGallery .photo-container {
+//         width: 280px;
+//         height: 150px;
+//     }
+
+//     .vueGallery .thumbnails div {
+//         width: 35px;
+//         height: 30px;
+//     }
+// }

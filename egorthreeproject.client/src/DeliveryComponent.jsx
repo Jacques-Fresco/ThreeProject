@@ -77,7 +77,6 @@ function DeliveryComponent() {
                         <div className="list_title_item">
                             {item.number}
                         </div>
-                        <hr />
                         <div className="list_text_item">
                             <strong>
                                 {item.description}
