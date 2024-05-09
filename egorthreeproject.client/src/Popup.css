@@ -7,7 +7,7 @@
 .t-col_6_component {
     display: flex;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
 .t-col_6 {
@@ -103,4 +103,9 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.arrowComponent {
+    padding: 10px 0 0 10px;
+    left: 15px;
 }

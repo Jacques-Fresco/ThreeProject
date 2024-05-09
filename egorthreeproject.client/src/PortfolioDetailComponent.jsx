@@ -8,7 +8,7 @@ function PortfolioDetailComponent({ galleryItems }) {
     const { detailId } = useParams();
 
     return (
-        <div className='container_portfolio_detail' style={{ background: 'rgb(255, 255, 255)' }}>
+        <div className='container_portfolio_detail'>
             <VueGallery photos={galleryItems[detailId - 1].imgs} />
         </div>
     );

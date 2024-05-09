@@ -2,15 +2,10 @@ $brand: #5c4084;
 
 .container_gallery {
     padding: 40px;
-    margin-top: 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 5px 8px #0000007a;
     height: 530px;
-    top: 30%; /* Располагаем верхний край дива в середине экрана */
-    position: fixed;
-    transform: translateY(-30%);
-    
 }
 
 .container_gallery_rotate {
@@ -143,8 +138,8 @@ $brand: #5c4084;
 
     .vueGallery .photo-container {
         width: 100%;
-        height: 600px;
-        margin: auto;
+        height: 470px;
+        margin: 0 auto 10px;
     }
 
     .vueGallery {
@@ -174,33 +169,21 @@ $brand: #5c4084;
 
 @media (max-width: 1060px) {
     .vueGallery .photo-container {
-        height: 500px;
-        margin: 0 auto 10px;
+        height: 400px;
     }
 
     .vueGallery .thumbnails div {
         width: 90%;
-        height: 95px;
+        height: 70px;
         margin: 0;
     }
 
     .container_gallery {
-        margin-top: 100px;
+        // margin: 10px;
         padding: 20px 10px;
     }
 }
 
-@media (max-width: 1060px) {
-    .vueGallery .photo-container {
-        height: 400px;
-        margin: 0 auto 10px;
-    }
-
-    .vueGallery .thumbnails div {
-        height: 70px;
-    }
-}
-
 @media (max-width: 700px) {
     .vueGallery .photo-container {
         height: 300px;
@@ -211,13 +194,9 @@ $brand: #5c4084;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .vueGallery .photo-container {
-        height: 300px;
-    }
-
-    .vueGallery .thumbnails div {
-        height: 50px;
+        height: 250px;
     }
 }
 
@@ -232,6 +211,12 @@ $brand: #5c4084;
 
     .container_gallery {
         padding: 5px 5px;
+    }
+}
+
+@media (max-width: 350px) {
+    .vueGallery .photo-container {
+        height: 180px;
     }
 }
 

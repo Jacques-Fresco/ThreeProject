@@ -9,6 +9,7 @@ function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const checkboxRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (path) => {
     setActiveButton(path);
@@ -93,8 +94,6 @@ function Header() {
       behavior: 'smooth'
     });
   };
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);

@@ -1,5 +1,6 @@
 import React from 'react';
 import './DeliveryComponent.css';
+import useWindowResize from './useWindowResize.jsx';
 
 function DeliveryComponent() {
     const delivery_info_array = [
@@ -11,9 +12,11 @@ function DeliveryComponent() {
         { number: 6, description: 'Сборка и монтаж' }
     ]
 
+    const initialHeight = useWindowResize();
+
     return (
         <div className="my-container" style={{background: 'rgb(255, 255, 255)'}}>
-            <div className="my-image-container" style={{ position: 'relative', paddingBottom: '15px' }}>
+            <div className="my-image-container" style={{ position: 'relative', paddingBottom: '15px', maxHeight: `${initialHeight}px` }}>
                 <img className="deliveryimg" src="https://optim.tildacdn.com/tild6233-3533-4230-b863-646365393431/-/format/webp/ShopInterior2a.jpg" alt="My image" />
                 <div className="t-container" style={{ position: 'absolute' }}>
                     <div className="t-cover__wrapper t-valign_middle" style={{ height: '548px' }}>

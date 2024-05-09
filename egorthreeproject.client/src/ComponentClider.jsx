@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { Navigation } from 'swiper/modules';
 import './App.css'; // Создайте файл styles.css и определите в нем стили
+import useWindowResize from './useWindowResize.jsx';
 
 const ComponentClider = () => {
   const slides = [
@@ -27,7 +28,6 @@ const ComponentClider = () => {
   };
 
   const [swiper, setSwiper] = useState(null);
-  const [initialHeight, setInitialHeight] = useState(645);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,25 +40,13 @@ const ComponentClider = () => {
 
     window.addEventListener('resize', handleResize);
 
-    if (isSmallScreen) {
-      // const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.clientHeight;
-
-      const otherElementsHeight = 80; // Здесь вы можете добавить высоту других элементов, если они есть
-      // const availableHeight = windowHeight - otherElementsHeight;
-      const availableHeight = documentHeight - otherElementsHeight;
-
-      setInitialHeight(availableHeight);
-    } else {
-      setInitialHeight(645); // Сбрасываем высоту до нуля, если ширина окна больше 952
-    }
-
 
     return () => {
-      window.removeEventListener('resize', handleResize);
       clearInterval(interval);
     }
   }, [swiper]);
+
+  const initialHeight = useWindowResize();
 
   return (
     <Swiper

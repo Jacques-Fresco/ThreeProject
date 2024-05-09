@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './App.jsx'
 import Popup from './Popup.jsx'
 import './index.css'
+import { Provider } from 'react-redux';
+import store from './store';
 
 const products = [
   { id: 1, name: 'Журнальный столик из дуба (wenge Italian paint)', description: '', categoryId: 1, priceOld: '17 200 ₽.', priceNew: '11 490 ₽.' },
@@ -144,22 +146,24 @@ const galleryItems = [
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<App products={products} categories={categories} pictures={pictures} />} />
-        <Route path="/portfolio" element={<App bodyComponent={'portfolio'} galleryItems={galleryItems} />} />
-        <Route path="/portfolio/:detailId" element={<App bodyComponent={'portfolio/detailId'} galleryItems={galleryItems} />} />
-        <Route path="/material" element={<App bodyComponent={'material'} />} />
-        <Route path="/material_detail_component" element={<App bodyComponent={'material_detail_component'} />} />
-        <Route path="/delivery" element={<App bodyComponent={'delivery'} />} />
-        {/* <Route path="/price" element={<App bodyComponent={'price'} />} /> */}
-        <Route path="/cooperation" element={<App bodyComponent={'cooperation'} />} />
-        <Route path="/contacts" element={<App bodyComponent={'contacts'} />} />
-        <Route path="/popup/:productId" element={<Popup pictures={pictures} products={products} />} />
-        {/* <Route component={NotFound} /> */}
-      </Routes>
-    </Router>
-    { /* <App /> */}
-  </React.StrictMode>,
+  //<React.StrictMode>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<App products={products} categories={categories} pictures={pictures} />} />
+          <Route path="/portfolio" element={<App bodyComponent={'portfolio'} galleryItems={galleryItems} />} />
+          <Route path="/portfolio/:detailId" element={<App bodyComponent={'portfolio/detailId'} galleryItems={galleryItems} />} />
+          <Route path="/material" element={<App bodyComponent={'material'} />} />
+          <Route path="/material_detail_component" element={<App bodyComponent={'material_detail_component'} />} />
+          <Route path="/delivery" element={<App bodyComponent={'delivery'} />} />
+          {/* <Route path="/price" element={<App bodyComponent={'price'} />} /> */}
+          <Route path="/cooperation" element={<App bodyComponent={'cooperation'} />} />
+          <Route path="/contacts" element={<App bodyComponent={'contacts'} />} />
+          <Route path="/popup/:productId" element={<Popup pictures={pictures} products={products} />} />
+          {/* <Route component={NotFound} /> */}
+        </Routes>
+      </Router>
+    </Provider>
+
+  //</React.StrictMode>
 )

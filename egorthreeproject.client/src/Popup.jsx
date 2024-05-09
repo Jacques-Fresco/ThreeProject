@@ -8,14 +8,22 @@ import './Popup.css'
 
 function Popup({ pictures, products }) {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
+    const goBack = () => {
+        window.history.back();
+    };
+
     const { productId } = useParams();
 
     return (
         <div className="" style={{ background: '#000000' }}>
             <div className="" style={{ backgroundColor: "rgba(255,255,255,1)" }}>
-                    <svg className="" width="40px" height="40px" style={{left: '15px'}} viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                        <path d="M10.4142136,5 L11.8284271,6.41421356 L5.829,12.414 L23.4142136,12.4142136 L23.4142136,14.4142136 L5.829,14.414 L11.8284271,20.4142136 L10.4142136,21.8284271 L2,13.4142136 L10.4142136,5 Z" fill="#000000"></path>
-                    </svg>
+                <svg className="arrowComponent" onClick={goBack} width="40px" height="40px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <path d="M10.4142136,5 L11.8284271,6.41421356 L5.829,12.414 L23.4142136,12.4142136 L23.4142136,14.4142136 L5.829,14.414 L11.8284271,20.4142136 L10.4142136,21.8284271 L2,13.4142136 L10.4142136,5 Z" fill="#000000"></path>
+                </svg>
             </div>
             <div className="" style={{ backgroundColor: '#ffffff' }}>
                 <div>

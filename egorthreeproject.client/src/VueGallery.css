@@ -1,7 +1,6 @@
 @charset "UTF-8";
 .container_gallery {
   padding: 40px;
-  margin-top: 10px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4784313725);
@@ -12,6 +11,7 @@
   display: flex;
   height: 100%;
 }
+
 .vueGallery .photo-container {
   display: flex;
   justify-content: center; /* Центрирование по горизонтали */
@@ -21,6 +21,7 @@
   overflow: hidden;
   margin-right: 10px;
 }
+
 .vueGallery .photo-container .activePhoto {
   position: absolute;
   transform: translate(-50%, -50%);

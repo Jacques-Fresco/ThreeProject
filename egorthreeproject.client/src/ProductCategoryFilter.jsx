@@ -6,7 +6,6 @@ import Card from './Card';
 
 const ProductCategoryFilter = ({ products, categories, pictures }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
-    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         // Выбор категории "LOFT" при первой загрузке страницы
