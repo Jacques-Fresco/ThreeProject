@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ProductCategoryFilter.css';
-import imgM from './pictuгes/pngwing.svg'
+import imgM from './pictures/pngwing.svg'
 
 function Footer() {
 

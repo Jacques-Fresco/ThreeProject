@@ -1,0 +1,57 @@
+.list {
+    display: flex;
+    overflow-x: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollableContainer {
+    display: flex;
+    flex-direction: column;
+    /* Change to column for vertical scrolling */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* Hide scrollbar for different browsers */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollableContainer > a {
+    margin: 5px 0;
+    border: 2px black solid;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollableContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    display: flex;
+    width: 12.5rem;
+    height: 12.5rem;
+    background-color: aquamarine;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.item:not(:last-child) {
+    margin-right: 1em;
+}

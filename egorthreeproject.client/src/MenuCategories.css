@@ -1,0 +1,159 @@
+.menu-categories {
+    /* z-index: 1200; */
+    background-color: #faf0e6;
+    max-width: none;
+    /* height: 100vh; */
+    min-height: auto;
+    /* position: fixed; */
+    /* top: 0%; */
+    /* bottom: 0%; */
+    /* left: 0%; */
+    /* right: auto; */
+    /* box-shadow: 1px 5px 25px rgba(223, 223, 223, .35); */
+    padding: 0 20px 0 10px;
+    border-radius: 30px;
+    margin: 15px 10px 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.menu-categories::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.menu-categories {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.text_catalog {
+    color: #0e0e0e;
+    width: auto;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+}
+
+/* .logo {
+    width: auto;
+    height: 60px;
+    margin-right: auto;
+    padding: 15px 0 20px 20px;
+} */
+
+.txt_catalog {
+    background-color: #9d5812;
+    /* justify-content: center; */
+    text-align: center;
+    align-items: center;
+    height: 100px;
+    /* margin-right: auto; */
+    /* padding: 20px 0 20px 20px; */
+    display: flex;
+    margin: 20px 20px 0 20px;
+    border-radius: 20px;
+}
+
+.text_catalog {
+    color: white;
+    font-size: 35px;
+}
+
+.categiries_block {
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+    text-decoration: none;
+    display: flex;
+}
+
+.link-categoria-shop,
+.link-categoria-shop-_personal,
+.link-categoria-shop-_kresla,
+.link-categoria-shop_stul,
+.link-categoria-shop_divan,
+.link-categoria-shop_resephen,
+.link-categoria-shop_ccconferenc,
+.link-categoria-shop-_stoli,
+.link-categoria-shop_aksessuar,
+.link-categoria-shop_goctinica,
+.link-categoria-shop_medical,
+.link-categoria-shop_metall,
+.link-categoria-shop_kuhni {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    /* justify-content: space-between; */
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.icon-categoria-left-menu {
+    width: 24px;
+    height: 24px;
+}
+
+.text-name-categoria {
+    color: #0e0e0e;
+    letter-spacing: 0;
+    text-indent: 0;
+    column-count: 1;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+}
+
+@media screen and (min-width: 1280px) {
+    .text-name-categoria {
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .txt_catalog {
+        padding-left: 30px;
+    }
+
+    .categiries_block {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .txt_catalog {
+        height: 70px;
+        padding-left: 30px;
+    }
+
+    .text_catalog {
+        font-size: 20px;
+    }
+
+    .categiries_block {
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        margin-left: 30px;
+    }
+
+    .icon-categoria-left-menu {
+        width: 28px;
+        height: 28px;
+    }
+
+    .text-name-categoria {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .txt_catalog {
+        display: none;
+    }
+}

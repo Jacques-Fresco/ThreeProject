@@ -23,7 +23,7 @@
     "react-slick": "^0.30.2",
     "redux": "^5.0.1",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.0.7",
+    "swiper": "^11.1.4",
     "ymaps": "^0.2.1"
   },
   "devDependencies": {

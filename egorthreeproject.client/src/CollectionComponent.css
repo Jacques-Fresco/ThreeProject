@@ -1,0 +1,228 @@
+.w-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+}
+
+.w-container:before,
+.w-container:after {
+    content: " ";
+    display: table;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 2;
+}
+
+.w-container:after {
+    clear: both;
+}
+
+.w-container .w-row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.w-layout-blockcontainer {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.collection_section {
+    background-color: rgba(255, 255, 255, 0);
+    width: auto;
+    min-height: auto;
+    margin-top: 20px;
+    margin-left: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.collection_section.card_collection {
+    margin-left: 0;
+}
+
+.container_collection {
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: none;
+    min-height: auto;
+    padding: 12px 20px 20px;
+    position: relative;
+}
+
+.container_collection.radius_6 {
+    width: auto;
+    height: auto;
+}
+
+.block_collection {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    display: flex;
+}
+
+.slider_collection {
+    background-color: #fff;
+    min-height: auto;
+    margin-top: 20px;
+    display: flex;
+}
+
+.w-slider {
+    position: relative;
+    height: 300px;
+    text-align: center;
+    background: #dddddd;
+    clear: both;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.mask-2 {
+    min-height: auto;
+}
+
+.w-slider-mask {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    height: 100%;
+    white-space: nowrap;
+}
+
+.left_collection_arrow.left-arrow_banner,
+.right_collection_arrow.right_arrow_banner {
+    display: none;
+}
+
+.left-arrow_banner {
+    background-color: var(--black-remi);
+    background-image: url('../images/Caret-left.svg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    top: auto;
+    bottom: 30px;
+    left: auto;
+    right: 85px;
+}
+
+.w-slider-arrow-left,
+.w-slider-arrow-right {
+  position: absolute;
+  width: 80px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  cursor: pointer;
+  overflow: hidden;
+  color: white;
+  font-size: 40px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.w-slider-arrow-left [class^='w-icon-'],
+.w-slider-arrow-right [class^='w-icon-'],
+.w-slider-arrow-left [class*=' w-icon-'],
+.w-slider-arrow-right [class*=' w-icon-'] {
+  position: absolute;
+}
+
+.w-slider-arrow-left:focus,
+.w-slider-arrow-right:focus {
+  outline: 0;
+}
+.w-slider-arrow-left {
+  z-index: 3;
+  right: auto;
+}
+
+.slide-nav-2 {
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .w-layout-blockcontainer {
+        max-width: 728px;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .collection_section {
+        width: auto;
+        margin-left: 250px;
+    }
+
+    .mask-2 {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .collection_section {
+        width: auto;
+        margin-left: 280px;
+    }
+
+    .mask-2 {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .collection_section {
+        margin-top: 30px;
+        margin-left: 360px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .collection_section.card_collection {
+        margin-left: 0;
+    }
+
+    .mask-2 {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .collection_section {
+        width: auto;
+        margin-left: 0%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .collection_section {
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mask-2 {
+        height: auto;
+    }
+}
