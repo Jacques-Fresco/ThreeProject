@@ -7,7 +7,7 @@
     <InvariantGlobalization>true</InvariantGlobalization>
     <SpaRoot>..\egorthreeproject.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
-    <SpaProxyServerUrl>https://localhost:5173</SpaProxyServerUrl>
+    <SpaProxyServerUrl>http://192.168.1.62:5173</SpaProxyServerUrl>
   </PropertyGroup>
 
   <ItemGroup>

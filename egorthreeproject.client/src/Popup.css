@@ -1,0 +1,104 @@
+
+
+/* .t-zoomable {
+    cursor: zoom-in;
+} */
+
+.t-col_6 {
+    max-width: 560px;
+}
+
+.t_col {
+    text-align: left;
+    display: inline;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+}
+
+.t-store__prod-popup__title-wrapper {
+    margin-bottom: 18px;
+}
+
+.t-name_xl {
+    font-size: 24px;
+    line-height: 1.35;
+}
+
+.t-name {
+    font-family: 'TildaSans',Arial,sans-serif;
+    font-weight: 600;
+    color: #000000;
+}
+
+.t-descr {
+    font-family: 'TildaSans',Arial,sans-serif;
+    font-weight: 300;
+    color: #000000;
+}
+
+.t-store__prod-popup__price-wrapper {
+    margin-top: 0;
+}
+
+.t-store__card__price-item, .t-store__prod-popup__price-item {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.t-name_md {
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.t-store__prod-popup__price_old {
+    margin-left: 5px;
+}
+
+.t-store__card__price_old, .t-store__prod-popup__price_old {
+    position: relative;
+    color: #bdbdbd;
+}
+
+.t-store__prod-popup__btn-wrapper {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.t-store__prod-popup__btn {
+    margin-bottom: 0;
+}
+
+.t-btn_sm {
+    height: 45px;
+    font-size: 14px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.t-btn {
+    display: inline-block;
+    font-family: 'TildaSans',Arial,sans-serif;
+    border: 0 none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-weight: 700;
+    background-image: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
