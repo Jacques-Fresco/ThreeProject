@@ -21,21 +21,99 @@
   font-size: 50px
 }
 
-.catalogDiv {
+.categoryDiv {
   /* transform: skewY(-2deg); */
-  margin: 60px auto 20px;
-  padding-bottom: 10px;
+  /* max-height: calc(100px - 20px); */
+  margin: 20px;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #ffffff;
+  background-color: #000000;
+  /* background: rgb(255 188 120); */
+  border-radius: 10px;
+
+  opacity: 0.8;
+  border-top-left-radius: 160px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 160px;
+  border-top-right-radius: 50px;
+}
+
+.center-content {
+  justify-content: center;
+}
+
+.categoryProducts {
+  position: relative; 
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
-  /* background: rgb(255 188 120); */
-  background: linear-gradient(-45deg, #b9c7a5, #bbb, #ffbc78, #ff9326);
-  background-size: 400% 400%;
-  animation: gradient 8s ease infinite;
-  margin-top: 60px;
-  width: 98%;
-  border-radius: 10px;
+}
+
+.rightContainerCatalog {
+    display: flex;
+    flex-direction: column;
+    width: calc(70% - 120px);
+    margin: 0 100px 20px 20px;
+}
+
+.product-grid.autoplay {
+  display: flex;
+  overflow-x: auto;
+  /* background-color: #e4ca4d; */
+  background-color: #ffed95;
+  margin: 0 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+
+.product-grid-inner {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.product-link {
+  flex: 0 0 auto;
+  margin: 0 30px;
+  text-decoration: none;
+}
+
+.card-content {
+  position: relative;
+}
+
+.product-price {
+  bottom: 20px;
+  right: 20px;
+  position: absolute;
+}
+
+.scrollButton {
+  position: absolute;
+  z-index: 1000;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.scrollButton.left, .scrollButton.right {
+  position: 'absolute';
+  z-index: 1000;
+  background: 'none'; 
+  border: 'none';
+  cursor: 'pointer';
+}
+
+.scrollButton.left {
+  left: 0;
+}
+
+.scrollButton.right {
+  right: 0;
 }
 
 .t-sociallinks__item {
@@ -112,6 +190,20 @@
   grid-gap: 20px;
   /* padding: 20px; */
   /* background-image: url('./pictuгes/90114433 (1).jpg'); */
+  /* max-width: 1150px; */
+  width: 100%;
+  height: 440px;
+  -webkit-overflow-scrolling: touch; /* Плавная прокрутка на мобильных устройствах */
+
+
+  overflow-x: auto; 
+  background-color: #bbbbbb; 
+  border-radius: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 0 20px;
+  padding: 20px; 
+  scroll-behavior: smooth;
 }
 
 .product-card {
@@ -142,6 +234,7 @@
   flex-direction: column;
   width: 80%;
   width: 240px;
+  min-width: 200px;
   /* Можно задать максимальную ширину */
   padding: 15px;
   border-radius: 1rem;

@@ -40,7 +40,7 @@ const categories = [
 
 const MenuCategories = () => {
   return (
-    <div style={{display: 'flex', flexDirection: 'column', width: '27%', marginBottom: '20px'}}>
+    <div className="leftContainerCatalog">
       <div className="txt_catalog">
         <div className="text_catalog">Каталог товаров</div>
       </div>
@@ -49,7 +49,7 @@ const MenuCategories = () => {
         <img src="images/logo.svg" loading="lazy" width="172" alt="" className="logo_img" />
       </div> */}
 
-        <div className="categiries_block">
+        <div className="categiries_block" style={{display: 'flex', alignItems: 'center'}}>
             <ul className="scrollableContainer">
               {categories.map((category, index) => (
                 <a
