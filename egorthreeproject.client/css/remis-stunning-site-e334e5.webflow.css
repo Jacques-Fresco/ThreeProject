@@ -405,6 +405,7 @@
 } */
 
 .text_catalog {
+  margin: 10px;
   color: #0e0e0e;
   width: auto;
   font-family: Inter, sans-serif;

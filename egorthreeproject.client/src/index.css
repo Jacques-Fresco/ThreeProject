@@ -57,6 +57,27 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./fonts/Carre-JWja.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFontR';
+  src: url('./fonts/BloggersansBolditalic-WaKV.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFontT';
+  src: url('./fonts/Mesiu-DYJax.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

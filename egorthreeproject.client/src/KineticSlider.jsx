@@ -19,8 +19,8 @@ function KineticSlider() {
     <div className="content_Kinetic">
       <div id="rgbKineticSlider" className="rgbKineticSlider"></div>
       <nav className='nav_clider'>
-        <a href="#" class="main-nav prev" data-nav="previous">Prev <span></span></a>
-        <a href="#" class="main-nav next" data-nav="next">Next <span></span></a>
+        <a href="#" className="main-nav prev" data-nav="previous">Prev <span></span></a>
+        <a href="#" className="main-nav next" data-nav="next">Next <span></span></a>
       </nav>
     </div>
   );
