@@ -1,0 +1,295 @@
+/* font-family: "Poppins", sans-serif; */
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+}
+a,
+button,
+img {
+  transition: all 0.5s;
+}
+.white-bg {
+  background-color: var(--white);
+}
+.black-bg {
+  background-color: var(--black);
+}
+h2.title {
+  font-size: 272px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.06);
+  text-transform: uppercase;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+p {
+  margin: 0 0 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-1);
+}
+.paragraph p:first-child:first-letter {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+}
+.common-btn {
+  margin: 0;
+  padding: 17px 23px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--white);
+  background-color: var(--primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.15s;
+  user-select: none;
+}
+.common-btn::before {
+  left: 6px;
+  top: 6px;
+  position: absolute;
+  content: "";
+  border: 1px solid var(--primary);
+  height: 100%;
+  width: 100%;
+  transition: all 0.15s;
+  z-index: -1;
+}
+.common-btn:hover::before {
+  top: 0;
+  left: 0;
+}
+.common-btn:hover,
+.common-btn:focus {
+  color: var(--white);
+}
+.common-btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+.common-btn img {
+  width: 24px;
+}
+
+/* Banner */
+.banner {
+  background-color: var(--black);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.banner-img {
+  position: relative;
+  overflow: hidden;
+}
+.banner-img::before {
+  position: absolute;
+  content: "";
+  background-color: rgb(0 0 0 / 60%);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.banner-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.banner-box {
+  padding: 60px;
+  position: relative;
+  z-index: 1;
+}
+.banner-box h1 {
+  position: absolute;
+  top: 11%;
+  left: 0;
+  font-size: 339px;
+  line-height: 370px;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-image: url(https://www.yudiz.com/codepen/interior-design/mask-img.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.6;
+  color: var(--white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-family: "Righteous", cursive;
+  z-index: -1;
+}
+.banner-text {
+  margin: 100px 0 0;
+  padding: 135px 0 0 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  max-width: 80%;
+  overflow: hidden;
+}
+.banner-text h2 {
+  margin: 0 0 8px;
+  font-size: 104px;
+  line-height: 1.1;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--white);
+  position: relative;
+  user-select: none;
+}
+.banner-text h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgb(255 255 255 / 72%);
+  position: relative;
+}
+
+/* Company */
+.company-section {
+  padding: 206px 0 0;
+}
+.compy-box {
+  padding: 0;
+}
+.compy-box::before {
+  left: 30px;
+  top: -30px;
+  position: absolute;
+  content: "";
+  border: 2px solid var(--primary);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.compy-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Projects */
+.projects-section {
+  padding: 217px 0 0;
+}
+.project-box {
+  width: 100%;
+  height: 334px;
+  position: relative;
+}
+.project-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.project-content {
+  padding: 2px 32px;
+  position: relative;
+  z-index: 1;
+}
+.project-content::before,
+.project-content::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 130px;
+  background: var(--color-3);
+}
+.project-content::after {
+  right: 14px;
+  bottom: 3px;
+}
+.project-content::before {
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.project-content p {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 26px;
+}
+.project-content .common-btn {
+  padding: 8px 19px;
+}
+.project-content .common-btn img {
+  position: relative;
+}
+
+/* Contact */
+.contact-us {
+  padding: 100px 0 76px;
+}
+.contact-us h4 {
+  margin: 0 0 40px;
+  font-size: 32px;
+  line-height: 48px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-1);
+}
+.contact-info {
+  padding: 56px;
+  position: relative;
+  z-index: 1;
+}
+.contact-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-5);
+  z-index: -2;
+}
+.contact-border {
+  left: 24px;
+  top: -24px;
+  position: absolute;
+  border: 2px solid var(--color-6);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.contact-info h3 {
+  margin: 0 0 24px;
+  font-size: 64px;
+  line-height: 72px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--color-3);
+}
+.contact-info p {
+  margin-bottom: 48px;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--color-3);
+}

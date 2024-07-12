@@ -1,0 +1,84 @@
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-im {
+    border-top-left-radius: 160px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 160px;
+    border-top-right-radius: 50px;
+    margin: 0 80px;
+    position: relative;
+    height: 87vh;
+    overflow: hidden;
+    background-color: #dfe1c8;
+}
+
+.inner-container-im {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    border-radius: inherit;
+    overflow: hidden;
+    background-color: inherit;
+}
+
+.slider-im {
+    background: aliceblue;
+    height: 100%;
+    overflow: hidden;
+    perspective: 300px;
+    perspective-origin: 50% -10%;
+}
+
+.card-im {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 50%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: #000;
+}
+
+@media (max-width: 500px) {
+    .slider-im {
+        top: 27vh;
+    }
+
+    .card-im {
+        height: 300px;
+    }
+}
+
+.card-im img {
+    position: absolute;
+    opacity: 0.85;
+}
+
+.copy-im {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    font-size: 6vw;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #dfe1c8;
+    font-family: "Raleway";
+}

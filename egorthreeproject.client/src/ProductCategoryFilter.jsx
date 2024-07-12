@@ -181,8 +181,10 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
                                                     </div>
 
                                                     <div className="card_details">
-                                                        <h5 className="card-title" style={{ fontFamily: 'MyCustomFontT, sans-serif', color: color }}>{product.name}</h5>
+                                                        
                                                     </div>
+                                            <h5 className="card-title" style={{ fontFamily: 'MyCustomFontT, sans-serif', color: color }}>{product.name}</h5>
+
                                                 </div>
                                             </div>
                                         </Link>
