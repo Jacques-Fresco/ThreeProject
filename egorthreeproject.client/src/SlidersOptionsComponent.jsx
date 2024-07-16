@@ -68,7 +68,6 @@ const SlidersOptionsComponent = () => {
         />
       ))}
       <a href="http://victorofvalencia-blog.tumblr.com" target="_blank" rel="noopener noreferrer" className="credit">
-        Photos from Victor of Valencia on tumblr
       </a>
     </div>
   );

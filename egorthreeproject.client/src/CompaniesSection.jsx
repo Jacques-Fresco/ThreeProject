@@ -4,9 +4,9 @@ import './CompaniesSection.scss';
 const companies = [
   {
     imgSrc: "images/zeotaog65r7gaxhc8anad2en247yokc4_1250x900-p-1600.jpg",
-    altText: "Trust & Co.",
-    name: "trust & co.",
-    description: "Fill out the form and the algorithm will offer the right team of experts",
+    // altText: "Trust & Co.",
+    name: "Стильные и функциональные интерьеры для бизнеса",
+    description: "Мы создаем интерьеры для лучших компаний, сочетающие стиль, комфорт и функциональность.",
     tags: [
       { name: "brandingCs", color: "#d3b19a" },
       { name: "packagingCs", color: "#70b3b1" }
@@ -14,9 +14,9 @@ const companies = [
   },
   {
     imgSrc: "images/ztm0c30krszud5aa84jg7lh3cpyhjups_1250x900-p-1600.jpg",
-    altText: "Tonic",
-    name: "tonic",
-    description: "Fill out the form and the algorithm will offer the right team of experts",
+    // altText: "Tonic",
+    name: "Современные офисные пространства для продуктивной работы",
+    description: "Элегантный и современный офис, идеально подходящий для продуктивной работы и важных встреч.",
     tags: [
       { name: "brandingCs", color: "#d3b19a" },
       { name: "marketingCs", color: "#d05fa2" }
@@ -24,9 +24,9 @@ const companies = [
   },
   {
     imgSrc: "images/tyuf9e6ckdfse1ow4a84n9t3v7ag0qk0_1250x900-p-1600.jpg",
-    altText: "Shower Gel",
-    name: "shower gel",
-    description: "Fill out the form and the algorithm will offer the right team of experts",
+    // altText: "Shower Gel",
+    name: "Комфортные и эффективные рабочие кабинеты",
+    description: "Просторный и стильный рабочий кабинет с акцентом на комфорт и эффективность.",
     tags: [
       { name: "brandingCs", color: "#d3b19a" },
       { name: "packagingCs", color: "#70b3b1" },
@@ -64,10 +64,9 @@ const CompanyCard = ({ imgSrc, altText, name, description, tags }) => (
 );
 
 const CompaniesSection = () => (
-  <section>
-    <h2>
-      leading companies 
-      have trusted us
+  <section style={{maxWidth: '2300px', margin: '0 auto'}}>
+    <h2 style={{ textAlign: 'center' }}>
+      Идеальные решения для вашего рабочего пространства
     </h2>
     <div className="container-cs">
       {companies.map((company, index) => (

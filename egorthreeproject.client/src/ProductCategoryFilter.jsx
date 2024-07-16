@@ -181,10 +181,23 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
                                                     </div>
 
                                                     <div className="card_details">
-                                                        
-                                                    </div>
-                                            <h5 className="card-title" style={{ fontFamily: 'MyCustomFontT, sans-serif', color: color }}>{product.name}</h5>
 
+                                                    </div>
+                                                    <h5 className="card-title" style={{ fontFamily: 'MyCustomFontT, sans-serif', color: color }}>{product.name}
+                                                        {product.priceNew && (
+                                                            <span className="badgePrice">-30%</span>
+                                                        )}
+                                                        <div className="wishlistAndCart btn-wishlist">
+                                                            <svg width="24" height="24">
+                                                                <use xlinkHref="#heart"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div className="wishlistAndCart btn-cart">
+                                                            <svg width="18" height="18">
+                                                                <use xlinkHref="#cart"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </h5>
                                                 </div>
                                             </div>
                                         </Link>

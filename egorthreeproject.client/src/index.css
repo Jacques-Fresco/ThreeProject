@@ -78,6 +78,27 @@ button:focus-visible {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'MyCustomFontMSR';
+  src: url('./fonts/ДУРИК.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFontO2';
+  src: url('./fonts/Obrazec-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFontHNL';
+  src: url('./fonts/HelveticaNeue-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

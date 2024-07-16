@@ -8,9 +8,16 @@ section {
   color: #111;
 
   h2 {
-    text-transform: capitalize;
+    // text-transform: capitalize;
     letter-spacing: 0.025em;
     font-size: clamp(2rem, 1.8125rem + 0.75vw, 2.6rem);
+    // font-family: 'MyCustomFontO2';
+    text-align: center;
+    background: #a6713a;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    margin: 20px 300px;
   }
 
   a {
@@ -19,21 +26,24 @@ section {
   }
 
   .container-cs {
-    margin-top: 5em;
+    // margin-top: 5em;
+    margin: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 2rem;
 
     .card-cs {
-      &:nth-child(1) .box-cs .icon-cs .iconBox-cs {
-        background: #d3b19a;
-      }
-      &:nth-child(2) .box-cs .icon-cs .iconBox-cs {
-        background: #70b3b1;
-      }
-      &:nth-child(3) .box-cs .icon-cs .iconBox-cs {
-        background: #d05fa2;
-      }
+      // &:nth-child(1) .box-cs .icon-cs .iconBox-cs {
+      //   background: #d3b19a;
+      // }
+      // &:nth-child(2) .box-cs .icon-cs .iconBox-cs {
+      //   background: #70b3b1;
+      // }
+      // &:nth-child(3) .box-cs .icon-cs .iconBox-cs {
+      //   background: #d05fa2;
+      // }
+
+      // max-width: 800px;
 
       ul {
         margin: 0;
@@ -69,15 +79,24 @@ section {
 
       .content-cs {
         padding: 0.938rem 0.625rem;
+        background: #c3c3c3;
+        margin: 20px 0;
+        border-radius: 10px;
 
         h3 {
+            margin: 20px 20px 0;
           text-transform: capitalize;
           font-size: clamp(1.5rem, 1.3909rem + 0.4364vw, 1.8rem);
+          font-family: 'MyCustomFontMSR';
+          font-size: 25px;
         }
 
         p {
           margin: 0.625rem 0 1.25rem;
           color: #565656;
+          background: white;
+          padding: 15px;
+          border-radius: 10px;
         }
       }
     }

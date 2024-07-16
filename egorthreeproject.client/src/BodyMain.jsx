@@ -6,6 +6,7 @@ import SlidersOptionsComponent from './SlidersOptionsComponent.jsx';
 import CompaniesSection from './CompaniesSection.jsx';
 import ImageSlider  from './ImageSlider.jsx';
 import ProjectsSection from './ProjectsSection.jsx';
+import AboutComponent from './AboutComponent.jsx'
 
 function BodyMain({ products, categories, pictures }) {
 
@@ -15,8 +16,9 @@ function BodyMain({ products, categories, pictures }) {
             {/* <ComponentSlider /> */}
             <SlidersOptionsComponent />
             <ProductCategoryFilter products={products} categories={categories} pictures={pictures} />
-            <CompaniesSection />
-            <ImageSlider />
+            <AboutComponent />
+            {/* <CompaniesSection /> */}
+            {/* <ImageSlider /> */}
             {/* <ProjectsSection /> */}
         </div>
     )

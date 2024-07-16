@@ -82,6 +82,7 @@
 }
 
 .text_catalog {
+    font-family: 'MyCustomFontMSR';
     color: white;
     font-size: 35px;
 }
@@ -129,7 +130,7 @@
     letter-spacing: 0;
     text-indent: 0;
     column-count: 1;
-    font-family: Inter, sans-serif;
+    font-family: sans-serif;
     font-size: 14px;
 }
 
@@ -164,9 +165,9 @@
         /* padding-left: 30px; */
     }
 
-    .text_catalog {
+    /* .text_catalog {
         font-size: 20px;
-    }
+    } */
 
     .categiries_block {
         grid-column-gap: 30px;
