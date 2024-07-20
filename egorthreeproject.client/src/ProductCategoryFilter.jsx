@@ -106,7 +106,7 @@ const ProductCategoryFilter = ({ products, categories, pictures }) => {
 
     return (
         <div style={{ position: 'sticky', zIndex: '1201' }}>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', maxWidth: '2200px', margin: '0 auto' }}>
                 <MenuCategories />
                 <div className='rightContainerCatalog'>
                     <div className="categoryDiv">

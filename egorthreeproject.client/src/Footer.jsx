@@ -47,7 +47,7 @@ function Footer() {
     return (
         <div className="footer_component">
             <div style={{ background: '#ffffff' }}>
-                <div className="t-title" field="btitle">Мы гордимся нашими продуктами</div>
+                {/* <div className="t-title" field="btitle">Мы гордимся нашими продуктами</div>
                 <div className="t-col-c" style={{ display: 'flex', marginTop: '50px', marginBottom: '60px' }}>
                     {componentT.map((item, index) => (
                         <div className={`t-col t-col_scrolledColor ${windowWidth <= 866 ? 't-img_component' : ''}`} key={index}>
@@ -64,9 +64,9 @@ function Footer() {
                             </div>
 
                         </div>
-                    ))}
+                    ))} */}
                     {/* <div className={`t-col ${isScrolled ? 't-col_scrolledColor' : ''}`}> */}
-                </div>
+                {/* </div> */}
                 <div style={{ backgroundColor: '#faf9f5', paddingBottom: "30px" }}>
                     <div style={{ textAlign: 'center' }}>
                         <div className="t-title">Следите за нами в <a href="https://www.instagram.com/tildapublishing/" style={{ color: 'rgb(0, 0, 0)', borderBottom: '1px solid rgb(0, 0, 0)', boxShadow: 'none', textDecoration: 'none' }}>instagram</a></div>

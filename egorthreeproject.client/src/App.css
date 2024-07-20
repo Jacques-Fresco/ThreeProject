@@ -8,81 +8,42 @@ body {
 }
 
 .header {
-    display: block;
-    background: #333;
-    color: #fff;
+    background: #fff;
     position: sticky;
-    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 2000;
-    /* opacity: 0.90; */
     transition: opacity 0.5s ease;
 }
-
-/* .paralax {
-    height: 1000px;
-    min-height: 1000px;
-    background: #ededed;
-    position: relative;
-    z-index: 1;
-} */
 
 .scroll-to-top-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: inline-block;
     width: 40px;
     height: 40px;
     background-color: transparent;
     border: none;
     cursor: pointer;
     z-index: 1000;
-
-
-
-
     -webkit-tap-highlight-color: transparent;
-    /* Убираем подсветку при нажатии (для устройств с сенсорным экраном) */
     -webkit-touch-callout: none;
-    /* Отключаем контекстное меню на устройствах с сенсорным экраном */
     -webkit-user-select: none;
-    /* Запрещаем выделение текста на устройствах с сенсорным экраном */
     -moz-user-select: none;
-    /* Запрещаем выделение текста в Firefox */
     -ms-user-select: none;
-    /* Запрещаем выделение текста в Internet Explorer */
     user-select: none;
-    /* Запрещаем выделение текста */
     -webkit-appearance: none;
-    /* Убираем стандартные стили для элемента */
     -moz-appearance: none;
-    /* Убираем стандартные стили для элемента */
     appearance: none;
-    /* Убираем стандартные стили для элемента */
-    background-color: transparent;
-    /* Убираем фоновый цвет */
-    border: none;
-    /* Убираем границу */
     padding: 0;
-    /* Убираем отступы */
     margin: 0;
-    /* Убираем отступы */
-    cursor: pointer;
-    /* Устанавливаем курсор в виде указателя */
-    font: inherit;
-    /* Используем наследуемый шрифт */
     color: inherit;
-    /* Используем наследуемый цвет текста */
     text-decoration: none;
-    /* Убираем стандартное оформление ссылки */
 }
 
 .scroll-to-top-button:focus {
     outline: none;
-    /* Убираем обводку */
 }
 
 .scroll-to-top-button::before {
@@ -94,91 +55,80 @@ body {
     width: 20px;
     height: 20px;
     border-top: 10px solid #a05f1b;
-    /* коричневый цвет */
     border-right: 10px solid #a05f1b;
-    /* коричневый цвет */
     border-radius: 100px;
 }
 
-/* Убираем бордер и анимации при нажатии */
 .scroll-to-top-button:active {
     border: none;
 }
 
-/* Убираем изменения при наведении */
-/* .scroll-to-top-button:hover::before {
-    border-top-color: #a05f1b;
-    border-right-color: #a05f1b;
-} */
-
 .scroll-to-top-button:hover {
     color: #000;
-    /* Цвет текста */
     background-color: transparent;
-    /* Фон */
 }
 
 .logocl {
-    /* width: 100px; */
-    /* height: 100px; */
     width: 50px;
     height: 50px;
     display: block;
-    margin: 0 20px;
 }
 
 .menudivPC {
     display: flex;
-    justify-content: center;
-    /* Центрируем по горизонтали */
+    justify-content: space-between;
     align-items: center;
     flex-grow: 1;
 }
 
 .clickmenu {
-    /* width: 150px;
-    height: 100px;
-    align-items: flex-start;//
-    display: table-cell;
-    text-align: center; */
-
     display: flex;
     justify-content: center;
-    /* Центрируем по горизонтали */
     align-items: center;
-    /* Центрируем по вертикали */
     height: 100px;
 }
 
 .clickmenu>div {
     display: flex;
     justify-content: center;
-    /* Центрируем по горизонтали */
     align-items: center;
-    /* Центрируем по вертикали */
 }
 
 .rightMenuBlock>svg {
-    padding: 0px 5px;
+    padding: 0 5px;
 }
 
 .rightMenuBlock svg:last-child {
     padding-right: 20px;
-    /* Больше отступ справа для последнего элемента */
 }
 
 .menu {
     font-size: 18px;
     font-family: Arial, sans-serif;
     justify-content: center;
-    /* Центрирование по горизонтали */
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    /* Позволяет элементам переноситься на новую строку */
+}
+
+.menu .activeButton {
+    background: #c1bfbf;
+    border-radius: 15px;
+    border: 6px #fcea93 solid;
+    border-top-left-radius: 160px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 160px;
+    border-top-right-radius: 50px;
+}
+
+.menu .activeButton a {
+    color: #fff;
+}
+
+.menu li a:hover {
+    color: #c1bfbf;
 }
 
 .menu a {
@@ -189,34 +139,15 @@ body {
 .menu li a {
     color: #000000;
     text-decoration: none;
-    padding: 0px 20px;
+    padding: 0 30px;
     display: block;
     position: relative;
+    font-size: 19px;
+    font-weight: 600;
 }
 
-.menu li a::after {
-    content: '';
-    position: absolute;
-    left: 0px;
-    bottom: -5px;
-    width: 100%;
-    height: 3px;
-    background-color: #a05f1b;
-    transition: transform 0.9s ease-in-out;
-    transform: scaleX(0);
-    /* transform-origin: bottom right; */
-}
-
-.menu li.active-left a::after {
-    transform-origin: bottom right;
-    transform: scaleX(1);
-}
-
-.menu li.active-right a::after {
-    transform-origin: bottom left;
-    transform: scaleX(1);
-}
-
+.menu li.active-left a::after,
+.menu li.active-right a::after,
 .menu li.activeButton a::after {
     transform: scaleX(1);
 }
@@ -224,12 +155,10 @@ body {
 .slide-content {
     position: relative;
     height: 100%;
-    /* Высота блока slide-content */
     width: 100%;
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    /* Обрезаем градиентный фон, чтобы он не выходил за пределы элемента */
 }
 
 .slide-background {
@@ -249,24 +178,19 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, transparent, rgb(0 0 0 / 20%));
-    /* Градиент для затемнения */
 }
 
 .slide-text {
     position: absolute;
     bottom: 0;
     right: 0;
-    /* Выравниваем блок справа */
     width: 600px;
-    /* Ширина блока slide-text */
     padding: 0 80px 60px 0;
     text-align: right;
     font-family: 'Beer money';
     font-size: 24px;
     color: white;
-    /* Установка цвета текста */
     z-index: 2;
-    /* Перемещаем текст над затемнением */
 }
 
 @media (max-width: 890px) {
@@ -280,24 +204,22 @@ body {
 
 @media (min-width: 900px) and (max-width: 1000px) {
     .menu li a {
-        padding: 0px 10px;
+        padding: 0 10px;
     }
 }
 
-
 .headerS {
     background-color: rgba(255, 255, 255, 1);
-    /* height: 80px; */
     height: 20px;
-    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    padding: 30px 0 20px;
+    padding: 30px 0;
 }
 
 .menudivMb {
     display: none;
-    /* overflow: hidden; */
 }
 
 input {
@@ -307,9 +229,21 @@ input {
 .childPath {
     position: absolute;
     bottom: 25%;
-    /* Разместить по вертикали посередине */
     right: 25%;
-    /* Разместить по горизонтали посередине */
+}
+
+.menuNavPC {
+    /* border-radius: 15px; */
+    /* background: #ffed95; */
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.menuNavPC.open {
+    transform: translateX(-200px);
 }
 
 @media screen and (max-width: 956px) {
@@ -324,7 +258,6 @@ input {
         justify-content: center;
         align-items: center;
         height: 80px;
-
         flex-direction: row;
     }
 
@@ -335,9 +268,6 @@ input {
 
     .logocl {
         margin: 0;
-    }
-
-    .logocl {
         height: 55px;
         width: 55px;
         transform: translateX(50%);
@@ -346,9 +276,7 @@ input {
 
     .menudivMb {
         display: flex;
-        /* Используем flexbox */
         justify-content: center;
-        /* Центрируем дочерние элементы по горизонтали */
         position: relative;
         flex-direction: column;
         background: rgb(64 66 75 / 48%);
@@ -364,12 +292,10 @@ input {
         align-items: center;
         background: rgba(0, 0, 0, 0.65);
         width: 0;
-        /* Начальная ширина 0 */
         padding: 50px 0;
         overflow-x: hidden;
         margin: 0;
         transition: width 1s ease;
-        /* Анимация изменения ширины */
         border-bottom-left-radius: 20px;
     }
 
@@ -377,7 +303,6 @@ input {
         list-style-type: none;
         padding: 10px 20px;
         margin: 3px 0;
-
         text-align: center;
     }
 
@@ -391,11 +316,8 @@ input {
         color: #fff;
     }
 
-
-
     .menuNav .activeButton a {
         background: #a05f1b;
-        /* background: #adadad; */
     }
 
     .menuClick {
@@ -407,7 +329,6 @@ input {
     }
 
     .menuClick label {
-        /* border: solid; */
         width: 45px;
         height: 45px;
         position: absolute;
@@ -427,27 +348,23 @@ input {
 
     input:checked~.menuNav {
         display: flex;
-        /* height: 100vh; */
         padding: 50px 0px;
     }
-
-
 
     .scroll-to-top-button {
         cursor: pointer;
     }
 }
 
-
 #nav-icon {
     width: 50px;
     height: 45px;
     position: relative;
-    /* margin: 30px auto; */
     transform: rotate(0deg);
     transition: .5s ease-in-out;
-    /* cursor: pointer; */
     margin-bottom: -3px;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 #nav-icon span {
@@ -497,5 +414,43 @@ input {
 
 .menuNav.open {
     width: 70%;
-    /* Установка ширины на 100% при раскрытии */
+}
+
+.menuNavPC.hide {
+    transform: translateX(-200px);
+    opacity: 0;
+}
+
+.menuNavPC.show {
+    transform: translateX(0);
+    opacity: 1;
+    height: 46px;
+    position: relative;
+    z-index: 2;
+    margin-left: 50px;
+}
+
+@media (min-width: 1530px) {
+    .menuNavPC.show {
+        /* Any specific styles for wider screens */
+    }
+}
+
+.header {
+    transition: opacity 0.5s ease;
+}
+
+.header.transparent {
+    opacity: 0.8;
+}
+
+.header .logocl-container {
+    display: flex;
+    align-items: center;
+    opacity: 1 !important;
+    margin-left: 20px;
+}
+
+.logocl {
+    opacity: 1 !important;
 }
