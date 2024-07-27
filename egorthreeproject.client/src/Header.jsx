@@ -56,7 +56,7 @@ function Header() {
       setIsOpen(false);
       setTimeout(() => {
         setIsNavVisible(false);
-      }, 100);
+      }, 500);
     } else {
       // Show navigation
       setIsNavVisible(true);
@@ -100,7 +100,7 @@ function Header() {
               </ul>
             </nav>
           )}
-          <SearchBarComponent />
+          <SearchBarComponent isOpen={isOpen} />
           <div id="nav-icon" className={isOpen ? 'open' : ''} onClick={handleToggle}>
             <span></span>
             <span></span>

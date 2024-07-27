@@ -48,10 +48,18 @@
 }
 
 .scrollableContainer > a {
-    margin: 5px 0;
+    margin: 5px 0 5px 15px;
     border: 2px white solid;
     border-radius: 30px;
     padding: 5px;
+}
+
+.scrollableContainer .MOB {
+    margin: 5px;
+}
+
+.MOB img {
+    padding: 10px;
 }
 
 .list::-webkit-scrollbar {

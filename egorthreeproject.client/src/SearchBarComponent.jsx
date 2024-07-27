@@ -1,22 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchBarComponent.css';
 
-const SearchBarComponent = () => {
-  const [searched, setSearched] = useState(false);
+const SearchBarComponent = ({ isOpen }) => {
+  const [centered, setCentered] = useState(false);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (e.target.search.value) {
-      document.activeElement.blur();
-      setSearched(true);
-      setTimeout(() => setSearched(false), 600);
-    }
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      const menuNav = document.querySelector('.menuNavPC.show');
+      if (!menuNav) {
+        setCentered(true);
+      } else {
+        setCentered(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isOpen]);
 
   return (
-    <div className='top-search-container-PC'>
+    <div className={`top-search-container-PC ${centered ? 'center' : 'not-center'}`}>
+      <div className={`wishlistAndCart ${centered ? '' : 'noneNC'}`} style={{ background: '#ffed95', borderRadius: '5px', padding: '5px', border: '3px #f6d8ff solid', right: '115%', height: 'inherit', bottom: '-8px', cursor: 'pointer' }}>
+        <svg width="34" height="34">
+          <use xlinkHref="#heart"></use>
+        </svg>
+      </div>
+      <div className={`wishlistAndCart ${centered ? '' : 'noneNC'}`} style={{ background: '#f6d8ff', borderRadius: '5px', padding: '5px', border: '3px #ffed95 solid', right: '101%', height: 'inherit', bottom: '-8px', cursor: 'pointer' }}>
+        <svg width="34" height="34">
+          <use xlinkHref="#cart"></use>
+        </svg>
+        <span></span>
+      </div>
+      <div className={`wishlistAndCart ${centered ? '' : 'noneNC'}`} style={{ background: 'rgb(201 49 49)', borderRadius: '5px', padding: '5px', border: '3px rgb(255 119 119) solid', right: '-30%', height: 'inherit', bottom: '-8px', cursor: 'pointer' }}>
+        <svg fill='rgb(255 119 119)' width="50" height="50">
+          <use xlinkHref="#personNEntered"></use>
+        </svg>
+      </div>
+      <div className={`wishlistAndCart ${centered ? '' : 'noneNC'}`} style={{ background: 'rgb(76 211 52)', borderRadius: '5px', padding: '5px', border: '3px rgb(255 119 119) solid', right: '-15%', height: 'inherit', bottom: '-8px', cursor: 'pointer' }}>
+        <svg fill='rgb(164 255 149)' width="50" height="50">
+          <use xlinkHref="#personEntered"></use>
+        </svg>
+      </div>
       <div className="search-container">
-        <form className={`search ${searched ? 'search--searched' : ''}`} onSubmit={handleSearch}>
+        <form className="search">
           <label className="search__label" htmlFor="search">Поиск</label>
           <div className="search__input-wrap">
             <input className="search__input" id="search" type="text" name="search" placeholder="Search…" />
@@ -32,7 +61,6 @@ const SearchBarComponent = () => {
         </form>
       </div>
     </div>
-
   );
 };
 

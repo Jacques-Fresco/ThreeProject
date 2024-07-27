@@ -17,6 +17,10 @@ body {
     transition: opacity 0.5s ease;
 }
 
+.header.transparent:hover {
+    opacity: 1;
+}
+
 .scroll-to-top-button {
     position: fixed;
     bottom: 20px;
@@ -128,7 +132,7 @@ body {
 }
 
 .menu li a:hover {
-    color: #c1bfbf;
+    color: #ffed95;
 }
 
 .menu a {
@@ -436,10 +440,6 @@ input {
     }
 }
 
-.header {
-    transition: opacity 0.5s ease;
-}
-
 .header.transparent {
     opacity: 0.8;
 }
@@ -453,4 +453,17 @@ input {
 
 .logocl {
     opacity: 1 !important;
+}
+
+.wishlistAndCart>span {
+    background-color: #e94560;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    height: 15px;
+    position: absolute;
+    right: -15%;
+    text-align: center;
+    top: -5px;
+    width: 15px;
 }

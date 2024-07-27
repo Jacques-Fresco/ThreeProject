@@ -61,8 +61,8 @@
 .leftContainerCatalog {
     display: flex;
     flex-direction: column;
-    width: calc(30% - 120px);
-    margin: 0 20px 20px 100px;
+    width: calc(30% - 40px);
+    margin: 0 0 20px 20px;
 }
 
 .txt_catalog {
@@ -80,12 +80,19 @@
     border-radius: 20px;
     display: flex;
     justify-content: center;
+    height: 77px;
 }
 
 .text_catalog {
     font-family: 'MyCustomFontMSR';
     color: white;
     font-size: 35px;
+}
+
+@media (max-width: 1420px) {
+    .text_catalog {
+        font-size: 25px;
+    }
 }
 
 .categiries_block {
@@ -124,6 +131,7 @@
 .icon-categoria-left-menu {
     width: 24px;
     height: 24px;
+    padding-left: 10px;
 }
 
 .text-name-categoria {
@@ -135,11 +143,11 @@
     font-size: 14px;
 }
 
-@media screen and (max-width: 1658px) {
+/* @media screen and (max-width: 1658px) {
     .txt_catalog {
         height: 140px;
     }
-}
+} */
 
 @media screen and (min-width: 1280px) {
     .text-name-categoria {
@@ -161,10 +169,10 @@
 
 @media screen and (min-width: 1920px) {
 
-    .txt_catalog {
+    /* .txt_catalog {
         height: 70px;
-        /* padding-left: 30px; */
-    }
+        padding-left: 30px;
+    } */
 
     /* .text_catalog {
         font-size: 20px;
@@ -186,8 +194,8 @@
     }
 }
 
-@media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
     .txt_catalog {
         display: none;
     }
-}
+} */

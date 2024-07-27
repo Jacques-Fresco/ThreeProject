@@ -45,10 +45,6 @@ const MenuCategories = () => {
         <div className="text_catalog">Каталог товаров</div>
       </div>
       <div className="menu-categories">
-        {/* <div className="logo">
-        <img src="images/logo.svg" loading="lazy" width="172" alt="" className="logo_img" />
-      </div> */}
-
         <div className="categiries_block" style={{display: 'flex', alignItems: 'center'}}>
             <ul className="scrollableContainer">
               {categories.map((category, index) => (
