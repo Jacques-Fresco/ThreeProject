@@ -426,11 +426,16 @@
 .search {
   justify-content: space-between;
   align-items: center;
-  width: auto;
+  width: 140px;
   max-width: none;
   height: 100%;
   margin-left: 0;
   display: flex;
+  transition: width 0.6s ease;
+}
+
+.search-container:hover .search {
+  width: 90%; /* Width when hovering over the container */
 }
 
 .search_block {

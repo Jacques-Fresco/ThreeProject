@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import './App.css';
 import SearchBarComponent from './SearchBarComponent.jsx';
+import EntryAndExitComponent from './EntryAndExitComponent.jsx';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleLoginOrRegistration } from './features/loginOrRegistrationSlice';
 
 function Header() {
   const [activeButton, setActiveButton] = useState('');
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isNavVisible, setIsNavVisible] = useState(false); // Initial state is false
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
+  const isActive = useSelector((state) => state.toggleLoginOrRegistration.isActive);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -51,6 +58,11 @@ function Header() {
   };
 
   const handleToggle = () => {
+
+    if(isActive == true) {
+      dispatch(toggleLoginOrRegistration());
+    }
+
     if (isOpen) {
       // Hide navigation and set a timer to remove the element after 0.5 seconds
       setIsOpen(false);
@@ -82,6 +94,14 @@ function Header() {
 
   return (
     <header className={`header ${isHeaderTransparent ? 'transparent' : ''}`}>
+      <CSSTransition
+        in={isActive}
+        timeout={300} 
+        classNames='entryAndExitComponent'
+        unmountOnExit
+        >
+        <EntryAndExitComponent />
+      </CSSTransition>
       <div className="headerS">
         <div className='menudivPC'>
           <div className='logocl-container'>

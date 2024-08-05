@@ -19,6 +19,21 @@ import icon13 from './pictures/imgs_menu_categorie/icon13.svg';
 import icon14 from './pictures/imgs_menu_categorie/icon14.svg';
 import icon15 from './pictures/imgs_menu_categorie/icon15.svg';
 
+// const icon = 'https://cdn.mnogomeb.ru/resize_cache/99186/d039554dd0e72ac69780bcb01f2c57ab/iblock/4d0/submenu_item_2.png';
+// const icon2 = 'https://cdn.mnogomeb.ru/resize_cache/99921/d039554dd0e72ac69780bcb01f2c57ab/iblock/de0/kresla.png';
+// const icon3 = 'https://cdn.mnogomeb.ru/resize_cache/366909/d039554dd0e72ac69780bcb01f2c57ab/iblock/2a8/uglovye-divany.png';
+// const icon4 = 'https://cdn.mnogomeb.ru/resize_cache/366903/d039554dd0e72ac69780bcb01f2c57ab/iblock/a7b/pryamye-divany.png';
+// const icon5 = 'https://cdn.mnogomeb.ru/resize_cache/366921/d039554dd0e72ac69780bcb01f2c57ab/iblock/49e/pufy-i-banketki.png';
+// const icon6 = 'https://cdn.mnogomeb.ru/resize_cache/99928/d039554dd0e72ac69780bcb01f2c57ab/iblock/f5e/shkaf.png';
+// const icon7 = 'https://cdn.mnogomeb.ru/resize_cache/366965/d039554dd0e72ac69780bcb01f2c57ab/iblock/cb4/gorki.png';
+// const icon8 = 'https://cdn.mnogomeb.ru/resize_cache/366935/d039554dd0e72ac69780bcb01f2c57ab/iblock/016/shkafy-kupe.png';
+// const icon9 = 'https://cdn.mnogomeb.ru/resize_cache/220181/d039554dd0e72ac69780bcb01f2c57ab/iblock/b61/stol.png';
+// const icoicon_acustic_2 = 'https://cdn.mnogomeb.ru/resize_cache/366927/d039554dd0e72ac69780bcb01f2c57ab/iblock/36e/komp-kresla.png';
+// const icon12 = 'https://cdn.mnogomeb.ru/resize_cache/366969/d039554dd0e72ac69780bcb01f2c57ab/iblock/f9d/stellazhi.png';
+// const icon13 = 'https://cdn.mnogomeb.ru/resize_cache/367019/d039554dd0e72ac69780bcb01f2c57ab/iblock/4d3/dlya-gostinnoy.png';
+// const icon14 = 'https://cdn.mnogomeb.ru/resize_cache/366917/d039554dd0e72ac69780bcb01f2c57ab/iblock/f04/divany_krovati.png';
+// const icon15 = 'https://cdn.mnogomeb.ru/resize_cache/367011/d039554dd0e72ac69780bcb01f2c57ab/iblock/615/dlya-prikhozhey.png';
+
 
 
 const categories = [

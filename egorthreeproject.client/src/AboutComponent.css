@@ -117,14 +117,21 @@ body {
     padding-left: 0;
 }
 
+.about__inner {
+    padding: 70px 60px 20px;
+    background: aliceblue;
+    border-radius: 99px;
+}
+
 @media (max-width: 767px) {
     .about__inner {
-        padding: 0 16px;
+        padding: 50px;
         width: 100%;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 50px;
     }
     .about__image_2, .about__image_3 {
         display: none;
@@ -181,7 +188,7 @@ body {
         position: relative;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(4, auto);
-        margin: 0 auto;
+        margin: 0 auto 100px;
         max-width: var(--widthContainer);
         display: grid;
     }

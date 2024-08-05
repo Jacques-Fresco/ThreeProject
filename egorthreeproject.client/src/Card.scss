@@ -159,6 +159,32 @@ h1+p, p+p {
   transition: all 0.3s ease-out;
 }
 
+.wishlistAndCart.wishlist {
+  background: rgb(255, 237, 149);
+  border-radius: 5px; 
+  padding: 5px;
+  border: 3px rgb(223 201 97) solid; 
+  right: 115%;
+  height: auto; 
+  bottom: 1px;
+  cursor: pointer;
+}
+
+.wishlistAndCart.cart {
+  background: rgb(255, 237, 149);
+   border-radius: 5px; 
+   padding: 5px; 
+   border: 3px rgb(223 201 97) solid;
+  right: 101%; 
+  height: auto; 
+  bottom: 1px; 
+  cursor: pointer;
+}
+
+.wishlistAndCart:hover {
+  background: rgb(246 216 255);
+}
+
 .btn-wishlist {
   top: -240px;
   width: 30px;

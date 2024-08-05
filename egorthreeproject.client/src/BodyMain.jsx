@@ -8,6 +8,7 @@ import ImageSlider  from './ImageSlider.jsx';
 import ProjectsSection from './ProjectsSection.jsx';
 import AboutComponent from './AboutComponent.jsx'
 
+
 function BodyMain({ products, categories, pictures }) {
 
     return (

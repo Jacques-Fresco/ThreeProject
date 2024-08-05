@@ -2,6 +2,12 @@
   margin-bottom: 300px;
 }
 
+.footer_component_DivOne { 
+  max-width: 2000px;
+  margin: auto;
+  background: rgb(255, 255, 255);
+}
+
 .hamadevo {
   position: relative;
   text-transform: uppercase;
@@ -715,6 +721,13 @@
 
 .productCategoryComponentMB .rightContainerCatalog .categoryProducts .product-grid.autoplay {
   width: 80%;
+}
+
+.footer_component_twoDiv {
+  background-color: rgb(247 240 206);
+    border-top-left-radius: 99px;
+    border-top-right-radius: 99px;
+    padding-bottom: 30px;
 }
 
 @media (max-width: 956px) {

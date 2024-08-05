@@ -5,7 +5,7 @@ import App from './App.jsx'
 import Popup from './Popup.jsx'
 import './index.css'
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './app/store';
 
 const products = [
   { id: 1, name: 'Журнальный столик из дуба (wenge Italian paint)', description: '', categoryId: 1, priceOld: '17 200', priceNew: '11 490' },

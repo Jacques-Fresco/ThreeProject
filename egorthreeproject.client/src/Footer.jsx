@@ -46,30 +46,10 @@ function Footer() {
 
     return (
         <div className="footer_component">
-            <div style={{ background: '#ffffff' }}>
-                {/* <div className="t-title" field="btitle">Мы гордимся нашими продуктами</div>
-                <div className="t-col-c" style={{ display: 'flex', marginTop: '50px', marginBottom: '60px' }}>
-                    {componentT.map((item, index) => (
-                        <div className={`t-col t-col_scrolledColor ${windowWidth <= 866 ? 't-img_component' : ''}`} key={index}>
-                            <div className={`t-img-c ${windowWidth <= 866 ? 't-img_component' : ''}`}>
-                                {windowWidth <= 866 && <div className={`t-card__title ${isScrolled ? 'wrappercenter_scrolledColor' : ''}`}>{item.tct}</div>}
-                                <img className="t-img" src={item.timg} alt="" />
-                            </div>
-
-                            <div className='wrappercenter'>
-                                {windowWidth > 866 && (
-                                    <div className={`t-card__title ${isScrolled ? 'wrappercenter_scrolledColor' : ''}`}>{item.tct}</div>
-                                )}
-                                <div className={`t-card__descr ${isScrolled ? 'wrappercenter_scrolledColor' : ''}`}>{item.tcd}</div>
-                            </div>
-
-                        </div>
-                    ))} */}
-                    {/* <div className={`t-col ${isScrolled ? 't-col_scrolledColor' : ''}`}> */}
-                {/* </div> */}
-                <div style={{ backgroundColor: '#faf9f5', paddingBottom: "30px" }}>
+            <div className="footer_component_DivOne">
+                <div className="footer_component_twoDiv">
                     <div style={{ textAlign: 'center' }}>
-                        <div className="t-title">Следите за нами в <a href="https://www.instagram.com/tildapublishing/" style={{ color: 'rgb(0, 0, 0)', borderBottom: '1px solid rgb(0, 0, 0)', boxShadow: 'none', textDecoration: 'none' }}>instagram</a></div>
+                        <div className="t-title">Следите за нами в <a href="https://www.instagram.com/tildapublishing/" style={{ color: 'rgb(255 183 109)', borderBottom: '1px solid rgb(255 183 109)', boxShadow: 'none', textDecoration: 'none' }}>instagram</a></div>
                     </div>
                     <div className="d0">
                         <div className="d1">
@@ -90,9 +70,6 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            {/* <div className="photo-container" onMouseMove={movePhotos}>
-                <img src="https://optim.tildacdn.com/tild6537-3338-4665-b866-343739666462/-/format/webp/2023-07-07_12-51-27.png" className="photo" id="photo" style={{ left: photoPosition.left, top: photoPosition.top }} />
-            </div> */}
             <div className="footer_footer" style={{ padding: '45px 0 45px' }}>
                 <div style={{ margin: '0 auto', textAlign: 'center' }}>
                     <div className="hamadevo">Хамадево</div>

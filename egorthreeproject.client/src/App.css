@@ -384,6 +384,10 @@ input {
     transition: .25s ease-in-out;
 }
 
+#nav-icon:hover span {
+    background: #ffb76d;
+}
+
 #nav-icon span:nth-child(1) {
     top: 0px;
     transform-origin: left center;
@@ -466,4 +470,26 @@ input {
     text-align: center;
     top: -5px;
     width: 15px;
+}
+
+.entryAndExitComponent-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.entryAndExitComponent-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.entryAndExitComponent-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.entryAndExitComponent-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
 }

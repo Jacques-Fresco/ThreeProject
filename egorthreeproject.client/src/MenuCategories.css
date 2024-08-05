@@ -1,7 +1,7 @@
 .menu-categories {
     /* z-index: 1200; */
     /* background-color: #ffe3c7; */
-    background-color: #dddddd;
+    background-color: #f9ebde;
     max-width: none;
     /* height: 100vh; */
     min-height: auto;
@@ -132,6 +132,7 @@
     width: 24px;
     height: 24px;
     padding-left: 10px;
+    object-fit: contain;
 }
 
 .text-name-categoria {
@@ -140,7 +141,7 @@
     text-indent: 0;
     column-count: 1;
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 24px;
 }
 
 /* @media screen and (max-width: 1658px) {
@@ -152,6 +153,12 @@
 @media screen and (min-width: 1280px) {
     .text-name-categoria {
         letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    .text-name-categoria {
+        font-size: 18px;
     }
 }
 
@@ -185,12 +192,8 @@
     }
 
     .icon-categoria-left-menu {
-        width: 28px;
-        height: 28px;
-    }
-
-    .text-name-categoria {
-        font-size: 18px;
+        width: 50px;
+        height: 40px;
     }
 }
 
