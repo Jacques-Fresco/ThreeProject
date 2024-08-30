@@ -71,7 +71,7 @@
   /* Ширина для неактивных изображений */
   height: 100px;
   /* Высота для неактивных изображений */
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   /* Добавляем отступ между неактивными изображениями */
   border: 2px solid #fff;
   cursor: pointer;
@@ -87,13 +87,13 @@
   outline-color: #5c4084;
   opacity: 1;
 }
-.vueGallery .thumbnails div:not(:last-child) {
+/* .vueGallery .thumbnails div:not(:last-child) {
   margin-bottom: 5px;
-}
+} */
 
-@media (max-width: 1330) {
+/* @media (max-width: 1330) {
   .vueGallery .thumbnails div:not(:last-child) {
     margin-bottom: 0px;
   }
-}
+} */
 

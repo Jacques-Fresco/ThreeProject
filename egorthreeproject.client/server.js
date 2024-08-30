@@ -3,7 +3,7 @@ import TelegramBot from 'node-telegram-bot-api';
 
 const app = express();
 // const PORT = process.env.PORT || 3000;
-const PORT = 3000;
+const PORT = 80;
 
 
 const botToken = '6710215028:AAGiDYpdE71_v7jJSbYrzm8kAXL8IK8CBbc';

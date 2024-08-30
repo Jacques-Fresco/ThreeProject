@@ -13,6 +13,7 @@ import PriceComponent from './PriceComponent.jsx';
 import MaterialDetailComponent from './MaterialDetailComponent.jsx';
 import ContactComponent from './ContactComponent.jsx';
 import CooperationComponent from './CooperationComponent.jsx';
+import UserProfile from './Profil.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 
 function App({ products, categories, pictures, bodyComponent, galleryItems }) {
@@ -37,7 +38,8 @@ function App({ products, categories, pictures, bodyComponent, galleryItems }) {
         // 'price': <PriceComponent />,
         'cooperation': <CooperationComponent />,
         'contacts': <ContactComponent />,
-        'default': <BodyMain products={products} categories={categories} pictures={pictures} />
+        'default': <BodyMain products={products} categories={categories} pictures={pictures} />,
+        'profile': <UserProfile />
     };
 
     const renderBodyComponent = componentMap[bodyComponent] || componentMap['default'];

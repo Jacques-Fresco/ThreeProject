@@ -160,6 +160,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/cooperation" element={<App bodyComponent={'cooperation'} />} />
           <Route path="/contacts" element={<App bodyComponent={'contacts'} />} />
           <Route path="/popup/:productId" element={<Popup pictures={pictures} products={products} />} />
+          <Route path="/profile" element={<App bodyComponent={'profile'} />} />
           {/* <Route component={NotFound} /> */}
         </Routes>
       </Router>
