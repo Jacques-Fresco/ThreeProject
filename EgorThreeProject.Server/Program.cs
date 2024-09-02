@@ -1,87 +1,31 @@
-using EgorThreeProject.Server.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using EgorThreeProject.Server.Data;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Logging;
+using EgorThreeProject.Server.Extensions;
+using EgorThreeProject.Server.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
-using WweebbAapppp.Services;
-using EgorThreeProject.Services;
-using EgorThreeProject.Server.Middleware;
-using EgorThreeProject.Server.Validation;
-using EgorThreeProject.Server.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Настройка логирования
-builder.Logging.ClearProviders().AddConsole();
+builder.ConfigureLogging();
 
-// Добавление контекста базы данных
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")))
-    .AddCustomIdentity(builder.Configuration); // Настройка Identity
+builder.Services.ConfigureDatabase(builder.Configuration);
+builder.Services.ConfigureIdentity(builder.Configuration);
+builder.Services.ConfigureJwtAuthentication(builder.Configuration);
 
-// Регистрация сервисов JWT и Refresh Token
-builder.Services.AddScoped<JwtService>().AddScoped<RefreshTokenService>();
+//SwaggerHelper.ConfigureService(builder.Services);
 
-// Настройка аутентификации
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = ValidationParameters.GetValidationParameters(builder.Configuration);
-    
-        options.Events = new JwtBearerEvents
-        {
-            OnAuthenticationFailed = context =>
-            {
-                // Логируем ошибку аутентификации
-                Console.WriteLine("Authentication failed: " + context.Exception.Message);
-                Console.WriteLine("Token: " + context.Request.Headers["Authorization"]);
-                return Task.CompletedTask;
-            },
-            OnTokenValidated = context =>
-            {
-                // Логируем успешную аутентификацию
-                Console.WriteLine("Token validated successfully.");
-                return Task.CompletedTask;
-            }
-        };
-    });
+builder.Services.ConfigureCors();
+builder.Services.ConfigureControllers();
 
-builder.Services.AddControllers();
-
-// Настройка CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAllOrigins", builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-               //.AllowCredentials();
-    });
-});
-
-// Создание приложения
 var app = builder.Build();
 
-// Настройка логирования на этапе инициализации приложения
+app.ConfigureApp();
+
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
-logger.LogInformation("Starting application...");
-
-app.UseCors("AllowAllOrigins");
-app.UseStaticFiles();
-app.UseHttpsRedirection();
-app.UseRouting();
-app.UseMiddleware<RawRequestLoggingMiddleware>();
-app.UseAuthentication();
-app.UseAuthorization();
-
-// Настройка маршрутов
-app.MapControllers();
-app.MapFallbackToFile("/index.html");
 
 try
 {

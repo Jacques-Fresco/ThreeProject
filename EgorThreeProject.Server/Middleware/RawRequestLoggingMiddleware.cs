@@ -13,32 +13,34 @@
 
         public async Task InvokeAsync(HttpContext context)
         {
-            //foreach (var header in context.Request.Headers)
-            //{
-            //    _logger.LogInformation($"{header.Key}: {header.Value}");
-            //}
+            LogHeaders(context);
+            LogRequestDetails(context);
+            await _next(context);
+        }
 
-            if (context.Request.Headers.ContainsKey("Authorization"))
+        private void LogHeaders(HttpContext context)
+        {
+            foreach (var header in context.Request.Headers)
             {
-                var token = context.Request.Headers["Authorization"].ToString();
-                _logger.LogInformation("Received token: " + token);
+                _logger.LogInformation($"###{header.Key}: {header.Value}");
+            }
+        }
 
-                if (token.StartsWith("Bearer "))
-                {
-                    token = token.Substring("Bearer ".Length).Trim();
-                    _logger.LogInformation("Extracted JWT token: " + token);
-                }
-                else
-                {
-                    _logger.LogWarning("Token format is not Bearer.");
-                }
+        private void LogRequestDetails(HttpContext context)
+        {
+            _logger.LogInformation($"Request URL: {context.Request.Path}, Method: {context.Request.Method}");
+
+            if (context.Request.Headers.TryGetValue("Authorization", out var authHeader) && authHeader.ToString().StartsWith("Bearer "))
+            {
+                var token = authHeader.ToString()["Bearer ".Length..].Trim();
+                _logger.LogInformation($"Извлеченный JWT токен: {MaskToken(token)}");
             }
             else
             {
-                _logger.LogWarning("Authorization header is missing.");
+                _logger.LogWarning(authHeader.Any() ? "Формат токена не Bearer." : "Заголовок авторизации отсутствует.");
             }
-
-            await _next(context);
         }
+
+        private string MaskToken(string token) => token.Length <= 8 ? token : $"{token[..4]}...{token[^4..]}";
     }
 }

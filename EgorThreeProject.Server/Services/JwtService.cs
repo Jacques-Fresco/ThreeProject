@@ -5,12 +5,13 @@ using System.Security.Claims;
 using System.Text;
 using EgorThreeProject.Server.Models;
 using EgorThreeProject.Services;
+using System.Globalization;
 
 namespace WweebbAapppp.Services
 {
     public class JwtService
     {
-        public const int EXPIRATION_MINUTES = 1020;
+        public const int EXPIRATION_MINUTES = 1;
         public const int EXPIRATION_MINUTES_REFRESH_TOKEN = 1120;
 
         private readonly IConfiguration _configuration;
@@ -34,6 +35,7 @@ namespace WweebbAapppp.Services
             );
 
             var refreshToken = _refreshTokenService.GenerateRefreshToken();
+
             _refreshTokenService.SaveRefreshToken(user.Id, refreshToken, expiration_refreshToken);
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -56,14 +58,19 @@ namespace WweebbAapppp.Services
                 signingCredentials: credentials
             );
 
-        private Claim[] CreateClaims(IdentityUser user) =>
-            new[] {
+        
+
+        private Claim[] CreateClaims(IdentityUser user) {
+            return new[] {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString(), ClaimValueTypes.Integer64),
+                //new Claim(JwtRegisteredClaimNames.Iat, EpochTime.GetIntDate(DateTime.UtcNow).ToString(CultureInfo.InvariantCulture), ClaimValueTypes.Integer64),
+                new Claim(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()),
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.Email, user.Email)
             };
+        }
 
         private SigningCredentials CreateSigningCredentials() =>
             new SigningCredentials(

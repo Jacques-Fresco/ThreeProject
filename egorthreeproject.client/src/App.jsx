@@ -48,9 +48,8 @@ function App({ products, categories, pictures, bodyComponent, galleryItems }) {
         <div style={{ width: '100%', boxSizing: 'border-box', background: '#ffffff', position: 'relative' }}>
             <Header />
             {renderBodyComponent}
-            {bodyComponent !== 'portfolio/detailId' && <Footer />}
+            {bodyComponent !== 'portfolio/detailId' && bodyComponent !== 'profile' && <Footer />}
         </div>
-
     );
 }
 

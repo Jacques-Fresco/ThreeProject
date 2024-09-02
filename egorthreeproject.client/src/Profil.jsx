@@ -9,35 +9,30 @@ const UserProfile = () => {
 
         const fetchUserData = async () => {
             const token = localStorage.getItem('AccessToken');
-
+        
             try {
-
                 if (!token) {
-                    console.error('No token found. User is not authenticated.')
+                    console.error('No token found. User is not authenticated.');
                     return;
                 }
-
-                console.log("Token Profile:", token)
-
-                const response = await fetch('https://localhost:7089//api/auth/profile', {
+        
+                console.log("Token Profile:", token);
+        
+                const response = await fetch('api/auth/profile', {
                     method: 'GET',
                     headers: {
+                        "Accept": "application/json",
                         'Authorization': `Bearer ${token}`,
-                        // 'Cache-Control': 'no-cache',
-                        'Content-Type': 'application/json',
                     },
-                })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error('Error:', error));
-
+                });
+        
                 if (!response.ok) {
                     throw new Error('Ошибка при загрузке данных');
                 }
+        
                 const data = await response.json();
-
-                console.log("DATA:", data)
-
+                console.log("DATA:", data);
+        
                 setUser(data);
             } catch (err) {
                 setError(err.message);
@@ -66,7 +61,7 @@ const UserProfile = () => {
             <h2>User Profile</h2>
             <div className="user-details">
                 <div>
-                    <strong>ID:</strong> {user.id}
+                    <strong>ID:</strong> {user.userId}
                 </div>
                 <div>
                     <strong>Username:</strong> {user.username}
