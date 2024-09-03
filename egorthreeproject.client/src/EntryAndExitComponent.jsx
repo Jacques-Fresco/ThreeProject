@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from './features/authSlice';
 import './EntryAndExitComponent.css';
+import { toggleLoginOrRegistration } from './features/loginOrRegistrationSlice';
 
 const EntryAndExitComponent = () => {
+  const dispatch = useDispatch();
+  
   useEffect(() => {
     const switch1 = document.getElementById('switch1');
     const switch2 = document.getElementById('switch2');
@@ -50,17 +55,15 @@ const EntryAndExitComponent = () => {
         throw new Error(errorData.message || 'Ошибка при отправке данных');
       }
 
-      console.log("response: ", response);
-
-
       const dataD = await response.json();
-
-      console.log("dataD:", dataD);
 
       localStorage.setItem("AccessToken", dataD.accessToken);
       localStorage.setItem("expirationAccessToken", dataD.expirationAccessToken);
       localStorage.setItem("RefreshToken", dataD.refreshToken);
       localStorage.setItem("expirationRefreshToken", dataD.expirationRefreshToken);
+
+      dispatch(login());
+      dispatch(toggleLoginOrRegistration());
 
     } catch (error) {
 

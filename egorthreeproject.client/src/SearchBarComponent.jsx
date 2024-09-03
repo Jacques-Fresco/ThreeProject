@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './SearchBarComponent.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleLoginOrRegistration } from './features/loginOrRegistrationSlice';
+import { toggleProfileMenu } from './features/profileMenuSlice';
 
 const SearchBarComponent = ({ isOpen }) => {
   const [centered, setCentered] = useState(false);
-  // const [isHovered, setIsHovered] = useState(false);
   const dispatch = useDispatch();
+  
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,16 +27,6 @@ const SearchBarComponent = ({ isOpen }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
 
-  // const handleMouseEnter = () => {
-  //   setIsHovered(true);
-  //   dispatch(toggleLoginOrRegistration());
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setIsHovered(false);
-  //   dispatch(toggleLoginOrRegistration());
-  // };
-
   return (
     <div className={`top-search-container-PC ${centered ? 'center' : 'not-center'}`}>
       <div className={`wishlistAndCart ${centered ? '' : 'noneNC'} wishlist`}>
@@ -48,24 +40,25 @@ const SearchBarComponent = ({ isOpen }) => {
         </svg>
         <span></span>
       </div>
-      <div
-        className={`wishlistAndCart ${centered ? '' : 'noneNC'} enteredAccount`}
-        onClick={() => dispatch(toggleLoginOrRegistration())}
-        // onMouseEnter={handleMouseEnter}
-        // onMouseLeave={handleMouseLeave}
-      >
-        <svg fill='rgb(255 119 119)' width="50" height="50">
-          <use xlinkHref="#personNEntered"></use>
-        </svg>
-      </div>
-      {/* <div className={`wishlistAndCart ${centered ? '' : 'noneNC'} notEnteredAccount`}>
-        <svg fill='rgb(164 255 149)' width="50" height="50">
-          <use xlinkHref="#personEntered"></use>
-        </svg>
-      </div> */}
+      {isAuthenticated ? (
+        <div className={`wishlistAndCart ${centered ? '' : 'noneNC'} notEnteredAccount`} 
+        onClick={() => dispatch(toggleProfileMenu())}>
+          <svg fill='rgb(164 255 149)' width="50" height="50">
+            <use xlinkHref="#personEntered"></use>
+          </svg>
+        </div>
+      ) : (
+        <div
+          className={`wishlistAndCart ${centered ? '' : 'noneNC'} enteredAccount`}
+          onClick={() => dispatch(toggleLoginOrRegistration())}
+        >
+          <svg fill='rgb(255 119 119)' width="50" height="50">
+            <use xlinkHref="#personNEntered"></use>
+          </svg>
+        </div>
+      )}
       <div className="search-container">
         <form className="search">
-          {/* <label className="search__label" htmlFor="search">Поиск</label> */}
           <input className="search__input" id="search" type="text" name="search" placeholder="Поиск..." />
           <div className="search__input-wrap">
             <button type="submit" className="search__button">

@@ -6,6 +6,7 @@ import SearchBarComponent from './SearchBarComponent.jsx';
 import EntryAndExitComponent from './EntryAndExitComponent.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLoginOrRegistration } from './features/loginOrRegistrationSlice';
+import { closeProfileMenu } from './features/profileMenuSlice'; // Импортируем closeProfileMenu
 
 function Header() {
   const [activeButton, setActiveButton] = useState('');
@@ -15,6 +16,7 @@ function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
 
   const isActive = useSelector((state) => state.toggleLoginOrRegistration.isActive);
+  const isMenuOpen = useSelector((state) => state.profileMenu.isMenuOpen);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -58,8 +60,7 @@ function Header() {
   };
 
   const handleToggle = () => {
-
-    if(isActive == true) {
+    if (isActive === true) {
       dispatch(toggleLoginOrRegistration());
     }
 
@@ -82,6 +83,12 @@ function Header() {
     setActiveButton(path);
   };
 
+  const handleLogout = () => {
+    // Здесь вы можете добавить логику выхода, например, очистить токены и т.д.
+    // Затем закройте меню
+    dispatch(closeProfileMenu()); // Закрываем меню
+  };
+
   const menuItems = [
     { path: '/', label: 'Каталог' },
     { path: '/portfolio', label: 'Портфолио' },
@@ -96,12 +103,18 @@ function Header() {
     <header className={`header ${isHeaderTransparent ? 'transparent' : ''}`}>
       <CSSTransition
         in={isActive}
-        timeout={300} 
+        timeout={300}
         classNames='entryAndExitComponent'
         unmountOnExit
-        >
+      >
         <EntryAndExitComponent />
       </CSSTransition>
+      {isMenuOpen && (
+        <div className="account-options" style={{ background: 'coral', padding: '10px', position: 'absolute', top: '110%', right: '15%', borderRadius: '20px' }}>
+          <button style={{ marginRight: '10px' }} onClick={handleLogout}><Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>Профиль</Link></button>
+          <button onClick={handleLogout}>Выход</button>
+        </div>
+      )}
       <div className="headerS">
         <div className='menudivPC'>
           <div className='logocl-container'>

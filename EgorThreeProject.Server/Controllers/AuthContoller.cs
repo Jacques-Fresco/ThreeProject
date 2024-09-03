@@ -1,4 +1,5 @@
 ﻿using EgorThreeProject.Server.Models;
+using EgorThreeProject.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using WweebbAapppp.Services;
+using Newtonsoft.Json.Linq;
 
 namespace EgorThreeProject.Server.Controllers
 {
@@ -18,13 +20,15 @@ namespace EgorThreeProject.Server.Controllers
         private readonly SignInManager<User> _signInManager;
         private readonly JwtService _jwtService;
         private readonly ILogger<AuthController> _logger;
+        private readonly RefreshTokenService _refreshTokenService;
 
-        public AuthController(UserManager<User> userManager, SignInManager<User> signInManager, JwtService jwtService, ILogger<AuthController> logger)
+        public AuthController(UserManager<User> userManager, SignInManager<User> signInManager, JwtService jwtService, ILogger<AuthController> logger, RefreshTokenService refreshTokenService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _jwtService = jwtService;
             _logger = logger;
+            _refreshTokenService = refreshTokenService;
         }
 
         private IActionResult ValidateModel(object model, string[] requiredFields)
@@ -94,33 +98,34 @@ namespace EgorThreeProject.Server.Controllers
             });
         }
 
-        [Authorize]
-        [HttpGet("profile")]
-        public async Task<IActionResult> Profile()
+        [HttpPost("generate-new-token")]
+        public async Task<IActionResult> GenerateAccessToken(TokensRequest tokens)
         {
-            _logger.LogInformation("Вызван метод Profile");
-
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
+            if (!ModelState.IsValid)
             {
-                _logger.LogWarning("Не удалось найти идентификатор пользователя в токене.");
-                return Unauthorized();
+                return BadRequest(ModelState);
+            }
+
+            var userId = _jwtService.ExtractUserIdFromToken(tokens.AccessToken);
+            if (userId == null)
+            {
+                return Unauthorized("Invalid token");
+            }
+
+            var isValidRefreshToken = _refreshTokenService.ValidateRefreshToken(tokens.RefreshToken, userId);
+            if (!isValidRefreshToken)
+            {
+                return Unauthorized("Invalid refresh token");
             }
 
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
-                _logger.LogWarning($"Пользователь с ID {userId} не найден.");
-                return NotFound("Пользователь не найден.");
+                return NotFound("User not found");
             }
 
-            _logger.LogInformation($"Данные профиля для пользователя {user.UserName} успешно получены.");
-            return Ok(new
-            {
-                UserId = user.Id,
-                Username = user.UserName,
-                Email = user.Email ?? ""
-            });
+            var response = await _jwtService.GenerateNewTokens(user);
+            return Ok(response);
         }
     }
 }

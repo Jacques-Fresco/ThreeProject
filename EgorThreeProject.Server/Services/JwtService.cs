@@ -6,12 +6,13 @@ using System.Text;
 using EgorThreeProject.Server.Models;
 using EgorThreeProject.Services;
 using System.Globalization;
+using Newtonsoft.Json.Linq;
 
 namespace WweebbAapppp.Services
 {
     public class JwtService
     {
-        public const int EXPIRATION_MINUTES = 1;
+        public const int EXPIRATION_MINUTES = 100;
         public const int EXPIRATION_MINUTES_REFRESH_TOKEN = 1120;
 
         private readonly IConfiguration _configuration;
@@ -49,6 +50,23 @@ namespace WweebbAapppp.Services
             };
         }
 
+        public async Task<AuthenticationResponse> GenerateNewTokens(IdentityUser user)
+        {
+            var newAccessToken = CreateToken(user);
+            var newRefreshToken = _refreshTokenService.GenerateRefreshToken();
+
+            var expirationRefreshToken = DateTime.UtcNow.AddMinutes(JwtService.EXPIRATION_MINUTES_REFRESH_TOKEN);
+            _refreshTokenService.SaveRefreshToken(user.Id, newRefreshToken, expirationRefreshToken);
+
+            return new AuthenticationResponse
+            {
+                AccessToken = newAccessToken.AccessToken,
+                expirationAccessToken = newAccessToken.expirationAccessToken,
+                RefreshToken = newRefreshToken,
+                expirationRefreshToken = expirationRefreshToken
+            };
+        }
+
         private JwtSecurityToken CreateJwtToken(Claim[] claims, SigningCredentials credentials, DateTime expiration) =>
             new JwtSecurityToken(
                 _configuration["Jwt:Issuer"],
@@ -79,5 +97,14 @@ namespace WweebbAapppp.Services
                 ),
                 SecurityAlgorithms.HmacSha256
             );
+
+        public string ExtractUserIdFromToken(string accessToken)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadJwtToken(accessToken);
+            var payload = jwtToken.Payload.SerializeToJson();
+            JObject payloadJson = JObject.Parse(payload);
+            return (string)payloadJson[ClaimTypes.NameIdentifier];
+        }
     }
 }
